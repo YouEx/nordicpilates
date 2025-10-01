@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-snow text-graphite;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    @apply font-serif text-5xl md:text-6xl lg:text-7xl tracking-tight leading-tight;
+  }
+
+  h2 {
+    @apply font-serif text-3xl md:text-4xl tracking-tight;
+  }
+
+  h3 {
+    @apply font-sans text-xl md:text-2xl font-medium;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Fade-in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-screen-lg mx-auto px-24 md:px-48;
+  }
+
+  .btn-primary {
+    @apply bg-graphite text-snow px-32 py-16 rounded-button font-medium text-base;
+    @apply hover:shadow-subtle hover:scale-105 transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-ice-blue focus:ring-offset-4;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .input-field {
+    @apply w-full px-16 py-16 border border-fog rounded-default;
+    @apply focus:outline-none focus:ring-2 focus:ring-ice-blue;
+    @apply transition-all duration-150;
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  .checkbox-field {
+    @apply w-5 h-5 border-2 border-fog rounded;
+    @apply focus:outline-none focus:ring-2 focus:ring-ice-blue focus:ring-offset-2;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
