@@ -105,7 +105,7 @@ export default function Home() {
                 </a>
               </Button>
               <p className="text-white/70 text-sm mt-16">
-                50% rabat i to måneder + gratis strømper og drikkeflaske
+                50% rabat i to måneder + gratis strømper og drikkeflaske + prioritet til tidspunkter
               </p>
             </div>
           </div>
@@ -124,33 +124,6 @@ export default function Home() {
           <p className="text-center text-graphite/70 mb-32 max-w-2xl mx-auto">
             Få early-bird plads, introfordele og først besked om åbning.
           </p>
-          
-          {/* Early Bird Benefits Banner */}
-          <div className="bg-gradient-to-br from-ice-blue/20 to-[#C4A582]/10 border border-[#C4A582]/20 rounded-lg p-32 mb-40">
-            <div className="flex items-start gap-16 mb-20">
-              <span className="text-4xl">✨</span>
-              <div className="flex-1">
-                <h3 className="text-graphite font-semibold mb-20 text-xl">Early Bird Fordele</h3>
-                <ul className="space-y-12 text-graphite/80">
-                  <li className="flex items-center gap-12">
-                    <Sparkles size={48} className="text-[#C4A582] flex-shrink-0" />
-                    <span><strong>50% rabat</strong> i to måneder</span>
-                  </li>
-                  <li className="flex items-center gap-12">
-                    <Sparkles size={48} className="text-[#C4A582] flex-shrink-0" />
-                    <span><strong>Gratis strømper og drikkeflaske</strong> (værdi 200kr)</span>
-                  </li>
-                  <li className="flex items-center gap-12">
-                    <Clock size={48} className="text-[#C4A582] flex-shrink-0" />
-                    <span><strong>Prioritet</strong> til foretrukne tidspunkter</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <p className="text-sm text-graphite/60 text-center">
-              Kun tilgængeligt for de første 150 der tilmelder sig
-            </p>
-          </div>
 
           <WaitlistQuiz />
           
