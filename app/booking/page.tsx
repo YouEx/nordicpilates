@@ -1,6 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { Clock, User, Users, Zap, ArrowLeft } from 'lucide-react'
 
 type SessionType = 'Nordic Flow' | 'Power Core' | 'Stretch & Restore' | 'Sweat 30'
 type Difficulty = 'Begynder' | 'Let øvet' | 'Udfordrende'
@@ -81,9 +85,12 @@ export default function BookingPage() {
                 <p className="text-sm text-graphite/60">I dag, {new Date().toLocaleDateString('da-DK', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
               </div>
             </div>
-            <a href="/" className="text-sm text-graphite hover:text-[#C4A582] transition-colors">
-              ← Tilbage til forside
-            </a>
+            <Button variant="ghost" size="sm" asChild>
+              <a href="/">
+                <ArrowLeft className="w-4 h-4" />
+                Tilbage til forside
+              </a>
+            </Button>
           </div>
         </div>
       </header>
@@ -92,56 +99,46 @@ export default function BookingPage() {
       <section className="bg-white border-b border-fog/30">
         <div className="container-custom py-24">
           <div className="flex flex-wrap gap-12">
-            <button
+            <Button
               onClick={() => setFilter('all')}
-              className={`px-20 py-10 rounded-full text-sm font-medium transition-all ${
-                filter === 'all' 
-                  ? 'bg-graphite text-white' 
-                  : 'bg-white border border-fog/50 text-graphite hover:border-graphite/30'
-              }`}
+              variant={filter === 'all' ? 'default' : 'outline'}
+              size="sm"
+              className="rounded-full"
             >
               Alle sessions
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setFilter('Nordic Flow')}
-              className={`px-20 py-10 rounded-full text-sm font-medium transition-all ${
-                filter === 'Nordic Flow' 
-                  ? 'bg-graphite text-white' 
-                  : 'bg-white border border-fog/50 text-graphite hover:border-graphite/30'
-              }`}
+              variant={filter === 'Nordic Flow' ? 'default' : 'outline'}
+              size="sm"
+              className="rounded-full"
             >
               Nordic Flow
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setFilter('Power Core')}
-              className={`px-20 py-10 rounded-full text-sm font-medium transition-all ${
-                filter === 'Power Core' 
-                  ? 'bg-graphite text-white' 
-                  : 'bg-white border border-fog/50 text-graphite hover:border-graphite/30'
-              }`}
+              variant={filter === 'Power Core' ? 'default' : 'outline'}
+              size="sm"
+              className="rounded-full"
             >
               Power Core
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setFilter('Stretch & Restore')}
-              className={`px-20 py-10 rounded-full text-sm font-medium transition-all ${
-                filter === 'Stretch & Restore' 
-                  ? 'bg-graphite text-white' 
-                  : 'bg-white border border-fog/50 text-graphite hover:border-graphite/30'
-              }`}
+              variant={filter === 'Stretch & Restore' ? 'default' : 'outline'}
+              size="sm"
+              className="rounded-full"
             >
               Stretch & Restore
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setFilter('Sweat 30')}
-              className={`px-20 py-10 rounded-full text-sm font-medium transition-all ${
-                filter === 'Sweat 30' 
-                  ? 'bg-graphite text-white' 
-                  : 'bg-white border border-fog/50 text-graphite hover:border-graphite/30'
-              }`}
+              variant={filter === 'Sweat 30' ? 'default' : 'outline'}
+              size="sm"
+              className="rounded-full"
             >
               Sweat 30
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -155,63 +152,57 @@ export default function BookingPage() {
             const available = remaining > 0
 
             return (
-              <div
-                key={session.id}
-                className={`bg-white rounded-lg border overflow-hidden transition-all hover:shadow-subtle ${
-                  available ? 'border-fog/30 hover:border-[#C4A582]/30' : 'border-fog/20 opacity-60'
-                }`}
-              >
-                {/* Time Header */}
-                <div className="bg-gradient-to-r from-ice-blue/10 to-[#C4A582]/5 p-20 border-b border-fog/20">
+              <Card key={session.id} className={`overflow-hidden ${!available && 'opacity-60'}`}>
+                <CardHeader className="bg-gradient-to-r from-ice-blue/10 to-[#C4A582]/5 p-20 border-b border-fog/20">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-3xl font-light text-graphite">{session.time}</div>
-                      <div className="text-sm text-graphite/60">{session.duration} min</div>
+                      <CardTitle className="text-3xl font-light text-graphite">{session.time}</CardTitle>
+                      <CardDescription className="flex items-center gap-2 mt-2">
+                        <Clock className="w-4 h-4" />
+                        {session.duration} min
+                      </CardDescription>
                     </div>
                     <div className={`px-12 py-6 rounded-full text-xs font-medium border ${difficultyColors[session.difficulty]}`}>
                       {session.difficulty}
                     </div>
                   </div>
-                </div>
+                </CardHeader>
 
-                {/* Session Details */}
-                <div className="p-24">
-                  <h3 className="text-xl font-medium text-graphite mb-8">{session.type}</h3>
+                <CardContent className="p-24">
+                  <h3 className="text-xl font-medium text-graphite mb-16">{session.type}</h3>
                   <div className="space-y-12 mb-24">
                     <div className="flex items-center gap-8 text-sm text-graphite/70">
-                      <svg className="w-4 h-4 text-[#C4A582]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
+                      <User className="w-4 h-4 text-[#C4A582]" />
                       <span>{session.instructor}</span>
                     </div>
                     <div className="flex items-center gap-8 text-sm">
-                      <svg className="w-4 h-4 text-[#C4A582]" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                      </svg>
+                      <Users className="w-4 h-4 text-[#C4A582]" />
                       <span className={almostFull ? 'text-[#C4A582] font-medium' : 'text-graphite/70'}>
                         {remaining} {remaining === 1 ? 'plads' : 'pladser'} tilbage af {session.spotsTotal}
                       </span>
                     </div>
                   </div>
+                </CardContent>
 
-                  {/* Booking Button */}
-                  <button
+                <CardFooter className="p-24 pt-0 flex-col gap-8">
+                  <Button
                     onClick={() => handleBooking(session)}
                     disabled={!available}
-                    className={`w-full py-14 rounded-button text-sm font-medium transition-all ${
-                      available
-                        ? 'bg-graphite text-white hover:bg-graphite/90 hover:shadow-subtle'
-                        : 'bg-fog/30 text-graphite/40 cursor-not-allowed'
-                    }`}
+                    className="w-full"
+                    size="lg"
+                    variant={available ? "default" : "outline"}
                   >
                     {available ? 'Book nu' : 'Udsolgt'}
-                  </button>
+                  </Button>
                   
                   {almostFull && available && (
-                    <p className="text-xs text-[#C4A582] text-center mt-8">⚡ Næsten fyldt op</p>
+                    <p className="text-xs text-[#C4A582] text-center flex items-center justify-center gap-4">
+                      <Zap className="w-3 h-3" />
+                      Næsten fyldt op
+                    </p>
                   )}
-                </div>
-              </div>
+                </CardFooter>
+              </Card>
             )
           })}
         </div>
@@ -224,55 +215,72 @@ export default function BookingPage() {
       </section>
 
       {/* Booking Confirmation Modal */}
-      {selectedSession && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-24" onClick={() => setSelectedSession(null)}>
-          <div className="bg-white rounded-lg max-w-md w-full p-40 shadow-xl" onClick={(e) => e.stopPropagation()}>
-            <h2 className="text-2xl font-light text-graphite mb-24">Bekræft booking</h2>
-            
-            <div className="space-y-16 mb-32 p-24 bg-porcelain rounded-lg">
-              <div>
-                <div className="text-sm text-graphite/60 mb-4">Session</div>
-                <div className="text-lg font-medium text-graphite">{selectedSession.type}</div>
-              </div>
-              <div className="grid grid-cols-2 gap-16">
-                <div>
-                  <div className="text-sm text-graphite/60 mb-4">Tidspunkt</div>
-                  <div className="text-graphite">{selectedSession.time}</div>
-                </div>
-                <div>
-                  <div className="text-sm text-graphite/60 mb-4">Varighed</div>
-                  <div className="text-graphite">{selectedSession.duration} min</div>
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-graphite/60 mb-4">Instruktør</div>
-                <div className="text-graphite">{selectedSession.instructor}</div>
-              </div>
-              <div>
-                <div className="text-sm text-graphite/60 mb-4">Niveau</div>
-                <div className={`inline-block px-12 py-6 rounded-full text-xs font-medium border ${difficultyColors[selectedSession.difficulty]}`}>
-                  {selectedSession.difficulty}
-                </div>
-              </div>
+      <Dialog open={!!selectedSession} onOpenChange={(open) => !open && setSelectedSession(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Bekræft booking</DialogTitle>
+            <DialogDescription>
+              Gennemgå detaljerne før du bekræfter din booking
+            </DialogDescription>
+          </DialogHeader>
+          
+          {selectedSession && (
+            <div className="space-y-16 py-16">
+              <Card className="border-none shadow-none bg-porcelain">
+                <CardContent className="p-20 space-y-16">
+                  <div>
+                    <div className="text-sm text-graphite/60 mb-4">Session</div>
+                    <div className="text-lg font-medium text-graphite">{selectedSession.type}</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-16">
+                    <div>
+                      <div className="text-sm text-graphite/60 mb-4">Tidspunkt</div>
+                      <div className="text-graphite flex items-center gap-4">
+                        <Clock className="w-4 h-4 text-[#C4A582]" />
+                        {selectedSession.time}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-graphite/60 mb-4">Varighed</div>
+                      <div className="text-graphite">{selectedSession.duration} min</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-graphite/60 mb-4">Instruktør</div>
+                    <div className="text-graphite flex items-center gap-4">
+                      <User className="w-4 h-4 text-[#C4A582]" />
+                      {selectedSession.instructor}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-graphite/60 mb-4">Niveau</div>
+                    <div className={`inline-block px-12 py-6 rounded-full text-xs font-medium border ${difficultyColors[selectedSession.difficulty]}`}>
+                      {selectedSession.difficulty}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
+          )}
 
-            <div className="flex gap-12">
-              <button
-                onClick={() => setSelectedSession(null)}
-                className="flex-1 px-24 py-14 border-2 border-fog/50 text-graphite rounded-button font-medium hover:border-graphite/30 transition-all"
-              >
-                Annuller
-              </button>
-              <button
-                onClick={confirmBooking}
-                className="flex-1 px-24 py-14 bg-graphite text-white rounded-button font-medium hover:bg-graphite/90 hover:shadow-subtle transition-all"
-              >
-                Bekræft booking
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+          <DialogFooter className="flex gap-8 sm:gap-8">
+            <Button
+              onClick={() => setSelectedSession(null)}
+              variant="outline"
+              className="flex-1"
+            >
+              Annuller
+            </Button>
+            <Button
+              onClick={confirmBooking}
+              variant="premium"
+              className="flex-1"
+            >
+              Bekræft booking
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </main>
   )
 }

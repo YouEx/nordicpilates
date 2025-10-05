@@ -3,6 +3,8 @@
 import HeroMedia from '@/components/HeroMedia'
 import WaitlistForm from '@/components/WaitlistForm'
 import SocialProof from '@/components/SocialProof'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Button } from '@/components/ui/button'
 
 export default function Home() {
   return (
@@ -40,19 +42,19 @@ export default function Home() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-16 justify-center items-center animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
-              <a 
-                href="#waitlist" 
-                className="bg-snow text-graphite px-40 py-20 rounded-button font-medium text-lg hover:bg-white hover:shadow-subtle hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-graphite"
-                aria-label="Tilmeld ventelisten"
-              >
-                Tilmeld ventelisten →
-              </a>
-              <button 
+              <Button size="xl" variant="premium" asChild>
+                <a href="#waitlist">
+                  Tilmeld ventelisten →
+                </a>
+              </Button>
+              <Button 
+                size="xl"
+                variant="outline" 
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-40 py-20 border-2 border-white/80 text-white rounded-button font-medium text-lg hover:bg-white/10 hover:border-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-graphite"
+                className="border-2 border-white/80 text-white hover:bg-white/10 hover:border-white hover:text-white"
               >
                 Læs mere
-              </button>
+              </Button>
             </div>
             
             {/* Trust Micro-Badges */}
@@ -279,78 +281,50 @@ export default function Home() {
         <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
           Alt du behøver at vide om Nordic Pilates
         </p>
-        <div className="max-w-3xl mx-auto space-y-24">
-          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
-            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
-              <span>Er det begynder-venligt?</span>
-              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <p className="text-graphite/70 mt-16 leading-relaxed">
-              Ja. Vi har introhold og tydelig guidning i alle klasser. Du behøver ingen erfaring for at komme i gang.
-            </p>
-          </details>
-          
-          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
-            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
-              <span>Er der instruktør?</span>
-              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <p className="text-graphite/70 mt-16 leading-relaxed">
-              Vi har betalt nogle af verdens dygtigste og mest anerkendte pilates-instruktører for at lave guidede sessions, som vises på alle skærmene i rummet. Derudover er der altid en hjælpsom studioguide til stede.
-            </p>
-          </details>
-          
-          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
-            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
-              <span>Hvad koster det?</span>
-              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <p className="text-graphite/70 mt-16 leading-relaxed">
-              Fra 30kr til 60kr i timen, alt efter tid på dagen. Vi tilbyder fleksible priser, så du kan træne når det passer dig.
-            </p>
-          </details>
-          
-          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
-            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
-              <span>Hvad skal jeg have med?</span>
-              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <p className="text-graphite/70 mt-16 leading-relaxed">
-              Tætsiddende tøj og skridsikre strømper. Strømperne kan købes i studiet, hvis du ikke har nogle.
-            </p>
-          </details>
-          
-          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
-            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
-              <span>Kan jeg aflyse?</span>
-              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <p className="text-graphite/70 mt-16 leading-relaxed">
-              Ja, det er gratis at aflyse via app'en op til en time før hver session. Vi forstår, at livet sker.
-            </p>
-          </details>
-          
-          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
-            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
-              <span>Er det sikkert under graviditet?</span>
-              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <p className="text-graphite/70 mt-16 leading-relaxed">
-              Mange har glæde af skånsom pilates, men tal altid med din læge eller jordemoder først, og vælg vores gravid-venlige hold.
-            </p>
-          </details>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Er det begynder-venligt?</AccordionTrigger>
+              <AccordionContent>
+                Ja. Vi har introhold og tydelig guidning i alle klasser. Du behøver ingen erfaring for at komme i gang.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Er der instruktør?</AccordionTrigger>
+              <AccordionContent>
+                Vi har betalt nogle af verdens dygtigste og mest anerkendte pilates-instruktører for at lave guidede sessions, som vises på alle skærmene i rummet. Derudover er der altid en hjælpsom studioguide til stede.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Hvad koster det?</AccordionTrigger>
+              <AccordionContent>
+                Fra 30kr til 60kr i timen, alt efter tid på dagen. Vi tilbyder fleksible priser, så du kan træne når det passer dig.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Hvad skal jeg have med?</AccordionTrigger>
+              <AccordionContent>
+                Tætsiddende tøj og skridsikre strømper. Strømperne kan købes i studiet, hvis du ikke har nogle.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-5">
+              <AccordionTrigger>Kan jeg aflyse?</AccordionTrigger>
+              <AccordionContent>
+                Ja, det er gratis at aflyse via app'en op til en time før hver session. Vi forstår, at livet sker.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-6">
+              <AccordionTrigger>Er det sikkert under graviditet?</AccordionTrigger>
+              <AccordionContent>
+                Mange har glæde af skånsom pilates, men tal altid med din læge eller jordemoder først, og vælg vores gravid-venlige hold.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
