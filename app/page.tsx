@@ -55,7 +55,7 @@ export default function Home() {
           <Logo size="sm" />
           <nav className="flex items-center gap-12">
             <span className="hidden md:inline text-sm text-graphite/60">
-              <span className="font-semibold text-coral">{totalSpots - signupCount}/{totalSpots}</span> early bird pladser tilbage
+              <span className="font-semibold text-coral">{totalSpots - signupCount}</span> early bird pladser tilbage
             </span>
             <button 
               className="h-9 px-24 bg-navy text-white text-xs font-medium rounded-lg hover:bg-navy/90 transition-colors"
@@ -158,7 +158,7 @@ export default function Home() {
           <div className="mt-48 max-w-2xl mx-auto">
             <div className="bg-white border-2 border-coral/30 px-32 py-24">
               <p className="text-graphite text-center font-medium mb-12">
-                <span className="text-coral text-2xl font-semibold">{totalSpots - signupCount} af {totalSpots}</span> early bird pladser tilbage
+                <span className="text-coral text-2xl font-semibold">{totalSpots - signupCount}</span> early bird pladser tilbage
               </p>
               <div className="w-full h-3 bg-fog overflow-hidden">
                 <div className="h-full bg-coral transition-all duration-500" style={{ width: `${((totalSpots - signupCount) / totalSpots) * 100}%` }}></div>
