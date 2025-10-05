@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import HeroMedia from '@/components/HeroMedia'
-import WaitlistForm from '@/components/WaitlistForm'
+import WaitlistQuiz from '@/components/WaitlistQuiz'
 import SocialProof from '@/components/SocialProof'
 import Logo from '@/components/Logo'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
@@ -31,19 +31,15 @@ export default function Home() {
       >
         <div className="container-custom py-16 flex items-center justify-between">
           <Logo size="sm" />
-          <nav className="flex items-center gap-16">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Om os
-            </Button>
+          <nav className="flex items-center gap-12">
+            <span className="hidden md:inline text-sm text-graphite/60">
+              <span className="font-semibold text-coral">112/150</span> pladser tilbage
+            </span>
             <Button 
               size="sm"
               asChild
             >
-              <a href="#waitlist">Tilmeld ventelisten</a>
+              <a href="#waitlist">Få Early-Bird Plads</a>
             </Button>
           </nav>
         </div>
@@ -64,53 +60,57 @@ export default function Home() {
         {/* Content Overlay */}
         <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-center px-24 md:px-48 text-center">
           <div className="max-w-4xl">
-            {/* Tagline */}
-            <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-48 leading-relaxed max-w-2xl mx-auto animate-fadeInUp font-light" style={{ animationDelay: '0.4s', opacity: 0 }}>
-              Nordic Pilates gør reformer-træning enkel, fleksibel og overkommelig. Klasser kører fra tidlig morgen til sen aften – så du kan prioritere dig selv, uden at omrokere hele dagen.
-            </p>
+            {/* Main Headline - Clear outcome */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
+              Reformer Pilates på Østerbro, åbner januar 2026.<br/>
+              <span className="text-2xl md:text-3xl lg:text-4xl text-white/90 block mt-16">
+                Fleksible tider før og efter arbejde.
+              </span>
+            </h1>
 
-            {/* Social Proof & Urgency */}
-            <div className="mb-48 flex flex-col items-center animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
-              <SocialProof />
+            {/* Progress indicator */}
+            <div className="mb-40 animate-fadeInUp" style={{ animationDelay: '0.4s', opacity: 0 }}>
+              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-24 py-12 border border-white/20">
+                <p className="text-white/90 text-sm font-medium mb-8">
+                  <span className="text-coral text-lg font-semibold">112 af 150</span> early-bird pladser tilbage
+                </p>
+                <div className="w-64 md:w-80 h-2 bg-white/20 rounded-full overflow-hidden">
+                  <div className="h-full bg-coral rounded-full transition-all duration-500" style={{ width: '75%' }}></div>
+                </div>
+              </div>
             </div>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-16 justify-center items-center animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
-              <Button size="xl" asChild>
-                <a href="#waitlist" aria-label="Tilmeld dig ventelisten for early bird fordele">
-                  Tilmeld ventelisten →
+            {/* Single Primary CTA */}
+            <div className="animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
+              <Button size="xl" asChild className="shadow-lg hover:shadow-xl">
+                <a href="#waitlist" aria-label="Få din early bird plads">
+                  Få Early-Bird Plads
                 </a>
               </Button>
-              <Button 
-                size="xl"
-                variant="outline" 
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-white/80 text-white hover:bg-white/10 hover:border-white hover:text-white"
-                aria-label="Scroll til mere information"
-              >
-                Læs mere
-              </Button>
+              <p className="text-white/70 text-sm mt-16">
+                50% rabat første måned + gratis introklasse
+              </p>
             </div>
             
-            {/* Trust Micro-Badges */}
-            <div className="flex flex-wrap justify-center items-center gap-x-32 gap-y-12 mt-32 text-white/80 text-sm animate-fadeInUp" style={{ animationDelay: '0.7s', opacity: 0 }}>
+            {/* Location hint */}
+            <div className="flex flex-wrap justify-center items-center gap-x-24 gap-y-12 mt-48 text-white/80 text-sm animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
               <div className="flex items-center gap-8">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
-                <span>Åbner snart i København</span>
-              </div>
-              <div className="flex items-center gap-8">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                </svg>
-                <span>Små hold • Begynder-venligt</span>
+                <span>Østerbro, København</span>
               </div>
               <div className="flex items-center gap-8">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                 </svg>
-                <span>Fleksibel booking i appen</span>
+                <span>Januar 2026</span>
+              </div>
+              <div className="flex items-center gap-8">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                </svg>
+                <span>Maks 8 per hold</span>
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function Home() {
             </p>
           </div>
 
-          <WaitlistForm />
+          <WaitlistQuiz />
         </div>
       </section>
 
