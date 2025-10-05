@@ -101,7 +101,7 @@ export default function WaitlistForm() {
         <div className="text-5xl mb-24">✓</div>
         <h3 className="mb-16">Tak for din tilmelding!</h3>
         <p className="text-graphite/70 mb-24">
-          Tjek din mail for at bekræfte din tilmelding.
+          Du er nu på ventelisten og vil blive kontaktet, når vi åbner.
         </p>
         <p className="text-sm text-graphite/60">
           Vi passer på dine data og sender dig kun relevante opdateringer.
@@ -116,7 +116,7 @@ export default function WaitlistForm() {
         <div className="text-5xl mb-24">👋</div>
         <h3 className="mb-16">Du er allerede på listen!</h3>
         <p className="text-graphite/70 mb-24">
-          Tjek din indbakke for vores bekræftelsesmail.
+          Vi har allerede din tilmelding og kontakter dig snart.
         </p>
         <button
           onClick={() => setIsDuplicate(false)}
