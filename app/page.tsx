@@ -561,7 +561,7 @@ export default function Home() {
           
           {/* Privacy Statement */}
           <div className="text-center text-sm text-snow/50 mb-24 max-w-xl mx-auto">
-            Vi passer godt på dine data. Ingen spam – kun relevante opdateringer om Nordic Pilates.
+            Vi er en dansk virksomhed, og vi passer godt på dine data i henhold til EU lovgivning.
           </div>
           
           {/* Copyright */}
