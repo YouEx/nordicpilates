@@ -71,9 +71,9 @@ export default function Home() {
           <div className="max-w-4xl">
             {/* Main Headline - Clear outcome */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
-              Reformer Pilates i København, åbner januar 2026.<br/>
+              Nordic Pilates åbner snart i København<br/>
               <span className="text-2xl md:text-3xl lg:text-4xl text-white/90 block mt-16">
-                Fleksible tider før og efter arbejde.
+                Vi tilbyder drop-in 24/7 reformer pilates med verdens bedste pilates instruktører
               </span>
             </h1>
 
