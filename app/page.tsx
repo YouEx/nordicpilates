@@ -88,22 +88,6 @@ export default function Home() {
                 50% rabat i to måneder + gratis strømper og drikkeflaske
               </p>
             </div>
-            
-            {/* Location hint */}
-            <div className="flex flex-wrap justify-center items-center gap-x-24 gap-y-12 mt-48 text-white/80 text-sm animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
-              <div className="flex items-center gap-8">
-                <MapPin size={48} />
-                <span>Østerbro, København</span>
-              </div>
-              <div className="flex items-center gap-8">
-                <Calendar size={48} />
-                <span>Januar 2026</span>
-              </div>
-              <div className="flex items-center gap-8">
-                <Users size={48} />
-                <span>Maks 8 per hold</span>
-              </div>
-            </div>
           </div>
 
           {/* Scroll Indicator */}
