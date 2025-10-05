@@ -118,10 +118,10 @@ export default function Home() {
       </section>
 
       {/* Waitlist Form Section */}
-      <section id="waitlist" className="bg-cream py-80">
+      <section id="waitlist" className="bg-black py-80">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-center mb-24">Tilmeld ventelisten</h2>
-          <p className="text-center text-graphite/70 mb-32 max-w-2xl mx-auto">
+          <h2 className="text-center mb-24 text-white">Tilmeld ventelisten</h2>
+          <p className="text-center text-white/70 mb-32 max-w-2xl mx-auto">
             Få early-bird plads, introfordele og først besked om åbning.
           </p>
 
