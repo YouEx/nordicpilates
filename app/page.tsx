@@ -2,6 +2,7 @@
 
 import HeroMedia from '@/components/HeroMedia'
 import WaitlistForm from '@/components/WaitlistForm'
+import SocialProof from '@/components/SocialProof'
 
 export default function Home() {
   return (
@@ -31,6 +32,11 @@ export default function Home() {
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-48 leading-relaxed max-w-2xl mx-auto animate-fadeInUp font-light" style={{ animationDelay: '0.4s', opacity: 0 }}>
               Experience mindful movement in our exclusive Nordic-inspired studio
             </p>
+
+            {/* Social Proof & Urgency */}
+            <div className="mb-48 flex flex-col items-center animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
+              <SocialProof />
+            </div>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-16 justify-center items-center animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
@@ -71,9 +77,43 @@ export default function Home() {
       <section id="waitlist" className="bg-porcelain py-96">
         <div className="container-custom max-w-2xl">
           <h2 className="text-center mb-16">Bliv en af de første</h2>
-          <p className="text-center text-graphite/70 mb-48 max-w-xl mx-auto">
+          <p className="text-center text-graphite/70 mb-24 max-w-xl mx-auto">
             Åbner snart i København. Skriv dig på ventelisten for at modtage eksklusiv adgang.
           </p>
+          
+          {/* Early Bird Benefits Banner */}
+          <div className="bg-gradient-to-br from-ice-blue/20 to-[#C4A582]/10 border border-[#C4A582]/20 rounded-lg p-32 mb-48">
+            <div className="flex items-start gap-16 mb-24">
+              <span className="text-4xl">✨</span>
+              <div className="flex-1">
+                <h3 className="text-graphite font-semibold mb-16 text-xl">Early Bird Fordele</h3>
+                <ul className="space-y-12 text-graphite/80">
+                  <li className="flex items-center gap-12">
+                    <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span><strong>50% rabat</strong> på første måned</span>
+                  </li>
+                  <li className="flex items-center gap-12">
+                    <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span><strong>Gratis introduktionsklasse</strong> (værdi 300kr)</span>
+                  </li>
+                  <li className="flex items-center gap-12">
+                    <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span><strong>Prioritet</strong> til foretrukne tidspunkter</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-sm text-graphite/60 text-center">
+              Kun tilgængeligt for de første 150 der tilmelder sig
+            </p>
+          </div>
+
           <WaitlistForm />
         </div>
       </section>
