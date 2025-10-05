@@ -17,48 +17,14 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
   
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
-      {/* SVG Logo inline for better control */}
-      <svg
-        viewBox="0 0 440 340"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full"
-        aria-label="Nordic Pilates"
-      >
-        {/* "nordic" in coral handwritten style */}
-        <text
-          x="60"
-          y="130"
-          fontFamily="'Brush Script MT', cursive"
-          fontSize="100"
-          fill="#E87461"
-          style={{ fontStyle: 'italic', fontWeight: 400 }}
-        >
-          nordic
-        </text>
-        
-        {/* "PILATES" in navy bold caps */}
-        <text
-          x="60"
-          y="230"
-          fontFamily="'Arial Black', sans-serif"
-          fontSize="80"
-          fill="#1B2942"
-          fontWeight="900"
-          letterSpacing="8"
-        >
-          PILATES
-        </text>
-        
-        {/* Coral underline */}
-        <path
-          d="M 70 260 Q 220 270, 370 260"
-          stroke="#E87461"
-          strokeWidth="8"
-          strokeLinecap="round"
-          fill="none"
-        />
-      </svg>
+      <Image
+        src="/nordic-pilates.png"
+        alt="Nordic Pilates"
+        width={width}
+        height={height}
+        priority
+        className="object-contain"
+      />
     </div>
   )
 }
