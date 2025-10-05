@@ -95,19 +95,19 @@ export default function Home() {
       </section>
 
       {/* Waitlist Form Section */}
-      <section id="waitlist" className="bg-cream py-96">
-        <div className="container-custom max-w-2xl">
-          <h2 className="text-center mb-16">Tilmeld ventelisten</h2>
-          <p className="text-center text-graphite/70 mb-24 max-w-xl mx-auto">
+      <section id="waitlist" className="bg-cream py-80">
+        <div className="container-custom max-w-3xl">
+          <h2 className="text-center mb-24">Tilmeld ventelisten</h2>
+          <p className="text-center text-graphite/70 mb-32 max-w-2xl mx-auto">
             Få early-bird plads, introfordele og først besked om åbning.
           </p>
           
           {/* Early Bird Benefits Banner */}
-          <div className="bg-gradient-to-br from-ice-blue/20 to-[#C4A582]/10 border border-[#C4A582]/20 rounded-lg p-32 mb-48">
-            <div className="flex items-start gap-16 mb-24">
+          <div className="bg-gradient-to-br from-ice-blue/20 to-[#C4A582]/10 border border-[#C4A582]/20 rounded-lg p-32 mb-40">
+            <div className="flex items-start gap-16 mb-20">
               <span className="text-4xl">✨</span>
               <div className="flex-1">
-                <h3 className="text-graphite font-semibold mb-16 text-xl">Early Bird Fordele</h3>
+                <h3 className="text-graphite font-semibold mb-20 text-xl">Early Bird Fordele</h3>
                 <ul className="space-y-12 text-graphite/80">
                   <li className="flex items-center gap-12">
                     <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -140,41 +140,41 @@ export default function Home() {
       </section>
 
       {/* Why Nordic Pilates Section */}
-      <section id="about" className="container-custom py-96 md:py-96">
-        <h2 className="text-center mb-16">Hvorfor Nordic Pilates</h2>
-        <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
+      <section id="about" className="container-custom py-80">
+        <h2 className="text-center mb-24">Hvorfor Nordic Pilates</h2>
+        <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
           Opdag reformer Pilates i det skandinaviske design vi elsker
         </p>
-        <div className="grid md:grid-cols-3 gap-48 mb-96">
+        <div className="grid md:grid-cols-3 gap-32 mb-64">
           <div className="text-center">
-            <div className="mb-24">
+            <div className="mb-20">
               <svg className="w-16 h-16 mx-auto text-[#C4A582]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="mb-16">Fleksible tider</h3>
+            <h3 className="mb-12">Fleksible tider</h3>
             <p className="text-graphite/70">
               Klasser kører løbende hele dagen – fra tidlig morgen til sen aften
             </p>
           </div>
           <div className="text-center">
-            <div className="mb-24">
+            <div className="mb-20">
               <svg className="w-16 h-16 mx-auto text-[#C4A582]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h3 className="mb-16">Guidet & trygt</h3>
+            <h3 className="mb-12">Guidet & trygt</h3>
             <p className="text-graphite/70">
               Tydelig on-screen instruktion fra eksperter + hjælpsom studioguide
             </p>
           </div>
           <div className="text-center">
-            <div className="mb-24">
+            <div className="mb-20">
               <svg className="w-16 h-16 mx-auto text-[#C4A582]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
             </div>
-            <h3 className="mb-16">For alle niveauer</h3>
+            <h3 className="mb-12">For alle niveauer</h3>
             <p className="text-graphite/70">
               Begynder, let øvet og udfordrende formater – vælg det der passer dig
             </p>
@@ -182,48 +182,45 @@ export default function Home() {
         </div>
         
         {/* Early Bird Incentive */}
-        <div className="max-w-3xl mx-auto bg-gradient-to-br from-ice-blue/10 to-[#C4A582]/5 border border-[#C4A582]/20 rounded-lg p-48 text-center">
-          <h3 className="mb-24 text-2xl">Kom med fra start og få:</h3>
-          <ul className="space-y-16 text-left max-w-xl mx-auto mb-32">
+        <div className="max-w-3xl mx-auto bg-gradient-to-br from-ice-blue/10 to-[#C4A582]/5 border border-[#C4A582]/20 rounded-lg p-40 text-center">
+          <h3 className="mb-20 text-xl">Kom med fra start og få:</h3>
+          <ul className="space-y-12 text-left max-w-xl mx-auto mb-24">
             <li className="flex items-start gap-12">
-              <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0 mt-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5 text-[#C4A582] flex-shrink-0 mt-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span className="text-graphite/80">Early-bird adgang til de bedste tider</span>
             </li>
             <li className="flex items-start gap-12">
-              <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0 mt-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5 text-[#C4A582] flex-shrink-0 mt-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span className="text-graphite/80">Invitationer til åbnings-events</span>
             </li>
             <li className="flex items-start gap-12">
-              <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0 mt-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5 text-[#C4A582] flex-shrink-0 mt-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span className="text-graphite/80">Introfordele (begrænset antal)</span>
             </li>
           </ul>
-          <p className="text-sm text-graphite/60 mb-32">
-            Pladserne fordeles efter ventelisten. Tilmeld dig nu →
-          </p>
-          <Button size="lg" asChild>
+          <Button size="lg" asChild className="mt-8">
             <a href="#waitlist">
-              Få plads på ventelisten →
+              Få plads på ventelisten
             </a>
           </Button>
         </div>
       </section>
       
       {/* Program Samples */}
-      <section className="bg-warm-gray py-96">
+      <section className="bg-warm-gray py-80">
         <div className="container-custom">
-          <h2 className="text-center mb-16">Vælg dit format</h2>
-          <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
+          <h2 className="text-center mb-24">Vælg dit format</h2>
+          <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
             Vi tilbyder forskellige formater, så du kan finde det der passer til dig
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-32 mb-48">
-            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-24 mb-40">
+            <div className="bg-white p-24 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
               <div className="inline-block bg-ice-blue/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
                 Begynder
               </div>
@@ -232,7 +229,7 @@ export default function Home() {
                 Rolige sekvenser med fokus på teknik og åndedræt
               </p>
             </div>
-            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+            <div className="bg-white p-24 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
               <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
                 Let øvet
               </div>
@@ -241,7 +238,7 @@ export default function Home() {
                 Stabilitet, styrke og holdning – byg en stærk kerne
               </p>
             </div>
-            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+            <div className="bg-white p-24 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
               <div className="inline-block bg-ice-blue/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
                 Alle niveauer
               </div>
@@ -250,7 +247,7 @@ export default function Home() {
                 Dybe stræk, mobilitet og åndedræt for genopretning
               </p>
             </div>
-            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+            <div className="bg-white p-24 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
               <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
                 Udfordrende
               </div>
@@ -261,9 +258,9 @@ export default function Home() {
             </div>
           </div>
           <div className="text-center">
-            <Button asChild>
+            <Button size="lg" asChild>
               <a href="#waitlist">
-                Få plads på ventelisten →
+                Kom i gang
               </a>
             </Button>
           </div>
@@ -271,9 +268,9 @@ export default function Home() {
       </section>
       
       {/* FAQ Section */}
-      <section className="container-custom py-96">
-        <h2 className="text-center mb-16">Ofte stillede spørgsmål</h2>
-        <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
+      <section className="container-custom py-80">
+        <h2 className="text-center mb-24">Ofte stillede spørgsmål</h2>
+        <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
           Alt du behøver at vide om Nordic Pilates
         </p>
         <div className="max-w-3xl mx-auto">
@@ -324,7 +321,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-navy text-white py-48">
+      <footer className="bg-navy text-white py-64">
         <div className="container-custom">
           {/* Social & Links */}
           <div className="flex flex-wrap justify-center items-center gap-32 mb-32">

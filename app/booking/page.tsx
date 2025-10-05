@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Clock, User, Users, Zap, ArrowLeft } from 'lucide-react'
+import Logo from '@/components/Logo'
 
 type SessionType = 'Nordic Flow' | 'Power Core' | 'Stretch & Restore' | 'Sweat 30'
 type Difficulty = 'Begynder' | 'Let øvet' | 'Udfordrende'
@@ -70,18 +71,12 @@ export default function BookingPage() {
     <main className="min-h-screen bg-porcelain">
       {/* Header */}
       <header className="bg-white border-b border-fog/30 sticky top-0 z-50 shadow-sm">
-        <div className="container-custom py-24">
+        <div className="container-custom py-20">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-16">
-              {/* Logo */}
-              <div className="border-[2px] border-[#C4A582] aspect-square flex items-center justify-center p-12 w-[80px]">
-                <h1 className="text-[#C4A582] text-center">
-                  <span className="block text-lg font-light italic tracking-wide leading-none">nordic</span>
-                  <span className="block text-xs uppercase tracking-[0.3em] font-light mt-1 leading-none">PILATES</span>
-                </h1>
-              </div>
+            <div className="flex items-center gap-20">
+              <Logo size="sm" />
               <div>
-                <h1 className="text-2xl font-light text-graphite">Book din session</h1>
+                <h1 className="text-xl font-light text-graphite">Book din session</h1>
                 <p className="text-sm text-graphite/60">I dag, {new Date().toLocaleDateString('da-DK', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
               </div>
             </div>
@@ -97,7 +92,7 @@ export default function BookingPage() {
 
       {/* Filters */}
       <section className="bg-white border-b border-fog/30">
-        <div className="container-custom py-24">
+        <div className="container-custom py-20">
           <div className="flex flex-wrap gap-12">
             <Button
               onClick={() => setFilter('all')}
@@ -154,8 +149,8 @@ export default function BookingPage() {
       </section>
 
       {/* Sessions Grid */}
-      <section className="container-custom py-48">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-24">
+      <section className="container-custom py-40">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-20">
           {filteredSessions.map((session) => {
             const remaining = spotsRemaining(session)
             const almostFull = remaining <= 2
@@ -163,10 +158,10 @@ export default function BookingPage() {
 
             return (
               <Card key={session.id} className={`overflow-hidden ${!available && 'opacity-60'}`}>
-                <CardHeader className="bg-gradient-to-r from-ice-blue/10 to-[#C4A582]/5 p-20 border-b border-fog/20">
+                <CardHeader className="bg-gradient-to-r from-ice-blue/10 to-[#C4A582]/5 p-16 border-b border-fog/20">
                   <div className="flex items-center justify-between">
                     <div>
-                      <CardTitle className="text-3xl font-light text-graphite">{session.time}</CardTitle>
+                      <CardTitle className="text-2xl font-light text-graphite">{session.time}</CardTitle>
                       <CardDescription className="flex items-center gap-2 mt-2">
                         <Clock className="w-4 h-4" />
                         {session.duration} min
@@ -178,9 +173,9 @@ export default function BookingPage() {
                   </div>
                 </CardHeader>
 
-                <CardContent className="p-24">
-                  <h3 className="text-xl font-medium text-graphite mb-16">{session.type}</h3>
-                  <div className="space-y-12 mb-24">
+                <CardContent className="p-20">
+                  <h3 className="text-lg font-medium text-graphite mb-12">{session.type}</h3>
+                  <div className="space-y-8">
                     <div className="flex items-center gap-8 text-sm text-graphite/70">
                       <User className="w-4 h-4 text-[#C4A582]" />
                       <span>{session.instructor}</span>
@@ -194,7 +189,7 @@ export default function BookingPage() {
                   </div>
                 </CardContent>
 
-                <CardFooter className="p-24 pt-0 flex-col gap-8">
+                <CardFooter className="p-20 pt-0 flex-col gap-8">
                   <Button
                     onClick={() => handleBooking(session)}
                     disabled={!available}
