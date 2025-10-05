@@ -30,7 +30,7 @@ export default function Home() {
           <div className="max-w-4xl">
             {/* Tagline */}
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-48 leading-relaxed max-w-2xl mx-auto animate-fadeInUp font-light" style={{ animationDelay: '0.4s', opacity: 0 }}>
-              Experience mindful movement in our exclusive Nordic-inspired studio
+              Nordic Pilates gør reformer-træning enkel, fleksibel og overkommelig. Klasser kører fra tidlig morgen til sen aften – så du kan prioritere dig selv, uden at omrokere hele dagen.
             </p>
 
             {/* Social Proof & Urgency */}
@@ -43,16 +43,38 @@ export default function Home() {
               <a 
                 href="#waitlist" 
                 className="bg-snow text-graphite px-40 py-20 rounded-button font-medium text-lg hover:bg-white hover:shadow-subtle hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-graphite"
-                aria-label="Join the waitlist"
+                aria-label="Tilmeld ventelisten"
               >
-                Join Waitlist
+                Tilmeld ventelisten →
               </a>
               <button 
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-40 py-20 border-2 border-white/80 text-white rounded-button font-medium text-lg hover:bg-white/10 hover:border-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-graphite"
               >
-                Learn More
+                Læs mere
               </button>
+            </div>
+            
+            {/* Trust Micro-Badges */}
+            <div className="flex flex-wrap justify-center items-center gap-x-32 gap-y-12 mt-32 text-white/80 text-sm animate-fadeInUp" style={{ animationDelay: '0.7s', opacity: 0 }}>
+              <div className="flex items-center gap-8">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <span>Åbner snart i København</span>
+              </div>
+              <div className="flex items-center gap-8">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                </svg>
+                <span>Små hold • Begynder-venligt</span>
+              </div>
+              <div className="flex items-center gap-8">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                <span>Fleksibel booking i appen</span>
+              </div>
             </div>
           </div>
 
@@ -76,9 +98,9 @@ export default function Home() {
       {/* Waitlist Form Section */}
       <section id="waitlist" className="bg-porcelain py-96">
         <div className="container-custom max-w-2xl">
-          <h2 className="text-center mb-16">Bliv en af de første</h2>
+          <h2 className="text-center mb-16">Tilmeld ventelisten</h2>
           <p className="text-center text-graphite/70 mb-24 max-w-xl mx-auto">
-            Åbner snart i København. Skriv dig på ventelisten for at modtage eksklusiv adgang.
+            Få early-bird plads, introfordele og først besked om åbning.
           </p>
           
           {/* Early Bird Benefits Banner */}
@@ -124,41 +146,232 @@ export default function Home() {
         <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
           Opdag reformer Pilates i det skandinaviske design vi elsker
         </p>
-        <div className="grid md:grid-cols-3 gap-48">
+        <div className="grid md:grid-cols-3 gap-48 mb-96">
           <div className="text-center">
             <div className="mb-24">
-              <div className="w-16 h-16 bg-ice-blue/30 rounded-full mx-auto"></div>
+              <svg className="w-16 h-16 mx-auto text-[#C4A582]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
-            <h3 className="mb-16">Elegant skandinavisk ro</h3>
+            <h3 className="mb-16">Fleksible tider</h3>
             <p className="text-graphite/70">
-              Raffinerede rum designet til at skabe balance og fokus
+              Klasser kører løbende hele dagen – fra tidlig morgen til sen aften
             </p>
           </div>
           <div className="text-center">
             <div className="mb-24">
-              <div className="w-16 h-16 bg-ice-blue/30 rounded-full mx-auto"></div>
+              <svg className="w-16 h-16 mx-auto text-[#C4A582]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
             </div>
-            <h3 className="mb-16">Smarte, konsistente sessioner</h3>
+            <h3 className="mb-16">Guidet & trygt</h3>
             <p className="text-graphite/70">
-              Ekspertledet træning der passer til din hverdag
+              Tydelig on-screen instruktion fra eksperter + hjælpsom studioguide
             </p>
           </div>
           <div className="text-center">
             <div className="mb-24">
-              <div className="w-16 h-16 bg-ice-blue/30 rounded-full mx-auto"></div>
+              <svg className="w-16 h-16 mx-auto text-[#C4A582]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
             </div>
-            <h3 className="mb-16">Designet til hverdagen</h3>
+            <h3 className="mb-16">For alle niveauer</h3>
             <p className="text-graphite/70">
-              Ubesværet fremgang med hver session
+              Begynder, let øvet og udfordrende formater – vælg det der passer dig
             </p>
           </div>
+        </div>
+        
+        {/* Early Bird Incentive */}
+        <div className="max-w-3xl mx-auto bg-gradient-to-br from-ice-blue/10 to-[#C4A582]/5 border border-[#C4A582]/20 rounded-lg p-48 text-center">
+          <h3 className="mb-24 text-2xl">Kom med fra start og få:</h3>
+          <ul className="space-y-16 text-left max-w-xl mx-auto mb-32">
+            <li className="flex items-start gap-12">
+              <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0 mt-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-graphite/80">Early-bird adgang til de bedste tider</span>
+            </li>
+            <li className="flex items-start gap-12">
+              <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0 mt-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-graphite/80">Invitationer til åbnings-events</span>
+            </li>
+            <li className="flex items-start gap-12">
+              <svg className="w-6 h-6 text-[#C4A582] flex-shrink-0 mt-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-graphite/80">Introfordele (begrænset antal)</span>
+            </li>
+          </ul>
+          <p className="text-sm text-graphite/60 mb-32">
+            Pladserne fordeles efter ventelisten. Tilmeld dig nu →
+          </p>
+          <a 
+            href="#waitlist" 
+            className="inline-block bg-graphite text-white px-40 py-20 rounded-button font-medium text-lg hover:bg-graphite/90 hover:shadow-subtle hover:scale-105 transition-all duration-200"
+          >
+            Få plads på ventelisten →
+          </a>
+        </div>
+      </section>
+      
+      {/* Program Samples */}
+      <section className="bg-porcelain py-96">
+        <div className="container-custom">
+          <h2 className="text-center mb-16">Vælg dit format</h2>
+          <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
+            Vi tilbyder forskellige formater, så du kan finde det der passer til dig
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-32 mb-48">
+            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+              <div className="inline-block bg-ice-blue/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
+                Begynder
+              </div>
+              <h3 className="mb-12 text-lg">Nordic Flow</h3>
+              <p className="text-graphite/70 text-sm">
+                Rolige sekvenser med fokus på teknik og åndedræt
+              </p>
+            </div>
+            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+              <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
+                Let øvet
+              </div>
+              <h3 className="mb-12 text-lg">Power Core</h3>
+              <p className="text-graphite/70 text-sm">
+                Stabilitet, styrke og holdning – byg en stærk kerne
+              </p>
+            </div>
+            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+              <div className="inline-block bg-ice-blue/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
+                Alle niveauer
+              </div>
+              <h3 className="mb-12 text-lg">Stretch & Restore</h3>
+              <p className="text-graphite/70 text-sm">
+                Dybe stræk, mobilitet og åndedræt for genopretning
+              </p>
+            </div>
+            <div className="bg-white p-32 rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all">
+              <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
+                Udfordrende
+              </div>
+              <h3 className="mb-12 text-lg">Sweat 30</h3>
+              <p className="text-graphite/70 text-sm">
+                Tempo og puls på 30 minutter – effektiv træning
+              </p>
+            </div>
+          </div>
+          <div className="text-center">
+            <a 
+              href="#waitlist" 
+              className="inline-block bg-graphite text-white px-40 py-16 rounded-button font-medium hover:bg-graphite/90 hover:shadow-subtle transition-all duration-200"
+            >
+              Få plads på ventelisten →
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section */}
+      <section className="container-custom py-96">
+        <h2 className="text-center mb-16">Ofte stillede spørgsmål</h2>
+        <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
+          Alt du behøver at vide om Nordic Pilates
+        </p>
+        <div className="max-w-3xl mx-auto space-y-24">
+          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
+            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
+              <span>Er det begynder-venligt?</span>
+              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p className="text-graphite/70 mt-16 leading-relaxed">
+              Ja. Vi har introhold og tydelig guidning i alle klasser. Du behøver ingen erfaring for at komme i gang.
+            </p>
+          </details>
+          
+          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
+            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
+              <span>Er der instruktør?</span>
+              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p className="text-graphite/70 mt-16 leading-relaxed">
+              Vi har betalt nogle af verdens dygtigste og mest anerkendte pilates-instruktører for at lave guidede sessions, som vises på alle skærmene i rummet. Derudover er der altid en hjælpsom studioguide til stede.
+            </p>
+          </details>
+          
+          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
+            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
+              <span>Hvad koster det?</span>
+              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p className="text-graphite/70 mt-16 leading-relaxed">
+              Fra 30kr til 60kr i timen, alt efter tid på dagen. Vi tilbyder fleksible priser, så du kan træne når det passer dig.
+            </p>
+          </details>
+          
+          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
+            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
+              <span>Hvad skal jeg have med?</span>
+              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p className="text-graphite/70 mt-16 leading-relaxed">
+              Tætsiddende tøj og skridsikre strømper. Strømperne kan købes i studiet, hvis du ikke har nogle.
+            </p>
+          </details>
+          
+          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
+            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
+              <span>Kan jeg aflyse?</span>
+              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p className="text-graphite/70 mt-16 leading-relaxed">
+              Ja, det er gratis at aflyse via app'en op til en time før hver session. Vi forstår, at livet sker.
+            </p>
+          </details>
+          
+          <details className="group bg-white border border-fog/30 rounded-lg p-32 hover:border-[#C4A582]/30 transition-all">
+            <summary className="font-semibold text-graphite cursor-pointer list-none flex items-center justify-between">
+              <span>Er det sikkert under graviditet?</span>
+              <svg className="w-5 h-5 text-[#C4A582] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p className="text-graphite/70 mt-16 leading-relaxed">
+              Mange har glæde af skånsom pilates, men tal altid med din læge eller jordemoder først, og vælg vores gravid-venlige hold.
+            </p>
+          </details>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-graphite text-snow py-48">
         <div className="container-custom">
-          <div className="flex flex-wrap justify-center gap-32 mb-32">
+          {/* Social & Links */}
+          <div className="flex flex-wrap justify-center items-center gap-32 mb-32">
+            <a 
+              href="https://instagram.com/nordicpilatesdk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-8 hover:text-ice-blue transition-colors"
+              aria-label="Følg os på Instagram"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>@nordicpilatesdk</span>
+            </a>
+            <span className="text-snow/30">•</span>
             <a href="/privacy" className="hover:text-ice-blue transition-colors">
               Privacy
             </a>
@@ -168,15 +381,14 @@ export default function Home() {
             <a href="/contact" className="hover:text-ice-blue transition-colors">
               Kontakt
             </a>
-            <a 
-              href="https://instagram.com/nordicpilates" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-ice-blue transition-colors"
-            >
-              Instagram
-            </a>
           </div>
+          
+          {/* Privacy Statement */}
+          <div className="text-center text-sm text-snow/50 mb-24 max-w-xl mx-auto">
+            Vi passer godt på dine data. Ingen spam – kun relevante opdateringer om Nordic Pilates.
+          </div>
+          
+          {/* Copyright */}
           <div className="text-center text-sm text-snow/60">
             © {new Date().getFullYear()} Nordic Pilates. Alle rettigheder forbeholdes.
           </div>
