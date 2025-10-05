@@ -179,11 +179,11 @@ export default function WaitlistQuiz() {
             <h3 className="text-2xl font-medium mb-16 text-navy">Hvor vil du helst træne?</h3>
             <p className="text-graphite/70 mb-32">Vi åbner på Østerbro først, men vil gerne høre dine præferencer.</p>
             
-            <div className="space-y-12">
+            <div className="space-y-8">
               {['Østerbro', 'Frederiksberg', 'Vesterbro', 'Nørrebro', 'Andet'].map((loc) => (
                 <label
                   key={loc}
-                  className={`flex items-center p-20 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-center p-12 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.location === loc
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -195,9 +195,9 @@ export default function WaitlistQuiz() {
                     value={loc}
                     checked={quizData.location === loc}
                     onChange={(e) => setQuizData({ ...quizData, location: e.target.value })}
-                    className="mr-16"
+                    className="mr-12"
                   />
-                  <span className="font-medium">{loc}</span>
+                  <span className="text-sm">{loc}</span>
                 </label>
               ))}
             </div>
@@ -220,7 +220,7 @@ export default function WaitlistQuiz() {
             <h3 className="text-2xl font-medium mb-16 text-navy">Hvilket niveau passer til dig?</h3>
             <p className="text-graphite/70 mb-32">Vælg det niveau der føles mest komfortabelt.</p>
             
-            <div className="space-y-12">
+            <div className="space-y-8">
               {[
                 { value: 'Begynder', desc: 'Aldrig prøvet Pilates før' },
                 { value: 'Let øvet', desc: 'Har prøvet det et par gange' },
@@ -228,7 +228,7 @@ export default function WaitlistQuiz() {
               ].map(({ value, desc }) => (
                 <label
                   key={value}
-                  className={`flex items-start p-20 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-start p-12 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.level === value
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -240,11 +240,11 @@ export default function WaitlistQuiz() {
                     value={value}
                     checked={quizData.level === value}
                     onChange={(e) => setQuizData({ ...quizData, level: e.target.value })}
-                    className="mr-16 mt-4"
+                    className="mr-12 mt-2"
                   />
                   <div>
-                    <div className="font-medium">{value}</div>
-                    <div className="text-sm text-graphite/60">{desc}</div>
+                    <div className="text-sm font-medium">{value}</div>
+                    <div className="text-xs text-graphite/60">{desc}</div>
                   </div>
                 </label>
               ))}
@@ -268,7 +268,7 @@ export default function WaitlistQuiz() {
             <h3 className="text-2xl font-medium mb-16 text-navy">Hvornår træner du helst?</h3>
             <p className="text-graphite/70 mb-32">Vi tilbyder klasser hele dagen.</p>
             
-            <div className="space-y-12">
+            <div className="space-y-8">
               {[
                 { value: 'Tidlig morgen (06-09)', icon: '🌅' },
                 { value: 'Formiddag (09-12)', icon: '☀️' },
@@ -278,7 +278,7 @@ export default function WaitlistQuiz() {
               ].map(({ value, icon }) => (
                 <label
                   key={value}
-                  className={`flex items-center p-20 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-center p-12 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.timePreference === value
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -290,10 +290,10 @@ export default function WaitlistQuiz() {
                     value={value}
                     checked={quizData.timePreference === value}
                     onChange={(e) => setQuizData({ ...quizData, timePreference: e.target.value })}
-                    className="mr-16"
+                    className="mr-12"
                   />
-                  <span className="mr-12 text-2xl">{icon}</span>
-                  <span className="font-medium">{value}</span>
+                  <span className="mr-8 text-xl">{icon}</span>
+                  <span className="text-sm">{value}</span>
                 </label>
               ))}
             </div>
@@ -316,7 +316,7 @@ export default function WaitlistQuiz() {
             <h3 className="text-2xl font-medium mb-16 text-navy">Hvad er dit hovedmål?</h3>
             <p className="text-graphite/70 mb-32">Vælg det der passer bedst til dig.</p>
             
-            <div className="space-y-12">
+            <div className="space-y-8">
               {[
                 { value: 'Styrke og kondition', icon: '💪' },
                 { value: 'Mobilitet og fleksibilitet', icon: '🧘' },
@@ -325,7 +325,7 @@ export default function WaitlistQuiz() {
               ].map(({ value, icon, note }) => (
                 <label
                   key={value}
-                  className={`flex items-start p-20 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-start p-12 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.goal === value
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -337,14 +337,14 @@ export default function WaitlistQuiz() {
                     value={value}
                     checked={quizData.goal === value}
                     onChange={(e) => setQuizData({ ...quizData, goal: e.target.value })}
-                    className="mr-16 mt-4"
+                    className="mr-12 mt-2"
                   />
                   <div className="flex-1">
                     <div className="flex items-center gap-8">
-                      <span className="text-2xl">{icon}</span>
-                      <span className="font-medium">{value}</span>
+                      <span className="text-xl">{icon}</span>
+                      <span className="text-sm font-medium">{value}</span>
                     </div>
-                    {note && <p className="text-xs text-graphite/60 mt-4">⚠️ {note}</p>}
+                    {note && <p className="text-xs text-graphite/60 mt-2">⚠️ {note}</p>}
                   </div>
                 </label>
               ))}
