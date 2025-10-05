@@ -56,7 +56,14 @@ export default function Home() {
 
         {/* Logo in top-left corner */}
         <div className="absolute top-24 left-24 md:top-32 md:left-32 lg:top-40 lg:left-40 z-20 animate-fadeIn" style={{ animationDelay: '0.2s', opacity: 0 }}>
-          <Logo size="lg" />
+          <Image 
+            src="/nordicwhite.png" 
+            alt="Nordic Pilates" 
+            width={200} 
+            height={133} 
+            priority 
+            className="object-contain"
+          />
         </div>
 
         {/* Content Overlay */}
