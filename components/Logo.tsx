@@ -18,7 +18,7 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
       <Image
-        src="/nordic-pilates.png"
+        src="/nordic.png"
         alt="Nordic Pilates"
         width={width}
         height={height}

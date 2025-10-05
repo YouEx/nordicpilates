@@ -21,7 +21,15 @@ export default function HeroMedia() {
           return
         }
 
-        // Check for image
+        // Check for bg.png (new background image)
+        const bgResponse = await fetch('/bg.png', { method: 'HEAD' })
+        if (mounted && bgResponse.ok) {
+          setHasImage(true)
+          setIsLoading(false)
+          return
+        }
+
+        // Fallback to studio.jpg
         const imageResponse = await fetch('/studio.jpg', { method: 'HEAD' })
         if (mounted && imageResponse.ok) {
           setHasImage(true)
@@ -75,7 +83,7 @@ export default function HeroMedia() {
       {!hasVideo && hasImage && (
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/studio.jpg)' }}
+          style={{ backgroundImage: 'url(/bg.png)' }}
         />
       )}
       
@@ -87,8 +95,8 @@ export default function HeroMedia() {
           {/* Developer helper message (only in dev mode) */}
           {process.env.NODE_ENV === 'development' && (
             <div className="absolute bottom-32 left-1/2 -translate-x-1/2 text-white/40 text-sm text-center px-24">
-              <p>💡 Add <code className="bg-white/10 px-8 py-4 rounded">public/studio.mp4</code> or <code className="bg-white/10 px-8 py-4 rounded">public/studio.jpg</code></p>
-              <p className="text-xs mt-8">Run: <code className="bg-white/10 px-8 py-4 rounded">./check-media.sh</code> for help</p>
+              <p>💡 Add <code className="bg-white/10 px-8 py-4 rounded">public/bg.png</code> or <code className="bg-white/10 px-8 py-4 rounded">public/studio.mp4</code></p>
+              <p className="text-xs mt-8">Background image not found</p>
             </div>
           )}
         </div>
