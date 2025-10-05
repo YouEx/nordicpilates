@@ -28,6 +28,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        openSans: ['var(--font-open-sans)', 'system-ui', 'sans-serif'],
       },
       spacing: {
         '4': '4px',

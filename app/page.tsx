@@ -92,14 +92,14 @@ export default function Home() {
             {/* Main Headline - Clear outcome */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
               Nordic Pilates åbner snart i København<br/>
-              <span className="text-2xl md:text-3xl lg:text-4xl text-white/90 block mt-16" style={{ marginBottom: '280px' }}>
+              <span className="text-2xl md:text-3xl lg:text-4xl text-white/90 block mt-16 font-openSans" style={{ marginBottom: '280px' }}>
                 Vi tilbyder drop-in 24/7 reformer pilates fra 39kr/t
               </span>
             </h1>
             
             {/* Single Primary CTA */}
             <div className="animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
-              <Button size="xl" asChild className="bg-black text-orange border-2 border-orange hover:bg-black/90 shadow-lg hover:shadow-xl font-sans">
+              <Button size="xl" asChild className="bg-black text-coral border-2 border-coral hover:bg-black/90 shadow-lg hover:shadow-xl font-sans">
                 <a href="#waitlist" aria-label="Tilmeld venteliste">
                   Tilmeld venteliste
                 </a>
