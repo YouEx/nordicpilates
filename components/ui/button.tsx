@@ -5,23 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A582] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        // Primary: Premium bronze gradient for main CTAs
+        // Primary: Coral brand color for main CTAs
         default:
-          "bg-gradient-to-r from-[#C4A582] to-[#B89968] text-white shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] font-semibold",
-        // Secondary: Graphite outline for secondary actions  
+          "bg-coral text-white shadow-md hover:bg-coral-dark hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] font-semibold",
+        // Secondary: Navy outline for secondary actions  
         outline:
-          "border-2 border-graphite/30 bg-transparent text-graphite shadow-sm hover:bg-graphite/5 hover:border-graphite/50 hover:scale-[1.02] active:scale-[0.98]",
+          "border-2 border-navy/30 bg-transparent text-navy shadow-sm hover:bg-navy/5 hover:border-navy/50 hover:scale-[1.02] active:scale-[0.98]",
         // Tertiary: Subtle ghost for navigation
-        ghost: "hover:bg-porcelain/70 hover:text-graphite text-graphite/70",
+        ghost: "hover:bg-warm-gray hover:text-navy text-text-secondary",
         // Link style
-        link: "text-graphite underline-offset-4 hover:underline hover:text-[#C4A582]",
+        link: "text-navy underline-offset-4 hover:underline hover:text-coral",
         // Dark variant for light backgrounds
         dark:
-          "bg-graphite text-white shadow hover:bg-graphite/90 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+          "bg-navy text-white shadow hover:bg-navy-light hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
         // Destructive for delete/cancel
         destructive:
           "bg-red-500 text-white shadow-sm hover:bg-red-600 hover:scale-[1.02] active:scale-[0.98]",

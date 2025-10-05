@@ -3,6 +3,7 @@
 import HeroMedia from '@/components/HeroMedia'
 import WaitlistForm from '@/components/WaitlistForm'
 import SocialProof from '@/components/SocialProof'
+import Logo from '@/components/Logo'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
 
@@ -17,14 +18,9 @@ export default function Home() {
         {/* Dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-[1]"></div>
 
-        {/* Logo in top-left corner - consistent square design */}
+        {/* Logo in top-left corner */}
         <div className="absolute top-24 left-24 md:top-32 md:left-32 lg:top-40 lg:left-40 z-20 animate-fadeIn" style={{ animationDelay: '0.2s', opacity: 0 }}>
-          <div className="border-[3px] border-[#C4A582] aspect-square flex items-center justify-center p-16 md:p-20 lg:p-24 w-[140px] md:w-[180px] lg:w-[220px]">
-            <h1 className="text-[#C4A582] text-center">
-              <span className="block text-2xl md:text-3xl lg:text-4xl font-light italic tracking-wide leading-none">nordic</span>
-              <span className="block text-base md:text-xl lg:text-2xl uppercase tracking-[0.3em] font-light mt-2 md:mt-3 leading-none">PILATES</span>
-            </h1>
-          </div>
+          <Logo size="lg" />
         </div>
 
         {/* Content Overlay */}
@@ -99,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* Waitlist Form Section */}
-      <section id="waitlist" className="bg-porcelain py-96">
+      <section id="waitlist" className="bg-cream py-96">
         <div className="container-custom max-w-2xl">
           <h2 className="text-center mb-16">Tilmeld ventelisten</h2>
           <p className="text-center text-graphite/70 mb-24 max-w-xl mx-auto">
@@ -220,7 +216,7 @@ export default function Home() {
       </section>
       
       {/* Program Samples */}
-      <section className="bg-porcelain py-96">
+      <section className="bg-warm-gray py-96">
         <div className="container-custom">
           <h2 className="text-center mb-16">Vælg dit format</h2>
           <p className="text-center text-graphite/70 mb-64 max-w-2xl mx-auto">
@@ -328,7 +324,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-graphite text-snow py-48">
+      <footer className="bg-navy text-white py-48">
         <div className="container-custom">
           {/* Social & Links */}
           <div className="flex flex-wrap justify-center items-center gap-32 mb-32">
@@ -336,7 +332,7 @@ export default function Home() {
               href="https://instagram.com/nordicpilatesdk" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-8 hover:text-ice-blue transition-colors"
+              className="flex items-center gap-8 hover:text-coral transition-colors"
               aria-label="Følg os på Instagram"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -345,13 +341,13 @@ export default function Home() {
               <span>@nordicpilatesdk</span>
             </a>
             <span className="text-snow/30">•</span>
-            <a href="/privacy" className="hover:text-ice-blue transition-colors">
+            <a href="/privacy" className="hover:text-coral transition-colors">
               Privacy
             </a>
-            <a href="/terms" className="hover:text-ice-blue transition-colors">
+            <a href="/terms" className="hover:text-coral transition-colors">
               Vilkår
             </a>
-            <a href="/contact" className="hover:text-ice-blue transition-colors">
+            <a href="/contact" className="hover:text-coral transition-colors">
               Kontakt
             </a>
           </div>

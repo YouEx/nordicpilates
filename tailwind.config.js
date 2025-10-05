@@ -8,6 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Brand colors from logo
+        'coral': '#E87461',
+        'coral-dark': '#D96454',
+        'navy': '#1B2942',
+        'navy-light': '#2C3E5C',
+        // Supporting colors
+        'cream': '#FAF8F5',
+        'warm-gray': '#F5F3F0',
+        'text-primary': '#1B2942',
+        'text-secondary': '#5B6B83',
+        // Legacy colors (deprecated)
         snow: '#FAFAFA',
         porcelain: '#F4F6F7',
         graphite: '#111214',
