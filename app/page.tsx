@@ -76,18 +76,6 @@ export default function Home() {
                 Vi tilbyder drop-in 24/7 reformer pilates med verdens bedste pilates instruktører
               </span>
             </h1>
-
-            {/* Progress indicator */}
-            <div className="mb-40 animate-fadeInUp" style={{ animationDelay: '0.4s', opacity: 0 }}>
-              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-24 py-12 border border-white/20">
-                <p className="text-white/90 text-sm font-medium mb-8">
-                  <span className="text-coral text-lg font-semibold">112 af 150</span> early-bird pladser tilbage
-                </p>
-                <div className="w-64 md:w-80 h-2 bg-white/20 rounded-full overflow-hidden">
-                  <div className="h-full bg-coral rounded-full transition-all duration-500" style={{ width: '75%' }}></div>
-                </div>
-              </div>
-            </div>
             
             {/* Single Primary CTA */}
             <div className="animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
@@ -161,6 +149,18 @@ export default function Home() {
           </div>
 
           <WaitlistQuiz />
+          
+          {/* Progress indicator */}
+          <div className="mt-48 max-w-2xl mx-auto">
+            <div className="bg-white border-2 border-coral/30 px-32 py-24">
+              <p className="text-graphite text-center font-medium mb-12">
+                <span className="text-coral text-2xl font-semibold">112 af 150</span> early-bird pladser tilbage
+              </p>
+              <div className="w-full h-3 bg-fog overflow-hidden">
+                <div className="h-full bg-coral transition-all duration-500" style={{ width: '75%' }}></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
