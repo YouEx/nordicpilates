@@ -75,15 +75,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-[1]"></div>
 
         {/* Content Overlay */}
-        <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-center px-24 md:px-48 text-center">
+        <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-start px-24 md:px-48 text-center pt-80 md:pt-120">
           <div className="max-w-4xl">
             {/* Logo centered */}
             <div className="mb-40 animate-fadeIn flex justify-center" style={{ animationDelay: '0.2s', opacity: 0 }}>
               <Image 
                 src="/nordicwhite.png" 
                 alt="Nordic Pilates" 
-                width={200} 
-                height={133} 
+                width={400} 
+                height={266} 
                 priority 
                 className="object-contain"
               />
