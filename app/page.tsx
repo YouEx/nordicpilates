@@ -99,7 +99,7 @@ export default function Home() {
             
             {/* Single Primary CTA */}
             <div className="animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
-              <Button size="xl" asChild className="shadow-lg hover:shadow-xl">
+              <Button size="xl" asChild className="bg-black text-orange border-2 border-orange hover:bg-black/90 shadow-lg hover:shadow-xl font-sans">
                 <a href="#waitlist" aria-label="Tilmeld venteliste">
                   Tilmeld venteliste
                 </a>
