@@ -218,6 +218,110 @@ export default function Home() {
             </p>
           </div>
         </div>
+
+        {/* Social Proof - Testimonials */}
+        <div className="max-w-4xl mx-auto mb-64">
+          <h3 className="text-center text-xl font-medium mb-32 text-navy">Hvad medlemmer siger</h3>
+          <div className="grid md:grid-cols-3 gap-24">
+            <div className="bg-white p-24 rounded-lg border border-fog/30">
+              <div className="flex items-center gap-4 mb-12">
+                {[1,2,3,4,5].map(i => (
+                  <span key={i} className="text-coral">⭐️</span>
+                ))}
+              </div>
+              <p className="text-graphite/80 text-sm mb-16 leading-relaxed">
+                "Bedste intro til reformer Pilates jeg har prøvet. Instruktørerne er tydelige og studioguiden var super hjælpsom."
+              </p>
+              <p className="text-graphite/60 text-xs">— Anna, 32, København</p>
+            </div>
+            
+            <div className="bg-white p-24 rounded-lg border border-fog/30">
+              <div className="flex items-center gap-4 mb-12">
+                {[1,2,3,4,5].map(i => (
+                  <span key={i} className="text-coral">⭐️</span>
+                ))}
+              </div>
+              <p className="text-graphite/80 text-sm mb-16 leading-relaxed">
+                "Elsker at jeg kan træne kl. 7 om morgenen før arbejde. Appen gør det nemt at booke og aflyse."
+              </p>
+              <p className="text-graphite/60 text-xs">— Marcus, 28, København</p>
+            </div>
+            
+            <div className="bg-white p-24 rounded-lg border border-fog/30">
+              <div className="flex items-center gap-4 mb-12">
+                {[1,2,3,4,5].map(i => (
+                  <span key={i} className="text-coral">⭐️</span>
+                ))}
+              </div>
+              <p className="text-graphite/80 text-sm mb-16 leading-relaxed">
+                "Fantastisk for begyndere! Jeg var nervøs i starten, men Nordic Flow-klasserne er perfekte for at lære det grundlæggende."
+              </p>
+              <p className="text-graphite/60 text-xs">— Sofia, 35, København</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Safety & Trust Section */}
+        <div className="bg-navy/5 border border-navy/10 rounded-lg p-40 max-w-4xl mx-auto mb-64">
+          <h3 className="text-center text-xl font-medium mb-32 text-navy">Sådan sikrer vi tryg træning</h3>
+          <div className="grid md:grid-cols-2 gap-24">
+            <div className="flex items-start gap-16">
+              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-medium mb-8">Certificeret studioguide</h4>
+                <p className="text-sm text-graphite/70">
+                  Altid til stede for at hjælpe med form, stillinger og sikkerhed
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-16">
+              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-medium mb-8">Maksimalt 8 personer</h4>
+                <p className="text-sm text-graphite/70">
+                  Små hold sikrer personlig opmærksomhed og plads til alle
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-16">
+              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-medium mb-8">Ekspert-guidning på skærm</h4>
+                <p className="text-sm text-graphite/70">
+                  Professionelle instruktører guider dig gennem hver øvelse
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-16">
+              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-medium mb-8">Hyppig rengøring</h4>
+                <p className="text-sm text-graphite/70">
+                  Reformere rengøres mellem hver session for optimal hygiejne
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         
         {/* Early Bird Incentive */}
         <div className="max-w-3xl mx-auto bg-gradient-to-br from-ice-blue/10 to-[#C4A582]/5 border border-[#C4A582]/20 rounded-lg p-40 text-center">
@@ -305,6 +409,81 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Pricing Expectation Section */}
+      <section className="bg-warm-gray py-80">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-center mb-24">Priser & Medlemskaber</h2>
+          <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
+            Fleksible priser der passer til dit liv
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-24 mb-48">
+            <div className="bg-white p-32 rounded-lg border border-fog/30">
+              <h3 className="text-xl font-medium mb-16 text-navy">Fleks Medlemskab</h3>
+              <p className="text-3xl font-light mb-16">
+                <span className="text-navy">599-799 kr</span>
+                <span className="text-sm text-graphite/60">/måned</span>
+              </p>
+              <ul className="space-y-12 text-sm text-graphite/80 mb-24">
+                <li className="flex items-start gap-8">
+                  <span className="text-coral mt-2">✓</span>
+                  <span>Book klasser når det passer dig</span>
+                </li>
+                <li className="flex items-start gap-8">
+                  <span className="text-coral mt-2">✓</span>
+                  <span>Aflys gratis op til 12 timer før</span>
+                </li>
+                <li className="flex items-start gap-8">
+                  <span className="text-coral mt-2">✓</span>
+                  <span>Adgang til alle niveauer</span>
+                </li>
+              </ul>
+              <p className="text-xs text-graphite/60">
+                Early-bird: <strong>50% rabat første måned</strong>
+              </p>
+            </div>
+
+            <div className="bg-white p-32 rounded-lg border-2 border-coral/30 relative">
+              <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-coral text-white text-xs font-medium px-16 py-6 rounded-full">
+                MEST POPULÆR
+              </div>
+              <h3 className="text-xl font-medium mb-16 text-navy">Unlimited</h3>
+              <p className="text-3xl font-light mb-16">
+                <span className="text-navy">999 kr</span>
+                <span className="text-sm text-graphite/60">/måned</span>
+              </p>
+              <ul className="space-y-12 text-sm text-graphite/80 mb-24">
+                <li className="flex items-start gap-8">
+                  <span className="text-coral mt-2">✓</span>
+                  <span>Ubegrænsede klasser</span>
+                </li>
+                <li className="flex items-start gap-8">
+                  <span className="text-coral mt-2">✓</span>
+                  <span>Prioritet-booking til populære tider</span>
+                </li>
+                <li className="flex items-start gap-8">
+                  <span className="text-coral mt-2">✓</span>
+                  <span>Gratis strømper & drikkeflaske</span>
+                </li>
+                <li className="flex items-start gap-8">
+                  <span className="text-coral mt-2">✓</span>
+                  <span>Aflys gratis op til 12 timer før</span>
+                </li>
+              </ul>
+              <p className="text-xs text-graphite/60">
+                Early-bird: <strong>50% rabat første måned + gratis introklasse</strong>
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-navy/5 border border-navy/10 rounded-lg p-24 text-center">
+            <p className="text-sm text-graphite/80">
+              💡 <strong>Risk-free:</strong> Aflys gratis op til 12 timer før hver session. Ingen binding første måned.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="container-custom py-80">
         <h2 className="text-center mb-24">Ofte stillede spørgsmål</h2>
@@ -316,42 +495,61 @@ export default function Home() {
             <AccordionItem value="item-1">
               <AccordionTrigger>Er det begynder-venligt?</AccordionTrigger>
               <AccordionContent>
-                Ja. Vi har introhold og tydelig guidning i alle klasser. Du behøver ingen erfaring for at komme i gang.
+                <p className="leading-relaxed">
+                  Ja, absolut! Vi har specialdesignede Nordic Flow-klasser for begyndere med tydelig guidning i hvert trin. Du behøver ingen erfaring – vores introklasse (gratis for early-birds) lærer dig alt det grundlæggende. Maksimalt 8 personer per hold betyder, at der er fokus på dig.
+                </p>
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-2">
-              <AccordionTrigger>Er der instruktør?</AccordionTrigger>
+              <AccordionTrigger>Hvordan fungerer instruktionen?</AccordionTrigger>
               <AccordionContent>
-                Vi har betalt nogle af verdens dygtigste og mest anerkendte pilates-instruktører for at lave guidede sessions, som vises på alle skærmene i rummet. Derudover er der altid en hjælpsom studioguide til stede.
+                <p className="leading-relaxed">
+                  Hver klasse guides af professionelle instruktører vist på skærme i studiet – vi har betalt nogle af verdens bedste Pilates-eksperter. Derudover er der altid en certificeret studioguide til stede, der kan hjælpe med form, stillinger og spørgsmål. Det er det bedste fra begge verdener: ekspert-guidning kombineret med personlig støtte.
+                </p>
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-3">
-              <AccordionTrigger>Hvad koster det?</AccordionTrigger>
+              <AccordionTrigger>Hvad koster det præcist?</AccordionTrigger>
               <AccordionContent>
-                Fra 30kr til 60kr i timen, alt efter tid på dagen. Vi tilbyder fleksible priser, så du kan træne når det passer dig.
+                <p className="leading-relaxed mb-12">
+                  Vi tilbyder to medlemskaber:
+                </p>
+                <ul className="space-y-8 ml-16">
+                  <li><strong>Fleks (599-799 kr/md):</strong> Book klasser når det passer dig, med fleksible priser baseret på tidspunkt.</li>
+                  <li><strong>Unlimited (999 kr/md):</strong> Ubegrænsede klasser + prioritet-booking til populære tider.</li>
+                </ul>
+                <p className="mt-12 text-sm text-coral font-medium">
+                  Early-bird fordel: 50% rabat første måned + gratis introklasse (værdi 300 kr).
+                </p>
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-4">
               <AccordionTrigger>Hvad skal jeg have med?</AccordionTrigger>
               <AccordionContent>
-                Tætsiddende tøj og skridsikre strømper. Strømperne kan købes i studiet, hvis du ikke har nogle.
+                <p className="leading-relaxed">
+                  Tætsiddende tøj (leggings/sports-BH) og skridsikre strømper. Det er vigtigt at du kan bevæge dig frit, og at strømperne giver godt greb på reformeren. Strømper kan købes i studiet (50 kr), hvis du ikke har nogle. Vi har omklædningsrum med låseskabe.
+                </p>
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-5">
-              <AccordionTrigger>Kan jeg aflyse?</AccordionTrigger>
+              <AccordionTrigger>Kan jeg aflyse eller ændre booking?</AccordionTrigger>
               <AccordionContent>
-                Ja, det er gratis at aflyse via app'en op til en time før hver session. Vi forstår, at livet sker.
+                <p className="leading-relaxed">
+                  Ja, helt gratis op til 12 timer før sessionen via vores app. Vi forstår, at livet sker. Hvis du aflyser mindre end 12 timer før (eller ikke møder op), trækkes klassen fra dit kontingent. Det er fair over for andre medlemmer på ventelisten.
+                </p>
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-6">
-              <AccordionTrigger>Er det sikkert under graviditet?</AccordionTrigger>
+              <AccordionTrigger>Er det sikkert under graviditet eller postpartum?</AccordionTrigger>
               <AccordionContent>
-                Mange har glæde af skånsom pilates, men tal altid med din læge eller jordemoder først, og vælg vores gravid-venlige hold.
+                <p className="leading-relaxed">
+                  Pilates kan være fantastisk for både gravide og postpartum-genoptræning, <strong>men du skal altid tale med din læge eller jordemoder først</strong>. Vi har specialdesignede klasser (Stretch & Restore) der er gravid-venlige, og vores instruktører kan modificere øvelser. Vores studioguide vil bede om lægebekræftelse ved første besøg.
+                </p>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
