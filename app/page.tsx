@@ -58,7 +58,7 @@ export default function Home() {
               <span className="font-semibold text-coral">{totalSpots - signupCount}/{totalSpots}</span> early bird pladser tilbage
             </span>
             <button 
-              className="h-9 px-18 bg-navy text-white text-xs font-medium rounded-lg hover:bg-navy/90 transition-colors"
+              className="h-9 px-24 bg-navy text-white text-xs font-medium rounded-lg hover:bg-navy/90 transition-colors"
               onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Tilmeld venteliste
