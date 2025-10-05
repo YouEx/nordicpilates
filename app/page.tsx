@@ -54,21 +54,21 @@ export default function Home() {
         {/* Dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-[1]"></div>
 
-        {/* Logo in top-left corner */}
-        <div className="absolute top-24 left-24 md:top-32 md:left-32 lg:top-40 lg:left-40 z-20 animate-fadeIn" style={{ animationDelay: '0.2s', opacity: 0 }}>
-          <Image 
-            src="/nordicwhite.png" 
-            alt="Nordic Pilates" 
-            width={200} 
-            height={133} 
-            priority 
-            className="object-contain"
-          />
-        </div>
-
         {/* Content Overlay */}
         <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-center px-24 md:px-48 text-center">
           <div className="max-w-4xl">
+            {/* Logo centered */}
+            <div className="mb-40 animate-fadeIn flex justify-center" style={{ animationDelay: '0.2s', opacity: 0 }}>
+              <Image 
+                src="/nordicwhite.png" 
+                alt="Nordic Pilates" 
+                width={200} 
+                height={133} 
+                priority 
+                className="object-contain"
+              />
+            </div>
+            
             {/* Main Headline - Clear outcome */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
               Nordic Pilates åbner snart i København<br/>
