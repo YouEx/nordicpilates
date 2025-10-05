@@ -42,8 +42,8 @@ export default function Home() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-16 justify-center items-center animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
-              <Button size="xl" variant="premium" asChild>
-                <a href="#waitlist">
+              <Button size="xl" asChild>
+                <a href="#waitlist" aria-label="Tilmeld dig ventelisten for early bird fordele">
                   Tilmeld ventelisten →
                 </a>
               </Button>
@@ -52,6 +52,7 @@ export default function Home() {
                 variant="outline" 
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                 className="border-2 border-white/80 text-white hover:bg-white/10 hover:border-white hover:text-white"
+                aria-label="Scroll til mere information"
               >
                 Læs mere
               </Button>
@@ -210,12 +211,11 @@ export default function Home() {
           <p className="text-sm text-graphite/60 mb-32">
             Pladserne fordeles efter ventelisten. Tilmeld dig nu →
           </p>
-          <a 
-            href="#waitlist" 
-            className="inline-block bg-graphite text-white px-40 py-20 rounded-button font-medium text-lg hover:bg-graphite/90 hover:shadow-subtle hover:scale-105 transition-all duration-200"
-          >
-            Få plads på ventelisten →
-          </a>
+          <Button size="lg" asChild>
+            <a href="#waitlist">
+              Få plads på ventelisten →
+            </a>
+          </Button>
         </div>
       </section>
       
@@ -265,12 +265,11 @@ export default function Home() {
             </div>
           </div>
           <div className="text-center">
-            <a 
-              href="#waitlist" 
-              className="inline-block bg-graphite text-white px-40 py-16 rounded-button font-medium hover:bg-graphite/90 hover:shadow-subtle transition-all duration-200"
-            >
-              Få plads på ventelisten →
-            </a>
+            <Button asChild>
+              <a href="#waitlist">
+                Få plads på ventelisten →
+              </a>
+            </Button>
           </div>
         </div>
       </section>

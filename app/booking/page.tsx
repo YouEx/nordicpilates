@@ -86,7 +86,7 @@ export default function BookingPage() {
               </div>
             </div>
             <Button variant="ghost" size="sm" asChild>
-              <a href="/">
+              <a href="/" aria-label="Gå tilbage til forsiden">
                 <ArrowLeft className="w-4 h-4" />
                 Tilbage til forside
               </a>
@@ -104,6 +104,8 @@ export default function BookingPage() {
               variant={filter === 'all' ? 'default' : 'outline'}
               size="sm"
               className="rounded-full"
+              aria-label="Vis alle sessions"
+              aria-pressed={filter === 'all'}
             >
               Alle sessions
             </Button>
@@ -112,6 +114,8 @@ export default function BookingPage() {
               variant={filter === 'Nordic Flow' ? 'default' : 'outline'}
               size="sm"
               className="rounded-full"
+              aria-label="Filtrer Nordic Flow sessions"
+              aria-pressed={filter === 'Nordic Flow'}
             >
               Nordic Flow
             </Button>
@@ -120,6 +124,8 @@ export default function BookingPage() {
               variant={filter === 'Power Core' ? 'default' : 'outline'}
               size="sm"
               className="rounded-full"
+              aria-label="Filtrer Power Core sessions"
+              aria-pressed={filter === 'Power Core'}
             >
               Power Core
             </Button>
@@ -128,6 +134,8 @@ export default function BookingPage() {
               variant={filter === 'Stretch & Restore' ? 'default' : 'outline'}
               size="sm"
               className="rounded-full"
+              aria-label="Filtrer Stretch & Restore sessions"
+              aria-pressed={filter === 'Stretch & Restore'}
             >
               Stretch & Restore
             </Button>
@@ -136,6 +144,8 @@ export default function BookingPage() {
               variant={filter === 'Sweat 30' ? 'default' : 'outline'}
               size="sm"
               className="rounded-full"
+              aria-label="Filtrer Sweat 30 sessions"
+              aria-pressed={filter === 'Sweat 30'}
             >
               Sweat 30
             </Button>
@@ -191,6 +201,7 @@ export default function BookingPage() {
                     className="w-full"
                     size="lg"
                     variant={available ? "default" : "outline"}
+                    aria-label={available ? `Book ${session.type} kl. ${session.time}` : `Udsolgt - ${session.type} kl. ${session.time}`}
                   >
                     {available ? 'Book nu' : 'Udsolgt'}
                   </Button>
@@ -268,13 +279,14 @@ export default function BookingPage() {
               onClick={() => setSelectedSession(null)}
               variant="outline"
               className="flex-1"
+              aria-label="Annuller booking og luk dialog"
             >
               Annuller
             </Button>
             <Button
               onClick={confirmBooking}
-              variant="premium"
               className="flex-1"
+              aria-label="Bekræft og gennemfør booking"
             >
               Bekræft booking
             </Button>
