@@ -78,7 +78,7 @@ export default function Home() {
         <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-start px-24 md:px-48 text-center pt-80 md:pt-120">
           <div className="max-w-4xl">
             {/* Logo centered */}
-            <div className="mb-40 animate-fadeIn flex justify-center" style={{ animationDelay: '0.2s', opacity: 0 }}>
+            <div className="animate-fadeIn flex justify-center" style={{ animationDelay: '0.2s', opacity: 0 }}>
               <Image 
                 src="/nordicwhite.png" 
                 alt="Nordic Pilates" 
