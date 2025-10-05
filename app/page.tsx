@@ -92,7 +92,7 @@ export default function Home() {
             {/* Main Headline - Clear outcome */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
               Nordic Pilates åbner snart i København<br/>
-              <span className="text-2xl md:text-3xl lg:text-4xl text-white/90 block mt-16 font-openSans" style={{ marginBottom: '280px' }}>
+              <span className="text-white/90 block mt-16 font-openSans" style={{ marginBottom: '280px', fontSize: '2rem' }}>
                 Vi tilbyder drop-in 24/7 reformer pilates fra 39kr/t
               </span>
             </h1>
