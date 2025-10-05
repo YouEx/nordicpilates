@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import HeroMedia from '@/components/HeroMedia'
 import WaitlistForm from '@/components/WaitlistForm'
 import SocialProof from '@/components/SocialProof'
@@ -8,8 +9,45 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Button } from '@/components/ui/button'
 
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show header when scrolled past 80% of viewport height
+      setIsScrolled(window.scrollY > window.innerHeight * 0.8)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <main className="min-h-screen">
+      {/* Sticky Header - appears on scroll */}
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-fog/30 shadow-sm transition-transform duration-300 ${
+          isScrolled ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <div className="container-custom py-16 flex items-center justify-between">
+          <Logo size="sm" />
+          <nav className="flex items-center gap-16">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Om os
+            </Button>
+            <Button 
+              size="sm"
+              asChild
+            >
+              <a href="#waitlist">Tilmeld ventelisten</a>
+            </Button>
+          </nav>
+        </div>
+      </header>
       {/* Full-Screen Hero Splash */}
       <section className="relative min-h-screen w-full overflow-hidden">
         {/* Background Video/Image - Automatically detects and loads media */}
