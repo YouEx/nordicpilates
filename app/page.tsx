@@ -52,7 +52,9 @@ export default function Home() {
         }`}
       >
         <div className="container-custom h-full flex items-center justify-between">
-          <Logo size="sm" />
+          <div className="flex items-center">
+            <Logo size="sm" />
+          </div>
           <nav className="flex items-center gap-12">
             <span className="hidden md:inline text-sm text-graphite/60">
               <span className="font-semibold text-coral">{totalSpots - signupCount}</span> early bird pladser tilbage
@@ -126,18 +128,6 @@ export default function Home() {
           </p>
 
           <WaitlistQuiz />
-          
-          {/* Progress indicator */}
-          <div className="mt-48 max-w-2xl mx-auto">
-            <div className="bg-white border-2 border-coral/30 px-32 py-24">
-              <p className="text-graphite text-center font-medium mb-12">
-                <span className="text-coral text-2xl font-semibold">{totalSpots - signupCount}</span> early bird pladser tilbage
-              </p>
-              <div className="w-full h-3 bg-fog overflow-hidden">
-                <div className="h-full bg-coral transition-all duration-500" style={{ width: `${((totalSpots - signupCount) / totalSpots) * 100}%` }}></div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
