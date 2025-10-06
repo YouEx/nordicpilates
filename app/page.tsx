@@ -142,8 +142,11 @@ export default function Home() {
               <CreditCard size={48} className="mx-auto text-[#C4A582]" />
             </div>
             <h3 className="mb-12">Billigere Pilates</h3>
-            <p className="text-graphite/70">
+            <p className="text-graphite/70 mb-16">
               Fra 39kr/time med drop-in – ingen dyre abonnementer eller medlemskaber
+            </p>
+            <p className="text-sm text-graphite/60 italic">
+              “Fantastisk for begyndere! Nordic Flow-klasserne er perfekte for at lære det grundlæggende.”
             </p>
           </div>
           <div className="text-center">
@@ -151,8 +154,11 @@ export default function Home() {
               <Clock size={48} className="mx-auto text-[#C4A582]" />
             </div>
             <h3 className="mb-12">24/7 Fleksibilitet</h3>
-            <p className="text-graphite/70">
+            <p className="text-graphite/70 mb-16">
               Træn når det passer dig – morgen, middag, aften eller nat
+            </p>
+            <p className="text-sm text-graphite/60 italic">
+              “Elsker at jeg kan træne kl. 7 om morgenen før arbejde. Appen gør det nemt at booke.”
             </p>
           </div>
           <div className="text-center">
@@ -160,8 +166,11 @@ export default function Home() {
               <Monitor size={48} className="mx-auto text-[#C4A582]" />
             </div>
             <h3 className="mb-12">Ekspert instruktører</h3>
-            <p className="text-graphite/70">
+            <p className="text-graphite/70 mb-16">
               On-screen vejledning fra certificerede Pilates instruktører – ingen studio-guide
+            </p>
+            <p className="text-sm text-graphite/60 italic">
+              “Bedste intro til reformer Pilates jeg har prøvet. Instruktørerne er tydelige og hjælpsomme.”
             </p>
           </div>
           <div className="text-center">
@@ -169,131 +178,16 @@ export default function Home() {
               <Sparkles size={48} className="mx-auto text-[#C4A582]" />
             </div>
             <h3 className="mb-12">Nem app</h3>
-            <p className="text-graphite/70">
+            <p className="text-graphite/70 mb-16">
               Book dine sessions og hold styr på din udvikling direkte fra din mobil
+            </p>
+            <p className="text-sm text-graphite/60 italic">
+              “Appen gør det super nemt at se min fremgang og booke nye sessions.”
             </p>
           </div>
         </div>
 
-        {/* Social Proof - Testimonials */}
-        <div className="max-w-4xl mx-auto mb-64">
-          <h3 className="text-center text-xl font-medium mb-32 text-navy">Hvad medlemmer siger</h3>
-          <div className="grid md:grid-cols-3 gap-24">
-            <div className="bg-white p-24 rounded-lg border border-fog/30">
-              <div className="flex items-center gap-4 mb-12">
-                {[1,2,3,4,5].map(i => (
-                  <span key={i} className="text-coral">⭐️</span>
-                ))}
-              </div>
-              <p className="text-graphite/80 text-sm mb-16 leading-relaxed">
-                "Bedste intro til reformer Pilates jeg har prøvet. Instruktørerne er tydelige og studioguiden var super hjælpsom."
-              </p>
-              <p className="text-graphite/60 text-xs">— Anna, 32, København</p>
-            </div>
-            
-            <div className="bg-white p-24 rounded-lg border border-fog/30">
-              <div className="flex items-center gap-4 mb-12">
-                {[1,2,3,4,5].map(i => (
-                  <span key={i} className="text-coral">⭐️</span>
-                ))}
-              </div>
-              <p className="text-graphite/80 text-sm mb-16 leading-relaxed">
-                "Elsker at jeg kan træne kl. 7 om morgenen før arbejde. Appen gør det nemt at booke og aflyse."
-              </p>
-              <p className="text-graphite/60 text-xs">— Marcus, 28, København</p>
-            </div>
-            
-            <div className="bg-white p-24 rounded-lg border border-fog/30">
-              <div className="flex items-center gap-4 mb-12">
-                {[1,2,3,4,5].map(i => (
-                  <span key={i} className="text-coral">⭐️</span>
-                ))}
-              </div>
-              <p className="text-graphite/80 text-sm mb-16 leading-relaxed">
-                "Fantastisk for begyndere! Jeg var nervøs i starten, men Nordic Flow-klasserne er perfekte for at lære det grundlæggende."
-              </p>
-              <p className="text-graphite/60 text-xs">— Sofia, 35, København</p>
-            </div>
-          </div>
-        </div>
 
-        {/* Safety & Trust Section */}
-        <div className="bg-navy/5 border border-navy/10 rounded-lg p-40 max-w-4xl mx-auto mb-64">
-          <h3 className="text-center text-xl font-medium mb-32 text-navy">Sådan sikrer vi tryg træning</h3>
-          <div className="grid md:grid-cols-2 gap-24">
-            <div className="flex items-start gap-16">
-              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
-                <User size={48} className="text-coral" />
-              </div>
-              <div>
-                <h4 className="font-medium mb-8">Certificeret studioguide</h4>
-                <p className="text-sm text-graphite/70">
-                  Altid til stede for at hjælpe med form, stillinger og sikkerhed
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-16">
-              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
-                <Users size={48} className="text-coral" />
-              </div>
-              <div>
-                <h4 className="font-medium mb-8">Maksimalt 8 personer</h4>
-                <p className="text-sm text-graphite/70">
-                  Små hold sikrer personlig opmærksomhed og plads til alle
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-16">
-              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
-                <Monitor size={48} className="text-coral" />
-              </div>
-              <div>
-                <h4 className="font-medium mb-8">Ekspert-guidning på skærm</h4>
-                <p className="text-sm text-graphite/70">
-                  Professionelle instruktører guider dig gennem hver øvelse
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-16">
-              <div className="w-10 h-10 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
-                <Sparkles size={48} className="text-coral" />
-              </div>
-              <div>
-                <h4 className="font-medium mb-8">Hyppig rengøring</h4>
-                <p className="text-sm text-graphite/70">
-                  Reformere rengøres mellem hver session for optimal hygiejne
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Early Bird Incentive */}
-        <div className="max-w-3xl mx-auto bg-gradient-to-br from-ice-blue/10 to-[#C4A582]/5 border border-[#C4A582]/20 rounded-lg p-40 text-center">
-          <h3 className="mb-20 text-xl">Kom med fra start og få:</h3>
-          <ul className="space-y-12 text-left max-w-xl mx-auto mb-24">
-            <li className="flex items-start gap-12">
-              <CheckCircle size={48} className="text-[#C4A582] flex-shrink-0 mt-2" />
-              <span className="text-graphite/80">Early-bird adgang til de bedste tider</span>
-            </li>
-            <li className="flex items-start gap-12">
-              <CheckCircle size={48} className="text-[#C4A582] flex-shrink-0 mt-2" />
-              <span className="text-graphite/80">Invitationer til åbnings-events</span>
-            </li>
-            <li className="flex items-start gap-12">
-              <CheckCircle size={48} className="text-[#C4A582] flex-shrink-0 mt-2" />
-              <span className="text-graphite/80">Introfordele (begrænset antal)</span>
-            </li>
-          </ul>
-          <Button size="lg" asChild className="mt-8">
-            <a href="#waitlist">
-              Tilmeld venteliste
-            </a>
-          </Button>
-        </div>
       </section>
       
       {/* Program Samples */}
