@@ -155,20 +155,74 @@ export default function WaitlistQuiz() {
 
   if (submitSuccess) {
     return (
-      <div className="bg-white p-40 md:p-56 rounded-lg shadow-lg text-center max-w-2xl mx-auto">
-        <div className="text-6xl mb-24">✓</div>
-        <h3 className="text-2xl font-medium mb-16 text-navy">Du er på listen!</h3>
-        <p className="text-graphite/70 mb-32 text-lg">
+      <div className="relative bg-white p-40 md:p-56 rounded-lg shadow-lg text-center max-w-2xl mx-auto overflow-hidden">
+        {/* Animated gradient shader background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-coral via-[#C4A582] to-navy animate-gradient-shift"></div>
+        </div>
+        
+        {/* Success icon with pulse animation */}
+        <div className="relative">
+          <div className="inline-flex items-center justify-center w-24 h-24 mb-24 rounded-full bg-gradient-to-br from-coral to-[#C4A582] animate-scale-pulse">
+            <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+        </div>
+        
+        <h3 className="text-2xl font-medium mb-16 text-navy relative">Du er på listen!</h3>
+        <p className="text-graphite/70 mb-32 text-lg relative">
           Vi kontakter dig når vi åbner, og du får din personlige plan med til introklassen.
         </p>
-        <div className="bg-coral/10 border border-coral/20 rounded-lg p-24 mb-32">
+        <div className="bg-coral/10 border border-coral/20 rounded-lg p-24 mb-32 relative">
           <p className="text-sm text-graphite/80">
             <strong>Din anbefaling:</strong> {getRecommendation()}
           </p>
         </div>
-        <p className="text-sm text-graphite/60">
+        <p className="text-sm text-graphite/60 relative">
           Vi passer på dine data og sender kun relevante opdateringer.
         </p>
+        
+        <style jsx>{`
+          @keyframes gradient-shift {
+            0%, 100% {
+              background-position: 0% 50%;
+              transform: scale(1);
+            }
+            25% {
+              background-position: 100% 50%;
+              transform: scale(1.05);
+            }
+            50% {
+              background-position: 100% 100%;
+              transform: scale(1);
+            }
+            75% {
+              background-position: 0% 100%;
+              transform: scale(1.05);
+            }
+          }
+          
+          @keyframes scale-pulse {
+            0%, 100% {
+              transform: scale(1);
+              box-shadow: 0 0 0 0 rgba(232, 116, 97, 0.4);
+            }
+            50% {
+              transform: scale(1.05);
+              box-shadow: 0 0 0 10px rgba(232, 116, 97, 0);
+            }
+          }
+          
+          .animate-gradient-shift {
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+          }
+          
+          .animate-scale-pulse {
+            animation: scale-pulse 2s ease-in-out infinite;
+          }
+        `}</style>
       </div>
     )
   }
