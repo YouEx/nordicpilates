@@ -47,6 +47,9 @@ module.exports = {
         '80': '80px',
         '96': '96px',
       },
+      height: {
+        '12': '3rem',
+      },
       borderRadius: {
         'default': '2.5rem',
         'button': '2.5rem',
