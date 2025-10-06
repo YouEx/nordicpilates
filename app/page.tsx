@@ -51,10 +51,8 @@ export default function Home() {
           isScrolled ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="container-custom py-12 flex items-center justify-between">
-          <div className="py-12">
-            <Logo size="sm" />
-          </div>
+        <div className="container-custom py-8 flex items-center justify-between">
+          <Logo size="sm" />
           <nav className="flex items-center gap-12">
             <span className="hidden md:inline text-sm text-graphite/60">
               <span className="font-semibold text-coral">{totalSpots - signupCount}</span> early bird pladser tilbage
