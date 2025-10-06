@@ -204,7 +204,7 @@ export default function Home() {
               </div>
               <div className="p-24">
                 <div className="inline-block bg-ice-blue/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  Begynder
+                  🔥
                 </div>
                 <h3 className="mb-12 text-lg">Nordic Flow</h3>
                 <p className="text-graphite/70 text-sm">
@@ -218,7 +218,7 @@ export default function Home() {
               </div>
               <div className="p-24">
                 <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  Let øvet
+                  🔥🔥
                 </div>
                 <h3 className="mb-12 text-lg">Power Core</h3>
                 <p className="text-graphite/70 text-sm">
@@ -232,7 +232,7 @@ export default function Home() {
               </div>
               <div className="p-24">
                 <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  Udfordrende
+                  🔥🔥🔥
                 </div>
                 <h3 className="mb-12 text-lg">Sweat 30</h3>
                 <p className="text-graphite/70 text-sm">
