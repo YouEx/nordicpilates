@@ -154,12 +154,11 @@ export default function WaitlistQuiz() {
   }
 
   return (
-    <div className="bg-white p-32 md:p-48 rounded-lg shadow-lg max-w-2xl mx-auto">
+    <div className="bg-white p-32 md:p-48 rounded-lg shadow-lg max-w-xl mx-auto">
       {/* Progress bar */}
       <div className="mb-32">
         <div className="flex justify-between items-center mb-12">
           <p className="text-sm text-graphite/60">Trin {step} af {totalSteps}</p>
-          <p className="text-sm text-graphite/60">{Math.round((step / totalSteps) * 100)}%</p>
         </div>
         <div className="w-full h-2 bg-warm-gray rounded-full overflow-hidden">
           <div 
@@ -361,9 +360,6 @@ export default function WaitlistQuiz() {
             <div className="bg-coral/10 border border-coral/20 rounded-lg p-24 mb-32">
               <p className="text-sm text-graphite/60 mb-8">Baseret på dine svar anbefaler vi:</p>
               <p className="text-lg font-medium text-navy">{getRecommendation()}</p>
-              <p className="text-sm text-graphite/60 mt-8">
-                Du får early-bird adgang til foretrukne tider i {quizData.timePreference.split(' ')[0].toLowerCase()}
-              </p>
             </div>
             
             {/* Contact info */}
@@ -416,7 +412,7 @@ export default function WaitlistQuiz() {
                 className="flex-1"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sender...' : 'Tilmeld venteliste'}
+                {isSubmitting ? 'Sender...' : 'Tilmeld'}
               </Button>
             </div>
           </div>

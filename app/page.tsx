@@ -131,34 +131,34 @@ export default function Home() {
       <section id="about" className="container-custom py-80">
         <h2 className="text-center mb-24">Hvorfor Nordic Pilates</h2>
         <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-          Opdag reformer Pilates i det skandinaviske design vi elsker
+          Et nyt koncept der gør reformer Pilates mere tilgængeligt for alle
         </p>
         <div className="grid md:grid-cols-3 gap-32 mb-64">
           <div className="text-center">
             <div className="mb-20">
+              <CreditCard size={48} className="mx-auto text-[#C4A582]" />
+            </div>
+            <h3 className="mb-12">Billigere Pilates</h3>
+            <p className="text-graphite/70">
+              Fra 39kr/time med drop-in – ingen dyre abonnementer eller medlemskaber
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="mb-20">
               <Clock size={48} className="mx-auto text-[#C4A582]" />
             </div>
-            <h3 className="mb-12">Fleksible tider</h3>
+            <h3 className="mb-12">24/7 Fleksibilitet</h3>
             <p className="text-graphite/70">
-              Klasser kører løbende hele dagen – fra tidlig morgen til sen aften
+              Træn når det passer dig – morgen, middag, aften eller nat
             </p>
           </div>
           <div className="text-center">
             <div className="mb-20">
-              <Shield size={48} className="mx-auto text-[#C4A582]" />
+              <Monitor size={48} className="mx-auto text-[#C4A582]" />
             </div>
-            <h3 className="mb-12">Guidet & trygt</h3>
+            <h3 className="mb-12">Ekspert instruktører</h3>
             <p className="text-graphite/70">
-              Tydelig on-screen instruktion fra eksperter + hjælpsom studioguide
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mb-20">
-              <TrendingUp size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">For alle niveauer</h3>
-            <p className="text-graphite/70">
-              Begynder, let øvet og udfordrende formater – vælg det der passer dig
+              On-screen vejledning fra certificerede Pilates instruktører – ingen studio-guide
             </p>
           </div>
         </div>
