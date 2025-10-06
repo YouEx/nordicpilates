@@ -115,6 +115,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gradient Transition */}
+      <div className="h-[48px] bg-gradient-to-b from-transparent to-black"></div>
+
       {/* Waitlist Form Section */}
       <section id="waitlist" className="bg-black py-80">
         <div className="container-custom max-w-3xl">
