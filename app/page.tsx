@@ -133,7 +133,7 @@ export default function Home() {
         <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
           Et nyt koncept der gør reformer Pilates mere tilgængeligt for alle
         </p>
-        <div className="grid md:grid-cols-3 gap-32 mb-64">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-32 mb-64">
           <div className="text-center">
             <div className="mb-20">
               <CreditCard size={48} className="mx-auto text-[#C4A582]" />
@@ -159,6 +159,15 @@ export default function Home() {
             <h3 className="mb-12">Ekspert instruktører</h3>
             <p className="text-graphite/70">
               On-screen vejledning fra certificerede Pilates instruktører – ingen studio-guide
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="mb-20">
+              <Sparkles size={48} className="mx-auto text-[#C4A582]" />
+            </div>
+            <h3 className="mb-12">Nem app</h3>
+            <p className="text-graphite/70">
+              Book dine sessions og hold styr på din udvikling direkte fra din mobil
             </p>
           </div>
         </div>
