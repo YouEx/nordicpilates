@@ -183,7 +183,7 @@ export default function WaitlistQuiz() {
               {['Østerbro', 'Frederiksberg', 'Vesterbro', 'Nørrebro', 'Andet'].map((loc) => (
                 <label
                   key={loc}
-                  className={`flex items-center p-12 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.location === loc
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -228,7 +228,7 @@ export default function WaitlistQuiz() {
               ].map(({ value, desc }) => (
                 <label
                   key={value}
-                  className={`flex items-start p-12 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.level === value
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -278,7 +278,7 @@ export default function WaitlistQuiz() {
               ].map(({ value, icon }) => (
                 <label
                   key={value}
-                  className={`flex items-center p-12 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.timePreference === value
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -325,7 +325,7 @@ export default function WaitlistQuiz() {
               ].map(({ value, icon, note }) => (
                 <label
                   key={value}
-                  className={`flex items-start p-12 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.goal === value
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'

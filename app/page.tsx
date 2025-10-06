@@ -107,7 +107,7 @@ export default function Home() {
                 </a>
               </Button>
               <p className="text-white/70 text-sm mt-16">
-                50% rabat i to måneder + gratis strømper og drikkeflaske + prioritet til tidspunkter
+                50% rabat i to måneder + gratis strømper og drikkeflaske
               </p>
             </div>
           </div>

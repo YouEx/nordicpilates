@@ -43,8 +43,8 @@ module.exports = {
         '96': '96px',
       },
       borderRadius: {
-        'default': '12px',
-        'button': '16px',
+        'default': '2.5rem',
+        'button': '2.5rem',
       },
       boxShadow: {
         'subtle': '0 2px 8px rgba(0, 0, 0, 0.04), 0 10px 24px rgba(0, 0, 0, 0.08)',
