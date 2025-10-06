@@ -300,12 +300,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="bg-navy/5 border border-navy/10 rounded-lg p-24 text-center">
-            <p className="text-sm text-graphite/80">
-              💡 <strong>Risk-free:</strong> Aflys gratis op til 2 timer før hver session. Ingen binding første måned.
-            </p>
-          </div>
         </div>
       </section>
 
