@@ -59,9 +59,6 @@ export default function WaitlistQuiz() {
       } else if (!validateEmail(quizData.email)) {
         newErrors.email = 'Indtast en gyldig email-adresse'
       }
-      if (!quizData.consent) {
-        newErrors.consent = 'Du skal give samtykke for at fortsætte'
-      }
     }
 
     setErrors(newErrors)
@@ -310,22 +307,22 @@ export default function WaitlistQuiz() {
           </div>
         )}
 
-        {/* Step 4: Goal */}
+        {/* Step 4: Pilates Type Preference */}
         {step === 4 && (
           <div className="animate-fadeIn">
-            <h3 className="text-2xl font-medium mb-16 text-navy">Hvad er dit hovedmål?</h3>
+            <h3 className="text-2xl font-medium mb-16 text-navy">Hvilken type Pilates foretrækker du?</h3>
             <p className="text-graphite/70 mb-32">Vælg det der passer bedst til dig.</p>
             
             <div className="space-y-8">
               {[
-                { value: 'Styrke og kondition', icon: '💪' },
-                { value: 'Mobilitet og fleksibilitet', icon: '🧘' },
-                { value: 'Postpartum genoptræning', icon: '👶', note: 'Snak med din læge først' },
-                { value: 'Graviditet', icon: '🤰', note: 'Snak med din jordemoder først' },
-              ].map(({ value, icon, note }) => (
+                { value: 'Klassisk Reformer', icon: '🏋️' },
+                { value: 'Dynamisk & Cardio', icon: '🔥' },
+                { value: 'Slow & Kontrolleret', icon: '🧘' },
+                { value: 'Rehabilitering & Gentle', icon: '🌿' },
+              ].map(({ value, icon }) => (
                 <label
                   key={value}
-                  className={`flex items-start p-16 border-2 rounded-lg cursor-pointer transition-all ${
+                  className={`flex items-center p-16 border-2 rounded-lg cursor-pointer transition-all ${
                     quizData.goal === value
                       ? 'border-coral bg-coral/5'
                       : 'border-fog hover:border-coral/50'
@@ -337,15 +334,10 @@ export default function WaitlistQuiz() {
                     value={value}
                     checked={quizData.goal === value}
                     onChange={(e) => setQuizData({ ...quizData, goal: e.target.value })}
-                    className="mr-12 mt-2"
+                    className="mr-12"
                   />
-                  <div className="flex-1">
-                    <div className="flex items-center gap-8">
-                      <span className="text-xl">{icon}</span>
-                      <span className="text-sm font-medium">{value}</span>
-                    </div>
-                    {note && <p className="text-xs text-graphite/60 mt-2">⚠️ {note}</p>}
-                  </div>
+                  <span className="mr-8 text-xl">{icon}</span>
+                  <span className="text-sm">{value}</span>
                 </label>
               ))}
             </div>
@@ -377,7 +369,7 @@ export default function WaitlistQuiz() {
             </div>
             
             {/* Contact info */}
-            <div className="space-y-20 mb-24">
+            <div className="space-y-16 mb-24">
               <div>
                 <label htmlFor="name" className="block mb-8 font-medium text-sm">
                   Dit navn
@@ -385,7 +377,7 @@ export default function WaitlistQuiz() {
                 <input
                   type="text"
                   id="name"
-                  className={`w-full px-16 py-12 border-2 rounded-lg transition-colors ${
+                  className={`w-full h-12 px-16 border-2 rounded-lg transition-colors ${
                     errors.name ? 'border-red-500' : 'border-fog focus:border-coral'
                   } focus:outline-none`}
                   value={quizData.name}
@@ -401,7 +393,7 @@ export default function WaitlistQuiz() {
                 <input
                   type="email"
                   id="email"
-                  className={`w-full px-16 py-12 border-2 rounded-lg transition-colors ${
+                  className={`w-full h-12 px-16 border-2 rounded-lg transition-colors ${
                     errors.email ? 'border-red-500' : 'border-fog focus:border-coral'
                   } focus:outline-none`}
                   value={quizData.email}
@@ -409,23 +401,6 @@ export default function WaitlistQuiz() {
                 />
                 {errors.email && <p className="text-red-500 text-sm mt-8">{errors.email}</p>}
               </div>
-
-              <label className="flex items-start gap-12 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={quizData.consent}
-                  onChange={(e) => setQuizData({ ...quizData, consent: e.target.checked })}
-                  className="mt-4 flex-shrink-0"
-                  style={{ width: '20px', height: '20px' }}
-                />
-                <span className="text-sm leading-relaxed text-graphite/80">
-                  Jeg giver samtykke til at modtage nyheder og min personlige plan fra Nordic Pilates.{' '}
-                  <a href="/privacy" className="underline hover:text-coral transition-colors">
-                    Privatlivspolitik
-                  </a>
-                </span>
-              </label>
-              {errors.consent && <p className="text-red-500 text-sm mt-8">{errors.consent}</p>}
             </div>
 
             {errors.general && (
@@ -443,7 +418,7 @@ export default function WaitlistQuiz() {
                 className="flex-1"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sender...' : 'Få min plan'}
+                {isSubmitting ? 'Sender...' : 'Tilmeld venteliste'}
               </Button>
             </div>
           </div>
