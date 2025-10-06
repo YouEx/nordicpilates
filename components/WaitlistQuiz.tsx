@@ -267,11 +267,9 @@ export default function WaitlistQuiz() {
             
             <div className="space-y-8">
               {[
-                { value: 'Tidlig morgen (06-09)', icon: '🌅' },
-                { value: 'Formiddag (09-12)', icon: '☀️' },
+                { value: 'Morgen/Formiddag (06-12)', icon: '🌅' },
                 { value: 'Frokost/Eftermiddag (12-17)', icon: '📅' },
-                { value: 'Aften (17-21)', icon: '🌙' },
-                { value: 'Endnu senere (21+)', icon: '�' },
+                { value: 'Aften/Nat (17+)', icon: '🌙' },
               ].map(({ value, icon }) => (
                 <label
                   key={value}

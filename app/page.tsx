@@ -112,10 +112,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-32 left-1/2 -translate-x-1/2 animate-bounce">
-            <ChevronDown size={48} className="text-white/60" />
-          </div>
         </div>
       </section>
 
