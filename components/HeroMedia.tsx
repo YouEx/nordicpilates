@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from 'react'
 
 export default function HeroMedia() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const [hasVideo, setHasVideo] = useState(false)
   const [hasImage, setHasImage] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
     let mounted = true
@@ -50,6 +52,17 @@ export default function HeroMedia() {
     }
   }, [])
 
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setScrollY(scrollPosition)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   // Play video when loaded
   useEffect(() => {
     if (hasVideo && videoRef.current) {
@@ -59,8 +72,11 @@ export default function HeroMedia() {
     }
   }, [hasVideo])
 
+  // Calculate parallax transform (slower scroll = 0.5x speed)
+  const parallaxOffset = scrollY * 0.5
+
   return (
-    <div className="absolute inset-0">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {hasVideo && (
         <video
           ref={videoRef}
@@ -69,6 +85,10 @@ export default function HeroMedia() {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+            willChange: 'transform'
+          }}
           onLoadedData={() => console.log('Video loaded successfully')}
           onError={(e) => {
             console.error('Video failed to load:', e)
@@ -82,13 +102,23 @@ export default function HeroMedia() {
       
       {!hasVideo && hasImage && (
         <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/bg.png)' }}
+          className="absolute inset-0 w-full h-[120vh] bg-cover bg-center"
+          style={{ 
+            backgroundImage: 'url(/bg.png)',
+            transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+            willChange: 'transform'
+          }}
         />
       )}
       
       {!hasVideo && !hasImage && !isLoading && (
-        <div className="absolute inset-0 bg-gradient-to-br from-graphite via-graphite/95 to-graphite/90">
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-graphite via-graphite/95 to-graphite/90"
+          style={{
+            transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+            willChange: 'transform'
+          }}
+        >
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.1),transparent_50%)]"></div>
           
