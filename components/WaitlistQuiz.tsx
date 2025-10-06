@@ -133,6 +133,26 @@ export default function WaitlistQuiz() {
     return recommendations[key] || 'Nordic Flow 2×/uge'
   }
 
+  const getPersonalizedMessage = () => {
+    const level = quizData.level.toLowerCase()
+    const timePreference = quizData.timePreference.split('/')[0].toLowerCase()
+    const pilatesType = quizData.goal.toLowerCase()
+    
+    let message = `Som ${level} der foretrækker at træne ${timePreference}, `
+    
+    if (pilatesType.includes('klassisk')) {
+      message += 'vil du elske vores autentiske reformer setup med professionel on-screen vejledning.'
+    } else if (pilatesType.includes('dynamisk')) {
+      message += 'får du den perfekte blanding af cardio og styrke i vores intensive klasser.'
+    } else if (pilatesType.includes('slow')) {
+      message += 'kan du nyde den kontrollerede træning i dit eget tempo uden pres.'
+    } else {
+      message += 'får du gentle træning der passer til dine behov med fokus på sikkerhed.'
+    }
+    
+    return message + ' Med 24/7 adgang og priser fra 39kr/time får du fleksibilitet uden det høje prisskilt.'
+  }
+
   if (submitSuccess) {
     return (
       <div className="bg-white p-40 md:p-56 rounded-lg shadow-lg text-center max-w-2xl mx-auto">
@@ -354,12 +374,11 @@ export default function WaitlistQuiz() {
         {/* Step 5: Personal Info & Recommendation */}
         {step === 5 && (
           <div className="animate-fadeIn">
-            <h3 className="text-2xl font-medium mb-16 text-navy">Din personlige plan</h3>
+            <h3 className="text-2xl font-medium mb-16 text-navy">Hvorfor Nordic Pilates er perfekt til dig</h3>
             
-            {/* Recommendation */}
+            {/* Personalized message */}
             <div className="bg-coral/10 border border-coral/20 rounded-lg p-24 mb-32">
-              <p className="text-sm text-graphite/60 mb-8">Baseret på dine svar anbefaler vi:</p>
-              <p className="text-lg font-medium text-navy">{getRecommendation()}</p>
+              <p className="text-graphite/80 leading-relaxed">{getPersonalizedMessage()}</p>
             </div>
             
             {/* Contact info */}
