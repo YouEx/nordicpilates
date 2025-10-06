@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: { width: 120, height: 80 },
+  sm: { width: 150, height: 100 },
   md: { width: 160, height: 107 },
   lg: { width: 200, height: 133 },
   xl: { width: 280, height: 187 },
