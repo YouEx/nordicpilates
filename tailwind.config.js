@@ -27,7 +27,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        serif: ['var(--font-ibm-plex-sans)', 'system-ui', 'sans-serif'],
         openSans: ['var(--font-open-sans)', 'system-ui', 'sans-serif'],
       },
       fontSize: {

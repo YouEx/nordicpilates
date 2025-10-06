@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Cormorant_Garamond, Open_Sans } from 'next/font/google'
+import { Inter, IBM_Plex_Sans, Open_Sans } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ 
@@ -8,10 +8,10 @@ const inter = Inter({
   display: 'swap',
 })
 
-const cormorant = Cormorant_Garamond({ 
+const ibmPlexSans = IBM_Plex_Sans({ 
   subsets: ['latin'],
   weight: ['400', '600'],
-  variable: '--font-cormorant',
+  variable: '--font-ibm-plex-sans',
   display: 'swap',
 })
 
@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="da" className={`${inter.variable} ${cormorant.variable} ${openSans.variable}`}>
+    <html lang="da" className={`${inter.variable} ${ibmPlexSans.variable} ${openSans.variable}`}>
       <body>{children}</body>
     </html>
   )
