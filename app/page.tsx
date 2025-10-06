@@ -47,11 +47,11 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Sticky Header - appears on scroll */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-fog/30 shadow-sm transition-transform duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 h-[100px] bg-white border-b border-fog/30 shadow-sm transition-transform duration-300 ${
           isScrolled ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="container-custom py-8 flex items-center justify-between">
+        <div className="container-custom h-full flex items-center justify-between">
           <Logo size="sm" />
           <nav className="flex items-center gap-12">
             <span className="hidden md:inline text-sm text-graphite/60">

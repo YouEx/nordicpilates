@@ -30,6 +30,9 @@ module.exports = {
         serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
         openSans: ['var(--font-open-sans)', 'system-ui', 'sans-serif'],
       },
+      fontSize: {
+        'sm': '1rem',
+      },
       spacing: {
         '4': '4px',
         '8': '8px',
