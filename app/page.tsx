@@ -45,6 +45,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      {/* Skip to main content link for keyboard navigation */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-16 focus:py-8 focus:bg-coral focus:text-white focus:rounded-lg focus:shadow-lg"
+      >
+        Spring til hovedindhold
+      </a>
+      
       {/* Sticky Header - appears on scroll */}
       <header 
         className={`fixed top-0 left-0 right-0 z-50 h-[100px] bg-white border-b border-fog/30 shadow-sm transition-transform duration-300 ${
@@ -95,7 +103,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
               Åbner snart i København<br/>
               <span className="text-white/90 block mt-16 font-openSans" style={{ marginBottom: '280px', fontSize: '2rem' }}>
-                Vi tilbyder drop-in 24/7 reformer pilates fra 39kr/t
+                Unlimited reformer pilates til 239kr/måned
               </span>
             </h1>
             
@@ -107,7 +115,7 @@ export default function Home() {
                 </a>
               </Button>
               <p className="text-white/70 text-sm mt-16">
-                50% rabat i to måneder + gratis strømper og drikkeflaske
+                Ubegrænsede klasser · Book eller drop-in 24/7
               </p>
             </div>
           </div>
@@ -116,9 +124,9 @@ export default function Home() {
       </section>
 
       {/* Waitlist Form Section */}
-      <section id="waitlist" className="bg-black py-80">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-center mb-24 text-white">Tilmeld ventelisten</h2>
+      <section id="waitlist" className="bg-black py-80" aria-labelledby="waitlist-heading">
+        <div id="main-content" className="container-custom max-w-3xl">
+          <h2 id="waitlist-heading" className="text-center mb-24 text-white">Tilmeld ventelisten</h2>
           <p className="text-center text-white/70 mb-32 max-w-2xl mx-auto">
             Få early-bird plads, introfordele og først besked om åbning.
           </p>
@@ -140,7 +148,7 @@ export default function Home() {
             </div>
             <h3 className="mb-12">Billigere Pilates</h3>
             <p className="text-graphite/70 mb-16">
-              Fra 39kr/time med drop-in – ingen dyre abonnementer eller medlemskaber
+              Unlimited medlemskab til 239kr/måned – ingen skjulte gebyrer eller dyre klippekort
             </p>
             <p className="text-sm text-graphite/60 italic">
               “Fantastisk for begyndere! Nordic Flow-klasserne er perfekte for at lære det grundlæggende.”
@@ -164,7 +172,7 @@ export default function Home() {
             </div>
             <h3 className="mb-12">Ekspert instruktører</h3>
             <p className="text-graphite/70 mb-16">
-              On-screen vejledning fra certificerede Pilates instruktører – ingen studio-guide
+              Video-vejledning fra certificerede Pilates instruktører + studioguide ved bookede klasser
             </p>
             <p className="text-sm text-graphite/60 italic">
               “Bedste intro til reformer Pilates jeg har prøvet. Instruktørerne er tydelige og hjælpsomme.”
@@ -325,13 +333,33 @@ export default function Home() {
             <AccordionItem value="item-2">
               <AccordionTrigger>
                 <div className="flex items-center gap-12">
+                  <Calendar size={48} className="text-coral flex-shrink-0" />
+                  <span>Skal jeg booke eller kan jeg bare møde op?</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="leading-relaxed mb-12">
+                  <strong>Begge dele!</strong> Du kan booke guidede klasser (maks 8 personer) via appen hvis du vil have struktur og personlig støtte fra vores studioguide.
+                </p>
+                <p className="leading-relaxed">
+                  Eller du kan droppe ind 24/7 uden booking og bruge reformeren på egen hånd med vores on-demand video-bibliotek. Perfekt fleksibilitet.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-2b">
+              <AccordionTrigger>
+                <div className="flex items-center gap-12">
                   <Monitor size={48} className="text-coral flex-shrink-0" />
                   <span>Hvordan fungerer instruktionen?</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent>
+                <p className="leading-relaxed mb-12">
+                  <strong>Bookede klasser:</strong> Video-guidet af professionelle instruktører på skærm + certificeret studioguide til stede som hjælper med form og spørgsmål.
+                </p>
                 <p className="leading-relaxed">
-                  Hver klasse guides af professionelle instruktører vist på skærme i studiet – vi har betalt nogle af verdens bedste Pilates-eksperter. Derudover er der altid en certificeret studioguide til stede, der kan hjælpe med form, stillinger og spørgsmål. Det er det bedste fra begge verdener: ekspert-guidning kombineret med personlig støtte.
+                  <strong>Drop-in åben træning (24/7):</strong> Brug reformeren på egen hånd med on-demand video-bibliotek. Perfekt til erfarne eller til fleksibel træning uden fast tid.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -345,7 +373,7 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent>
                 <p className="leading-relaxed mb-12">
-                  Vi tilbyder ét simpelt Unlimited medlemskab til <strong>239 kr/måned</strong> med ubegrænsede klasser, prioritet-booking, og gratis strømper & drikkeflaske.
+                  Vi tilbyder ét simpelt Unlimited medlemskab til <strong>239 kr/måned</strong> med ubegrænsede klasser (både bookede og drop-in), prioritet-booking, og gratis strømper & drikkeflaske.
                 </p>
                 <p className="mt-12 text-sm text-coral font-medium">
                   Early-bird fordel: 50% rabat i to måneder + gratis strømper og drikkeflaske (værdi 200 kr).

@@ -95,6 +95,7 @@ export default function HeroMedia() {
             setHasVideo(false)
             setIsLoading(false)
           }}
+          aria-label="Nordic Pilates studio atmosfære video"
         >
           <source src="/studio.mp4" type="video/mp4" />
         </video>
@@ -108,6 +109,8 @@ export default function HeroMedia() {
             transform: `translate3d(0, ${parallaxOffset}px, 0)`,
             willChange: 'transform'
           }}
+          role="img"
+          aria-label="Nordic Pilates studio baggrund"
         />
       )}
       

@@ -246,32 +246,35 @@ export default function WaitlistQuiz() {
         {/* Step 1: Location */}
         {step === 1 && (
           <div className="animate-fadeIn">
-            <h3 className="text-2xl font-medium mb-16 text-navy">Hvor vil du helst træne?</h3>
-            <p className="text-graphite/70 mb-32">Vi åbner på Østerbro først, men vil gerne høre dine præferencer.</p>
-            
-            <div className="space-y-8">
-              {['Østerbro', 'Frederiksberg', 'Vesterbro', 'Nørrebro', 'Andet'].map((loc) => (
-                <label
-                  key={loc}
-                  className={`flex items-center p-16 border-2 rounded-lg cursor-pointer transition-all ${
-                    quizData.location === loc
-                      ? 'border-coral bg-coral/5'
-                      : 'border-fog hover:border-coral/50'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="location"
-                    value={loc}
-                    checked={quizData.location === loc}
-                    onChange={(e) => setQuizData({ ...quizData, location: e.target.value })}
-                    className="mr-12"
-                  />
-                  <span className="text-sm">{loc}</span>
-                </label>
-              ))}
-            </div>
-            {errors.location && <p className="text-red-500 text-sm mt-12">{errors.location}</p>}
+            <fieldset>
+              <legend className="text-2xl font-medium mb-16 text-navy">Hvor vil du helst træne?</legend>
+              <p className="text-graphite/70 mb-32">Vi åbner på Østerbro først, men vil gerne høre dine præferencer.</p>
+              
+              <div className="space-y-8" role="radiogroup" aria-labelledby="location-label">
+                {['Østerbro', 'Frederiksberg', 'Vesterbro', 'Nørrebro', 'Andet'].map((loc) => (
+                  <label
+                    key={loc}
+                    className={`flex items-center p-16 border-2 rounded-lg cursor-pointer transition-all min-h-[44px] ${
+                      quizData.location === loc
+                        ? 'border-coral bg-coral/5'
+                        : 'border-fog hover:border-coral/50'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="location"
+                      value={loc}
+                      checked={quizData.location === loc}
+                      onChange={(e) => setQuizData({ ...quizData, location: e.target.value })}
+                      className="mr-12"
+                      aria-label={`Vælg ${loc} som lokation`}
+                    />
+                    <span className="text-sm">{loc}</span>
+                  </label>
+                ))}
+              </div>
+              {errors.location && <p className="text-red-500 text-sm mt-12" role="alert" aria-live="polite">{errors.location}</p>}
+            </fieldset>
             
             <Button 
               type="button" 
@@ -287,39 +290,42 @@ export default function WaitlistQuiz() {
         {/* Step 2: Level */}
         {step === 2 && (
           <div className="animate-fadeIn">
-            <h3 className="text-2xl font-medium mb-16 text-navy">Hvilket niveau passer til dig?</h3>
-            <p className="text-graphite/70 mb-32">Vælg det niveau der føles mest komfortabelt.</p>
-            
-            <div className="space-y-8">
-              {[
-                { value: 'Begynder', desc: 'Aldrig prøvet Pilates før' },
-                { value: 'Let øvet', desc: 'Har prøvet det et par gange' },
-                { value: 'Udfordrende', desc: 'Træner jævnligt' },
-              ].map(({ value, desc }) => (
-                <label
-                  key={value}
-                  className={`flex items-start p-16 border-2 rounded-lg cursor-pointer transition-all ${
-                    quizData.level === value
-                      ? 'border-coral bg-coral/5'
-                      : 'border-fog hover:border-coral/50'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="level"
-                    value={value}
-                    checked={quizData.level === value}
-                    onChange={(e) => setQuizData({ ...quizData, level: e.target.value })}
-                    className="mr-12 mt-2"
-                  />
-                  <div>
-                    <div className="text-sm font-medium">{value}</div>
-                    <div className="text-xs text-graphite/60">{desc}</div>
-                  </div>
-                </label>
-              ))}
-            </div>
-            {errors.level && <p className="text-red-500 text-sm mt-12">{errors.level}</p>}
+            <fieldset>
+              <legend className="text-2xl font-medium mb-16 text-navy">Hvilket niveau passer til dig?</legend>
+              <p className="text-graphite/70 mb-32">Vælg det niveau der føles mest komfortabelt.</p>
+              
+              <div className="space-y-8" role="radiogroup" aria-labelledby="level-label">
+                {[
+                  { value: 'Begynder', desc: 'Aldrig prøvet Pilates før' },
+                  { value: 'Let øvet', desc: 'Har prøvet det et par gange' },
+                  { value: 'Udfordrende', desc: 'Træner jævnligt' },
+                ].map(({ value, desc }) => (
+                  <label
+                    key={value}
+                    className={`flex items-start p-16 border-2 rounded-lg cursor-pointer transition-all min-h-[44px] ${
+                      quizData.level === value
+                        ? 'border-coral bg-coral/5'
+                        : 'border-fog hover:border-coral/50'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="level"
+                      value={value}
+                      checked={quizData.level === value}
+                      onChange={(e) => setQuizData({ ...quizData, level: e.target.value })}
+                      className="mr-12 mt-2"
+                      aria-label={`${value}: ${desc}`}
+                    />
+                    <div>
+                      <div className="text-sm font-medium">{value}</div>
+                      <div className="text-xs text-graphite/60">{desc}</div>
+                    </div>
+                  </label>
+                ))}
+              </div>
+              {errors.level && <p className="text-red-500 text-sm mt-12" role="alert" aria-live="polite">{errors.level}</p>}
+            </fieldset>
             
             <div className="flex gap-12 mt-32">
               <Button type="button" onClick={handleBack} variant="outline" className="flex-1">
