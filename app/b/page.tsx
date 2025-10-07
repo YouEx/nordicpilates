@@ -2,28 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import HeroMedia from '@/components/HeroMedia'
 import WaitlistQuiz from '@/components/WaitlistQuiz'
-import SocialProof from '@/components/SocialProof'
-import Logo from '@/components/Logo'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { Button } from '@/components/ui/button'
-import { MapPin, Calendar, Users, ChevronDown, CheckCircle, Clock, Shield, TrendingUp, User, UserCheck, Monitor, Sparkles, Instagram, Gift, Zap, Heart, Baby, HelpCircle, CreditCard, ShoppingBag, AlertCircle, Infinity } from 'lucide-react'
+import { Instagram, ChevronRight } from 'lucide-react'
 
-// VARIANT B
+// VARIANT B - Scandinavian "Quiet Strength"
+// Palette: Warm beige #E8DED0, Soft sand #F5EFE7, Fjord blue #5B7C99, Slate gray #6B7280
 export default function VariantB() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [signupCount, setSignupCount] = useState(0)
-  const totalSpots = 100
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > window.innerHeight * 0.8)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   useEffect(() => {
     const fetchSignupCount = async () => {
@@ -42,369 +27,307 @@ export default function VariantB() {
   }, [])
 
   return (
-    <main className="min-h-screen">
-      {/* Variant B Label - Remove in production */}
-      <div className="fixed top-4 left-4 z-[100] bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+    <main className="min-h-screen bg-[#FEFBF3]">
+      {/* Variant B Label */}
+      <div className="fixed top-4 left-4 z-[100] bg-[#5B7C99] text-white px-4 py-2 rounded-full text-xs font-light tracking-wide">
         Variant B
       </div>
 
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 h-[100px] bg-white border-b border-fog/30 shadow-sm transition-transform duration-300 ${
-          isScrolled ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
-        <div className="container-custom h-full flex items-center justify-between">
-          <div className="flex items-center">
-            <Logo size="sm" />
-          </div>
-          <nav className="flex items-center gap-12">
-            <span className="hidden md:inline text-sm text-graphite/60">
-              <span className="font-semibold text-coral">{totalSpots - signupCount}</span> early bird pladser tilbage
-            </span>
-            <button 
-              className="h-9 px-24 bg-navy text-white text-xs font-medium rounded-lg hover:bg-navy/90 transition-colors"
-              onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Tilmeld venteliste
-            </button>
-          </nav>
-        </div>
-      </header>
-
-      <section className="relative min-h-screen w-full overflow-hidden">
-        <HeroMedia />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black z-[1]"></div>
-
-        <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-start px-24 md:px-48 text-center pt-80 md:pt-120">
-          <div className="max-w-4xl">
-            <div className="animate-fadeIn flex justify-center" style={{ animationDelay: '0.2s', opacity: 0 }}>
+      {/* Hero Section */}
+      <section className="relative min-h-screen w-full flex items-center justify-center py-20 px-8">
+        <div className="max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center">
+          {/* Left - Content */}
+          <div className="space-y-8">
+            {/* Logo */}
+            <div className="mb-8">
               <Image 
-                src="/nordicwhite.png" 
+                src="/logo-b.png" 
                 alt="Nordic Pilates" 
-                width={400} 
-                height={266} 
-                priority 
+                width={200} 
+                height={90} 
                 className="object-contain"
               />
             </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
-              Åbner snart i København<br/>
-              <span className="text-white/90 block mt-16 font-openSans" style={{ marginBottom: '280px', fontSize: '2rem' }}>
-                Vi tilbyder drop-in 24/7 reformer pilates fra 39kr/t
+
+            <div>
+              <p className="text-[#5B7C99] text-sm tracking-[0.2em] uppercase mb-4 font-light">
+                Opening Soon in Copenhagen
+              </p>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl text-[#2D3748] mb-6 leading-[1.1] font-light">
+                Quiet<br/>Strength.
+              </h1>
+              <p className="text-[#6B7280] text-lg leading-relaxed mb-8 max-w-lg">
+                Scandinavian simplicity meets mindful movement. Reformer Pilates designed for the modern Nordic lifestyle.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <button 
+                onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 bg-[#5B7C99] text-white rounded-full hover:bg-[#5B7C99]/90 transition-all text-sm tracking-wide flex items-center gap-2"
+              >
+                Join Waitlist
+                <ChevronRight size={16} />
+              </button>
+              <span className="text-[#6B7280] text-sm">
+                {signupCount}+ early members
               </span>
-            </h1>
-            
-            <div className="animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
-              <Button size="xl" asChild className="bg-black text-coral border-2 border-coral hover:bg-black/90 shadow-lg hover:shadow-xl font-sans">
-                <a href="#waitlist" aria-label="Tilmeld venteliste">
-                  Tilmeld venteliste
-                </a>
-              </Button>
-              <p className="text-white/70 text-sm mt-16">
-                50% rabat i to måneder + gratis strømper og drikkeflaske
+            </div>
+
+            {/* Features */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[#E8DED0]">
+              <div>
+                <p className="text-2xl font-light text-[#2D3748] mb-1">24/7</p>
+                <p className="text-xs text-[#6B7280] uppercase tracking-wider">Access</p>
+              </div>
+              <div>
+                <p className="text-2xl font-light text-[#2D3748] mb-1">239kr</p>
+                <p className="text-xs text-[#6B7280] uppercase tracking-wider">Per Month</p>
+              </div>
+              <div>
+                <p className="text-2xl font-light text-[#2D3748] mb-1">∞</p>
+                <p className="text-xs text-[#6B7280] uppercase tracking-wider">Classes</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Video in rounded square */}
+          <div className="flex items-center justify-center">
+            <div className="relative w-full max-w-[500px] aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/vid-b.mp4" type="video/mp4" />
+              </video>
+              {/* Subtle overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#5B7C99]/10 to-transparent pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="py-32 px-8 bg-[#F5EFE7]">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[#5B7C99] text-sm tracking-[0.2em] uppercase mb-6 font-light">
+            Our Philosophy
+          </p>
+          <h2 className="text-4xl md:text-5xl text-[#2D3748] mb-8 font-light leading-tight">
+            Strength Through Stillness
+          </h2>
+          <p className="text-[#6B7280] text-lg leading-relaxed max-w-2xl mx-auto mb-16">
+            In a world that moves too fast, we believe in the power of controlled movement, 
+            intentional breath, and quiet determination. Nordic Pilates is where Scandinavian 
+            minimalism meets transformative practice.
+          </p>
+
+          {/* Three pillars */}
+          <div className="grid md:grid-cols-3 gap-12 mt-20">
+            <div className="space-y-4">
+              <div className="w-16 h-16 rounded-full bg-[#5B7C99]/10 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">🌊</span>
+              </div>
+              <h3 className="text-xl text-[#2D3748] font-light">Flow</h3>
+              <p className="text-[#6B7280] text-sm leading-relaxed">
+                Movements that mirror the rhythm of Nordic waters—steady, powerful, graceful.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <div className="w-16 h-16 rounded-full bg-[#5B7C99]/10 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">🏔️</span>
+              </div>
+              <h3 className="text-xl text-[#2D3748] font-light">Foundation</h3>
+              <p className="text-[#6B7280] text-sm leading-relaxed">
+                Build core strength as solid as the mountains that define our landscape.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <div className="w-16 h-16 rounded-full bg-[#5B7C99]/10 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">❄️</span>
+              </div>
+              <h3 className="text-xl text-[#2D3748] font-light">Clarity</h3>
+              <p className="text-[#6B7280] text-sm leading-relaxed">
+                Find mental focus sharp as the crisp Nordic air, calm as winter stillness.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="waitlist" className="bg-black py-80">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-center mb-24 text-white">Tilmeld ventelisten</h2>
-          <p className="text-center text-white/70 mb-32 max-w-2xl mx-auto">
-            Få early-bird plads, introfordele og først besked om åbning.
+      {/* Waitlist Section */}
+      <section id="waitlist" className="py-32 px-8 bg-[#FEFBF3]">
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <p className="text-[#5B7C99] text-sm tracking-[0.2em] uppercase mb-6 font-light">
+            Join the Movement
           </p>
-          <WaitlistQuiz />
+          <h2 className="text-4xl md:text-5xl text-[#2D3748] mb-6 font-light">
+            Reserve Your Spot
+          </h2>
+          <p className="text-[#6B7280] text-lg leading-relaxed">
+            Be among the first to experience Nordic Pilates. Early members receive 50% off for 2 months.
+          </p>
         </div>
+
+        <WaitlistQuiz />
       </section>
 
-      <section id="about" className="container-custom py-80">
-        <h2 className="text-center mb-24">Hvorfor Nordic Pilates</h2>
-        <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-          Et nyt koncept der gør reformer Pilates mere tilgængeligt for alle
-        </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-32 mb-64">
-          <div className="text-center">
-            <div className="mb-20">
-              <CreditCard size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">Billigere Pilates</h3>
-            <p className="text-graphite/70 mb-16">
-              Fra 39kr/time med drop-in – ingen dyre abonnementer eller medlemskaber
+      {/* Class Preview */}
+      <section className="py-32 px-8 bg-[#E8DED0]/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-[#5B7C99] text-sm tracking-[0.2em] uppercase mb-6 font-light">
+              What to Expect
             </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Fantastisk for begyndere! Nordic Flow-klasserne er perfekte for at lære det grundlæggende."
-            </p>
+            <h2 className="text-4xl md:text-5xl text-[#2D3748] mb-6 font-light">
+              Your Practice
+            </h2>
           </div>
-          <div className="text-center">
-            <div className="mb-20">
-              <Clock size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">24/7 Fleksibilitet</h3>
-            <p className="text-graphite/70 mb-16">
-              Træn når det passer dig – morgen, middag, aften eller nat
-            </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Elsker at jeg kan træne kl. 7 om morgenen før arbejde. Appen gør det nemt at booke."
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mb-20">
-              <Monitor size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">Ekspert instruktører</h3>
-            <p className="text-graphite/70 mb-16">
-              On-screen vejledning fra certificerede Pilates instruktører – ingen studio-guide
-            </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Bedste intro til reformer Pilates jeg har prøvet. Instruktørerne er tydelige og hjælpsomme."
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mb-20">
-              <Sparkles size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">Nem app</h3>
-            <p className="text-graphite/70 mb-16">
-              Book dine sessions og hold styr på din udvikling direkte fra din mobil
-            </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Appen gør det super nemt at se min fremgang og booke nye sessions."
-            </p>
-          </div>
-        </div>
-      </section>
 
-      <section className="bg-warm-gray py-80">
-        <div className="container-custom">
-          <h2 className="text-center mb-24">Vælg dit format</h2>
-          <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-            Vi tilbyder forskellige formater, så du kan finde det der passer til dig
-          </p>
-          <div className="grid md:grid-cols-3 gap-32 mb-40">
-            <div className="bg-white rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all overflow-hidden">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="aspect-[4/3] relative">
                 <img src="/1.png" alt="Nordic Flow" className="w-full h-full object-cover" />
               </div>
-              <div className="p-24">
-                <div className="inline-block bg-ice-blue/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  🔥
-                </div>
-                <h3 className="mb-12 text-lg">Nordic Flow</h3>
-                <p className="text-graphite/70 text-sm">
-                  Rolige sekvenser med fokus på teknik og åndedræt
+              <div className="p-8">
+                <div className="text-xs text-[#5B7C99] uppercase tracking-wider mb-3">Foundation</div>
+                <h3 className="text-xl text-[#2D3748] mb-3 font-light">Nordic Flow</h3>
+                <p className="text-[#6B7280] text-sm leading-relaxed">
+                  Gentle sequences for beginners. Build awareness, control, and confidence.
                 </p>
               </div>
             </div>
-            <div className="bg-white rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all overflow-hidden">
-              <div className="aspect-[4/3] relative">
-                <img src="/2.png" alt="Power Core" className="w-full h-full object-cover" />
-              </div>
-              <div className="p-24">
-                <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  🔥🔥
-                </div>
-                <h3 className="mb-12 text-lg">Power Core</h3>
-                <p className="text-graphite/70 text-sm">
-                  Stabilitet, styrke og holdning – byg en stærk kerne
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all overflow-hidden">
-              <div className="aspect-[4/3] relative">
-                <img src="/3.png" alt="Sweat 30" className="w-full h-full object-cover" />
-              </div>
-              <div className="p-24">
-                <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  🔥🔥🔥
-                </div>
-                <h3 className="mb-12 text-lg">Sweat 30</h3>
-                <p className="text-graphite/70 text-sm">
-                  Tempo og puls på 30 minutter – effektiv træning
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="text-center">
-            <Button size="lg" asChild>
-              <a href="#waitlist">
-                Tilmeld venteliste
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
 
-      <section className="bg-warm-gray py-80">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-center mb-24">Unlimited Medlemskab</h2>
-          <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-            Én simpel pris - ubegrænsede muligheder
-          </p>
-          
-          <div className="max-w-xl mx-auto mb-48">
-            <div className="bg-white p-40 rounded-lg border-2 border-coral/30 relative">
-              <h3 className="text-2xl font-medium mb-16 text-navy flex items-center gap-8 justify-center">
-                <Infinity size={48} className="text-coral" />
-                Unlimited
-              </h3>
-              <p className="text-5xl font-light mb-32 text-center">
-                <span className="text-navy">239 kr</span>
-                <span className="text-lg text-graphite/60">/måned</span>
-              </p>
-              <ul className="space-y-16 text-base text-graphite/80 mb-32">
-                <li className="flex items-start gap-12">
-                  <Infinity size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Ubegrænsede klasser</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Clock size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Book når det passer dig</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Clock size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Prioritet-booking til populære tider</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Gift size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Gratis strømper & drikkeflaske</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Shield size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Aflys gratis op til 2 timer før</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <TrendingUp size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Adgang til alle niveauer</span>
-                </li>
-              </ul>
-              <p className="text-sm text-center text-graphite/60 bg-coral/5 p-16 rounded-lg">
-                <strong>Early-bird fordel:</strong> 50% rabat i to måneder + gratis strømper og drikkeflaske (værdi 200kr)
-              </p>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="aspect-[4/3] relative">
+                <img src="/2.png" alt="Core Strength" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-8">
+                <div className="text-xs text-[#5B7C99] uppercase tracking-wider mb-3">Intermediate</div>
+                <h3 className="text-xl text-[#2D3748] mb-3 font-light">Core Strength</h3>
+                <p className="text-[#6B7280] text-sm leading-relaxed">
+                  Challenge your stability and power. Sculpt, strengthen, transform.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="aspect-[4/3] relative">
+                <img src="/3.png" alt="Power Flow" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-8">
+                <div className="text-xs text-[#5B7C99] uppercase tracking-wider mb-3">Advanced</div>
+                <h3 className="text-xl text-[#2D3748] mb-3 font-light">Power Flow</h3>
+                <p className="text-[#6B7280] text-sm leading-relaxed">
+                  Dynamic sequences that demand focus, strength, and endurance.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container-custom py-80">
-        <h2 className="text-center mb-24">Ofte stillede spørgsmål</h2>
-        <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-          Alt du behøver at vide om Nordic Pilates
-        </p>
+      {/* Pricing */}
+      <section className="py-32 px-8 bg-[#FEFBF3]">
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <Heart size={48} className="text-coral flex-shrink-0" />
-                  <span>Er det begynder-venligt?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Ja, absolut! Vi har specialdesignede Nordic Flow-klasser for begyndere med tydelig guidning i hvert trin. Du behøver ingen erfaring. Maksimalt 8 personer per hold betyder, at der er fokus på dig.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <Monitor size={48} className="text-coral flex-shrink-0" />
-                  <span>Hvordan fungerer instruktionen?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Hver klasse guides af professionelle instruktører vist på skærme i studiet – vi har betalt nogle af verdens bedste Pilates-eksperter. Derudover er der altid en certificeret studioguide til stede, der kan hjælpe med form, stillinger og spørgsmål. Det er det bedste fra begge verdener: ekspert-guidning kombineret med personlig støtte.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <CreditCard size={48} className="text-coral flex-shrink-0" />
-                  <span>Hvad koster det præcist?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed mb-12">
-                  Vi tilbyder ét simpelt Unlimited medlemskab til <strong>239 kr/måned</strong> med ubegrænsede klasser, prioritet-booking, og gratis strømper & drikkeflaske.
-                </p>
-                <p className="mt-12 text-sm text-coral font-medium">
-                  Early-bird fordel: 50% rabat i to måneder + gratis strømper og drikkeflaske (værdi 200 kr).
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <ShoppingBag size={48} className="text-coral flex-shrink-0" />
-                  <span>Hvad skal jeg have med?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Tætsiddende tøj (leggings/sports-BH) og skridsikre strømper. Det er vigtigt at du kan bevæge dig frit, og at strømperne giver godt greb på reformeren. Strømper kan købes i studiet (50 kr), hvis du ikke har nogle. Vi har omklædningsrum med låseskabe.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-5">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <AlertCircle size={48} className="text-coral flex-shrink-0" />
-                  <span>Kan jeg aflyse eller ændre booking?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Ja, helt gratis op til 2 timer før sessionen via vores app. Vi forstår, at livet sker. Hvis du aflyser mindre end 2 timer før (eller ikke møder op), trækkes klassen fra dit kontingent. Det er fair over for andre medlemmer på ventelisten.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-6">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <Baby size={48} className="text-coral flex-shrink-0" />
-                  <span>Er det sikkert under graviditet eller postpartum?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Pilates kan være fantastisk for både gravide og postpartum-genoptræning, <strong>men du skal altid tale med din læge eller jordemoder først</strong>. Vores instruktører kan modificere øvelser til dit niveau. Vores studioguide vil bede om lægebekræftelse ved første besøg.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div className="text-center mb-16">
+            <p className="text-[#5B7C99] text-sm tracking-[0.2em] uppercase mb-6 font-light">
+              Simple Pricing
+            </p>
+            <h2 className="text-4xl md:text-5xl text-[#2D3748] mb-6 font-light">
+              One Membership
+            </h2>
+            <p className="text-[#6B7280] text-lg leading-relaxed">
+              Everything you need. Nothing you don't.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-12 shadow-lg border border-[#E8DED0]">
+            <div className="flex items-baseline justify-center gap-2 mb-8">
+              <span className="text-6xl font-light text-[#2D3748]">239</span>
+              <span className="text-2xl text-[#6B7280]">kr</span>
+              <span className="text-[#6B7280]">/month</span>
+            </div>
+
+            <ul className="space-y-4 mb-12">
+              <li className="flex items-center gap-3 text-[#6B7280]">
+                <span className="text-[#5B7C99]">✓</span>
+                <span>Unlimited classes, all levels</span>
+              </li>
+              <li className="flex items-center gap-3 text-[#6B7280]">
+                <span className="text-[#5B7C99]">✓</span>
+                <span>24/7 studio access</span>
+              </li>
+              <li className="flex items-center gap-3 text-[#6B7280]">
+                <span className="text-[#5B7C99]">✓</span>
+                <span>Priority booking</span>
+              </li>
+              <li className="flex items-center gap-3 text-[#6B7280]">
+                <span className="text-[#5B7C99]">✓</span>
+                <span>Scandinavian-designed studio</span>
+              </li>
+              <li className="flex items-center gap-3 text-[#6B7280]">
+                <span className="text-[#5B7C99]">✓</span>
+                <span>Cancel anytime</span>
+              </li>
+            </ul>
+
+            <div className="bg-[#F5EFE7] rounded-2xl p-6 text-center">
+              <p className="text-[#2D3748] font-medium mb-2">Early Member Benefit</p>
+              <p className="text-[#6B7280] text-sm">
+                50% off for 2 months + complimentary welcome kit (200kr value)
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer className="bg-navy text-white py-64">
-        <div className="container-custom">
-          <div className="flex flex-wrap justify-center items-center gap-32 mb-32">
-            <a 
-              href="https://instagram.com/nordicpilatesdk" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-8 hover:text-coral transition-colors"
-              aria-label="Følg os på Instagram"
-            >
-              <Instagram size={48} />
-              <span>@nordicpilatesdk</span>
-            </a>
+      {/* Footer */}
+      <footer className="bg-[#2D3748] text-white py-20 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            {/* Logo & Tagline */}
+            <div className="col-span-2">
+              <Image 
+                src="/logo-b.png" 
+                alt="Nordic Pilates" 
+                width={180} 
+                height={80} 
+                className="object-contain mb-6 brightness-0 invert"
+              />
+              <p className="text-white/70 text-sm mb-6 max-w-md leading-relaxed">
+                Quiet Strength. Scandinavian simplicity meets mindful movement in the heart of Copenhagen.
+              </p>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider mb-4">Connect</h4>
+              <div className="space-y-3">
+                <a 
+                  href="https://instagram.com/nordicpilatesdk" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  <Instagram size={16} />
+                  <span>@nordicpilatesdk</span>
+                </a>
+                <a 
+                  href="mailto:hello@nordicpilates.com" 
+                  className="text-white/70 hover:text-white transition-colors text-sm block"
+                >
+                  hello@nordicpilates.com
+                </a>
+              </div>
+            </div>
           </div>
-          
-          <div className="text-center text-sm text-snow/50 mb-24 max-w-xl mx-auto">
-            Vi er en dansk virksomhed, og vi passer godt på dine data i henhold til EU lovgivning.
-          </div>
-          
-          <div className="text-center text-sm text-snow/60">
-            © {new Date().getFullYear()} Nordic Pilates. Alle rettigheder forbeholdes.
+
+          <div className="border-t border-white/10 pt-8 text-center text-white/50 text-xs">
+            <p>© {new Date().getFullYear()} Nordic Pilates. Copenhagen, Denmark.</p>
           </div>
         </div>
       </footer>
