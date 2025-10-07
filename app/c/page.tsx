@@ -2,28 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import HeroMedia from '@/components/HeroMedia'
 import WaitlistQuiz from '@/components/WaitlistQuiz'
-import SocialProof from '@/components/SocialProof'
-import Logo from '@/components/Logo'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { Button } from '@/components/ui/button'
-import { MapPin, Calendar, Users, ChevronDown, CheckCircle, Clock, Shield, TrendingUp, User, UserCheck, Monitor, Sparkles, Instagram, Gift, Zap, Heart, Baby, HelpCircle, CreditCard, ShoppingBag, AlertCircle, Infinity } from 'lucide-react'
+import { Calendar, ArrowRight, Instagram, MapPin } from 'lucide-react'
 
-// VARIANT C
+// VARIANT C - Modern Studio Design
+// Palette: Teal #1A7A7A, Gold #C9A961, Light Gray #F5F5F5
 export default function VariantC() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [signupCount, setSignupCount] = useState(0)
-  const totalSpots = 100
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > window.innerHeight * 0.8)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   useEffect(() => {
     const fetchSignupCount = async () => {
@@ -42,369 +27,271 @@ export default function VariantC() {
   }, [])
 
   return (
-    <main className="min-h-screen">
-      {/* Variant C Label - Remove in production */}
-      <div className="fixed top-4 left-4 z-[100] bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+    <main className="min-h-screen bg-white">
+      {/* Skip Navigation */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-16 focus:py-8 focus:bg-[#1A7A7A] focus:text-white focus:rounded-lg focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
+      {/* Variant C Label */}
+      <div className="fixed top-4 left-4 z-[100] bg-[#1A7A7A] text-white px-4 py-2 rounded-full text-xs font-light tracking-wide">
         Variant C
       </div>
 
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 h-[100px] bg-white border-b border-fog/30 shadow-sm transition-transform duration-300 ${
-          isScrolled ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
-        <div className="container-custom h-full flex items-center justify-between">
-          <div className="flex items-center">
-            <Logo size="sm" />
+      {/* Top Navigation Bar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+          <Image 
+            src="/logo-c.png" 
+            alt="Studio Logo" 
+            width={120} 
+            height={40} 
+            className="object-contain"
+            priority
+          />
+          
+          <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
+            <a href="#about" className="hover:text-[#1A7A7A] transition-colors">About Us</a>
+            <a href="#course" className="hover:text-[#1A7A7A] transition-colors">Course</a>
+            <a href="#testimonial" className="hover:text-[#1A7A7A] transition-colors">Testimonial</a>
+            <a href="#contact" className="hover:text-[#1A7A7A] transition-colors">Contact</a>
           </div>
-          <nav className="flex items-center gap-12">
-            <span className="hidden md:inline text-sm text-graphite/60">
-              <span className="font-semibold text-coral">{totalSpots - signupCount}</span> early bird pladser tilbage
-            </span>
-            <button 
-              className="h-9 px-24 bg-navy text-white text-xs font-medium rounded-lg hover:bg-navy/90 transition-colors"
-              onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Tilmeld venteliste
-            </button>
-          </nav>
+
+          <button 
+            onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-6 py-2.5 bg-[#1A7A7A] text-white rounded hover:bg-[#1A7A7A]/90 hover:scale-105 transition-all text-sm font-medium min-h-[44px]"
+            aria-label="Contact us"
+          >
+            Contact Us
+          </button>
         </div>
-      </header>
+      </nav>
 
-      <section className="relative min-h-screen w-full overflow-hidden">
-        <HeroMedia />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black z-[1]"></div>
-
-        <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-start px-24 md:px-48 text-center pt-80 md:pt-120">
-          <div className="max-w-4xl">
-            <div className="animate-fadeIn flex justify-center" style={{ animationDelay: '0.2s', opacity: 0 }}>
-              <Image 
-                src="/nordicwhite.png" 
-                alt="Nordic Pilates" 
-                width={400} 
-                height={266} 
-                priority 
-                className="object-contain"
-              />
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-light mb-32 leading-tight animate-fadeInUp" style={{ animationDelay: '0.3s', opacity: 0 }}>
-              Åbner snart i København<br/>
-              <span className="text-white/90 block mt-16 font-openSans" style={{ marginBottom: '280px', fontSize: '2rem' }}>
-                Vi tilbyder drop-in 24/7 reformer pilates fra 39kr/t
-              </span>
-            </h1>
-            
-            <div className="animate-fadeInUp" style={{ animationDelay: '0.5s', opacity: 0 }}>
-              <Button size="xl" asChild className="bg-black text-coral border-2 border-coral hover:bg-black/90 shadow-lg hover:shadow-xl font-sans">
-                <a href="#waitlist" aria-label="Tilmeld venteliste">
-                  Tilmeld venteliste
-                </a>
-              </Button>
-              <p className="text-white/70 text-sm mt-16">
-                50% rabat i to måneder + gratis strømper og drikkeflaske
+      {/* Hero Section - Split Screen */}
+      <section className="relative min-h-screen w-full pt-20" aria-label="Hero section">
+        <div className="grid lg:grid-cols-2 min-h-[calc(100vh-5rem)]">
+          {/* Left - Content */}
+          <div id="main-content" className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 bg-white">
+            <div className="max-w-xl">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-800 mb-6 leading-tight animate-fadeInUp" style={{ animationDelay: '0.2s', opacity: 0 }}>
+                Change happens
+                <br />
+                <span className="text-[#1A7A7A] font-normal">through movement</span>
+                <br />
+                <span className="text-gray-600">and</span> <span className="text-[#1A7A7A] font-normal">movement heals</span>
+              </h1>
+              
+              <p className="text-[#C9A961] text-lg mb-2 font-medium animate-fadeIn" style={{ animationDelay: '0.4s', opacity: 0 }}>
+                Nordic Pilates Studio trainer
               </p>
+              
+              <p className="text-gray-500 mb-8 max-w-md leading-relaxed animate-fadeIn" style={{ animationDelay: '0.5s', opacity: 0 }}>
+                Discover transformative Pilates in the heart of Copenhagen. Expert guidance, modern equipment, and a welcoming community.
+              </p>
+
+              <button 
+                onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#C9A961] text-white rounded hover:bg-[#C9A961]/90 hover:scale-105 transition-all shadow-md hover:shadow-lg min-h-[44px] animate-fadeInUp"
+                style={{ animationDelay: '0.6s', opacity: 0 }}
+                aria-label="Schedule now"
+              >
+                <Calendar size={20} />
+                Schedule Now
+              </button>
+            </div>
+          </div>
+
+          {/* Right - Video */}
+          <div className="relative h-[50vh] lg:h-auto bg-gray-100">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              aria-label="Pilates studio training video"
+            >
+              <source src="/vid-c.mp4" type="video/mp4" />
+            </video>
+            {/* Grid overlay effect */}
+            <div 
+              className="absolute inset-0 opacity-20 pointer-events-none"
+              style={{
+                backgroundImage: `linear-gradient(to right, transparent 0%, transparent 49.5%, rgba(0,0,0,0.1) 49.5%, rgba(0,0,0,0.1) 50.5%, transparent 50.5%, transparent 100%),
+                                  linear-gradient(to bottom, transparent 0%, transparent 49.5%, rgba(0,0,0,0.1) 49.5%, rgba(0,0,0,0.1) 50.5%, transparent 50.5%, transparent 100%)`,
+                backgroundSize: '33.333% 33.333%'
+              }}
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Cards Section */}
+      <section className="py-24 px-8 bg-gray-50" aria-label="Features">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Card 1 */}
+            <article className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+              <div className="aspect-[4/3] relative overflow-hidden">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                >
+                  <source src="/vid-c.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute top-4 left-4 bg-[#C9A961] text-white w-12 h-12 rounded-full flex items-center justify-center" role="img" aria-label="Instagram">
+                  <Instagram size={20} />
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-medium text-gray-800 mb-2">Expert Instruction</h3>
+                <p className="text-gray-500 text-sm">Certified trainers guide every session</p>
+              </div>
+            </article>
+
+            {/* Card 2 */}
+            <article className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+              <div className="aspect-[4/3] relative overflow-hidden">
+                <img 
+                  src="/1.png" 
+                  alt="Pilates training session" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 left-4 bg-[#C9A961] text-white w-12 h-12 rounded-full flex items-center justify-center" role="img" aria-label="Location">
+                  <MapPin size={20} />
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-medium text-gray-800 mb-2">Central Copenhagen</h3>
+                <p className="text-gray-500 text-sm">Conveniently located in the city center</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Begin Journey Section */}
+      <section className="py-24 px-8 bg-white" aria-labelledby="journey-heading">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Video */}
+            <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg group">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              >
+                <source src="/vid-c.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Right - Content */}
+            <div>
+              <h2 id="journey-heading" className="text-4xl md:text-5xl font-light text-gray-800 mb-6 leading-tight">
+                Begin Your Pilates
+                <br />
+                <span className="text-[#1A7A7A]">Journey with Us Today!</span>
+              </h2>
+              
+              <p className="text-[#C9A961] text-xl font-medium mb-4">
+                {signupCount}+ early members
+              </p>
+              
+              <p className="text-gray-500 mb-8 leading-relaxed max-w-lg">
+                Transform your body and mind through mindful movement. Our expert instructors and modern studio create the perfect environment for your Pilates journey.
+              </p>
+
+              <button 
+                onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#C9A961] text-white rounded hover:bg-[#C9A961]/90 hover:scale-105 transition-all shadow-md hover:shadow-lg min-h-[44px]"
+                aria-label="See more about our journey"
+              >
+                See more
+                <ArrowRight size={20} />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="waitlist" className="bg-black py-80">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-center mb-24 text-white">Tilmeld ventelisten</h2>
-          <p className="text-center text-white/70 mb-32 max-w-2xl mx-auto">
-            Få early-bird plads, introfordele og først besked om åbning.
-          </p>
+      {/* Waitlist Section */}
+      <section id="waitlist" className="py-24 px-8 bg-gray-50" aria-labelledby="waitlist-heading">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 id="waitlist-heading" className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
+              Join the <span className="text-[#1A7A7A]">Waitlist</span>
+            </h2>
+            <p className="text-gray-500 text-lg">
+              Be the first to know when we open in Copenhagen
+            </p>
+          </div>
+
           <WaitlistQuiz />
         </div>
       </section>
 
-      <section id="about" className="container-custom py-80">
-        <h2 className="text-center mb-24">Hvorfor Nordic Pilates</h2>
-        <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-          Et nyt koncept der gør reformer Pilates mere tilgængeligt for alle
-        </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-32 mb-64">
-          <div className="text-center">
-            <div className="mb-20">
-              <CreditCard size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">Billigere Pilates</h3>
-            <p className="text-graphite/70 mb-16">
-              Fra 39kr/time med drop-in – ingen dyre abonnementer eller medlemskaber
-            </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Fantastisk for begyndere! Nordic Flow-klasserne er perfekte for at lære det grundlæggende."
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mb-20">
-              <Clock size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">24/7 Fleksibilitet</h3>
-            <p className="text-graphite/70 mb-16">
-              Træn når det passer dig – morgen, middag, aften eller nat
-            </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Elsker at jeg kan træne kl. 7 om morgenen før arbejde. Appen gør det nemt at booke."
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mb-20">
-              <Monitor size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">Ekspert instruktører</h3>
-            <p className="text-graphite/70 mb-16">
-              On-screen vejledning fra certificerede Pilates instruktører – ingen studio-guide
-            </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Bedste intro til reformer Pilates jeg har prøvet. Instruktørerne er tydelige og hjælpsomme."
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mb-20">
-              <Sparkles size={48} className="mx-auto text-[#C4A582]" />
-            </div>
-            <h3 className="mb-12">Nem app</h3>
-            <p className="text-graphite/70 mb-16">
-              Book dine sessions og hold styr på din udvikling direkte fra din mobil
-            </p>
-            <p className="text-sm text-graphite/60 italic">
-              "Appen gør det super nemt at se min fremgang og booke nye sessions."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-warm-gray py-80">
-        <div className="container-custom">
-          <h2 className="text-center mb-24">Vælg dit format</h2>
-          <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-            Vi tilbyder forskellige formater, så du kan finde det der passer til dig
-          </p>
-          <div className="grid md:grid-cols-3 gap-32 mb-40">
-            <div className="bg-white rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all overflow-hidden">
-              <div className="aspect-[4/3] relative">
-                <img src="/1.png" alt="Nordic Flow" className="w-full h-full object-cover" />
-              </div>
-              <div className="p-24">
-                <div className="inline-block bg-ice-blue/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  🔥
-                </div>
-                <h3 className="mb-12 text-lg">Nordic Flow</h3>
-                <p className="text-graphite/70 text-sm">
-                  Rolige sekvenser med fokus på teknik og åndedræt
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all overflow-hidden">
-              <div className="aspect-[4/3] relative">
-                <img src="/2.png" alt="Power Core" className="w-full h-full object-cover" />
-              </div>
-              <div className="p-24">
-                <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  🔥🔥
-                </div>
-                <h3 className="mb-12 text-lg">Power Core</h3>
-                <p className="text-graphite/70 text-sm">
-                  Stabilitet, styrke og holdning – byg en stærk kerne
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg border border-fog/30 hover:border-[#C4A582]/30 hover:shadow-subtle transition-all overflow-hidden">
-              <div className="aspect-[4/3] relative">
-                <img src="/3.png" alt="Sweat 30" className="w-full h-full object-cover" />
-              </div>
-              <div className="p-24">
-                <div className="inline-block bg-[#C4A582]/20 text-graphite text-xs font-medium px-12 py-6 rounded-full mb-16">
-                  🔥🔥🔥
-                </div>
-                <h3 className="mb-12 text-lg">Sweat 30</h3>
-                <p className="text-graphite/70 text-sm">
-                  Tempo og puls på 30 minutter – effektiv træning
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="text-center">
-            <Button size="lg" asChild>
-              <a href="#waitlist">
-                Tilmeld venteliste
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-warm-gray py-80">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-center mb-24">Unlimited Medlemskab</h2>
-          <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-            Én simpel pris - ubegrænsede muligheder
-          </p>
-          
-          <div className="max-w-xl mx-auto mb-48">
-            <div className="bg-white p-40 rounded-lg border-2 border-coral/30 relative">
-              <h3 className="text-2xl font-medium mb-16 text-navy flex items-center gap-8 justify-center">
-                <Infinity size={48} className="text-coral" />
-                Unlimited
-              </h3>
-              <p className="text-5xl font-light mb-32 text-center">
-                <span className="text-navy">239 kr</span>
-                <span className="text-lg text-graphite/60">/måned</span>
-              </p>
-              <ul className="space-y-16 text-base text-graphite/80 mb-32">
-                <li className="flex items-start gap-12">
-                  <Infinity size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Ubegrænsede klasser</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Clock size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Book når det passer dig</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Clock size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Prioritet-booking til populære tider</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Gift size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Gratis strømper & drikkeflaske</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <Shield size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Aflys gratis op til 2 timer før</span>
-                </li>
-                <li className="flex items-start gap-12">
-                  <TrendingUp size={48} className="text-coral mt-1 flex-shrink-0" />
-                  <span>Adgang til alle niveauer</span>
-                </li>
-              </ul>
-              <p className="text-sm text-center text-graphite/60 bg-coral/5 p-16 rounded-lg">
-                <strong>Early-bird fordel:</strong> 50% rabat i to måneder + gratis strømper og drikkeflaske (værdi 200kr)
+      {/* Footer */}
+      <footer className="bg-[#1A7A7A] text-white py-16 px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            {/* Logo & Tagline */}
+            <div>
+              <Image 
+                src="/logo-c.png" 
+                alt="Studio Logo" 
+                width={150} 
+                height={50} 
+                className="object-contain mb-4 brightness-0 invert"
+              />
+              <p className="text-white/70 text-sm leading-relaxed">
+                Change happens through movement and movement heals.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="container-custom py-80">
-        <h2 className="text-center mb-24">Ofte stillede spørgsmål</h2>
-        <p className="text-center text-graphite/70 mb-48 max-w-2xl mx-auto">
-          Alt du behøver at vide om Nordic Pilates
-        </p>
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <Heart size={48} className="text-coral flex-shrink-0" />
-                  <span>Er det begynder-venligt?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Ja, absolut! Vi har specialdesignede Nordic Flow-klasser for begyndere med tydelig guidning i hvert trin. Du behøver ingen erfaring. Maksimalt 8 personer per hold betyder, at der er fokus på dig.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <Monitor size={48} className="text-coral flex-shrink-0" />
-                  <span>Hvordan fungerer instruktionen?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Hver klasse guides af professionelle instruktører vist på skærme i studiet – vi har betalt nogle af verdens bedste Pilates-eksperter. Derudover er der altid en certificeret studioguide til stede, der kan hjælpe med form, stillinger og spørgsmål. Det er det bedste fra begge verdener: ekspert-guidning kombineret med personlig støtte.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <CreditCard size={48} className="text-coral flex-shrink-0" />
-                  <span>Hvad koster det præcist?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed mb-12">
-                  Vi tilbyder ét simpelt Unlimited medlemskab til <strong>239 kr/måned</strong> med ubegrænsede klasser, prioritet-booking, og gratis strømper & drikkeflaske.
-                </p>
-                <p className="mt-12 text-sm text-coral font-medium">
-                  Early-bird fordel: 50% rabat i to måneder + gratis strømper og drikkeflaske (værdi 200 kr).
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <ShoppingBag size={48} className="text-coral flex-shrink-0" />
-                  <span>Hvad skal jeg have med?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Tætsiddende tøj (leggings/sports-BH) og skridsikre strømper. Det er vigtigt at du kan bevæge dig frit, og at strømperne giver godt greb på reformeren. Strømper kan købes i studiet (50 kr), hvis du ikke har nogle. Vi har omklædningsrum med låseskabe.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-5">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <AlertCircle size={48} className="text-coral flex-shrink-0" />
-                  <span>Kan jeg aflyse eller ændre booking?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Ja, helt gratis op til 2 timer før sessionen via vores app. Vi forstår, at livet sker. Hvis du aflyser mindre end 2 timer før (eller ikke møder op), trækkes klassen fra dit kontingent. Det er fair over for andre medlemmer på ventelisten.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-6">
-              <AccordionTrigger>
-                <div className="flex items-center gap-12">
-                  <Baby size={48} className="text-coral flex-shrink-0" />
-                  <span>Er det sikkert under graviditet eller postpartum?</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="leading-relaxed">
-                  Pilates kan være fantastisk for både gravide og postpartum-genoptræning, <strong>men du skal altid tale med din læge eller jordemoder først</strong>. Vores instruktører kan modificere øvelser til dit niveau. Vores studioguide vil bede om lægebekræftelse ved første besøg.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider mb-4 font-medium">Quick Links</h4>
+              <div className="space-y-2 text-sm">
+                <a href="#about" className="block text-white/70 hover:text-white transition-colors">About Us</a>
+                <a href="#course" className="block text-white/70 hover:text-white transition-colors">Course</a>
+                <a href="#testimonial" className="block text-white/70 hover:text-white transition-colors">Testimonial</a>
+                <a href="#contact" className="block text-white/70 hover:text-white transition-colors">Contact</a>
+              </div>
+            </div>
 
-      <footer className="bg-navy text-white py-64">
-        <div className="container-custom">
-          <div className="flex flex-wrap justify-center items-center gap-32 mb-32">
-            <a 
-              href="https://instagram.com/nordicpilatesdk" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-8 hover:text-coral transition-colors"
-              aria-label="Følg os på Instagram"
-            >
-              <Instagram size={48} />
-              <span>@nordicpilatesdk</span>
-            </a>
+            {/* Contact */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider mb-4 font-medium">Connect</h4>
+              <div className="space-y-3">
+                <a 
+                  href="https://instagram.com/nordicpilatesdk" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  <Instagram size={16} />
+                  <span>@nordicpilatesdk</span>
+                </a>
+                <a 
+                  href="mailto:hello@nordicpilates.com" 
+                  className="text-white/70 hover:text-white transition-colors text-sm block"
+                >
+                  hello@nordicpilates.com
+                </a>
+              </div>
+            </div>
           </div>
-          
-          <div className="text-center text-sm text-snow/50 mb-24 max-w-xl mx-auto">
-            Vi er en dansk virksomhed, og vi passer godt på dine data i henhold til EU lovgivning.
-          </div>
-          
-          <div className="text-center text-sm text-snow/60">
-            © {new Date().getFullYear()} Nordic Pilates. Alle rettigheder forbeholdes.
+
+          <div className="border-t border-white/10 pt-8 text-center text-white/50 text-xs">
+            <p>© {new Date().getFullYear()} Nordic Pilates. Copenhagen, Denmark.</p>
           </div>
         </div>
       </footer>
