@@ -36,9 +36,14 @@ export default function VariantA() {
       {/* Minimal Header */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-[#F5F1EB]/95 backdrop-blur-sm py-6">
         <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <div className="w-8 h-8 bg-[#8B7355] rounded-full"></div>
-            <span className="font-serif text-xl tracking-wide text-[#3D3D3D]">Nordic Pilates</span>
+          <div className="flex items-center">
+            <Image 
+              src="/nordic.png" 
+              alt="Nordic Pilates" 
+              width={180} 
+              height={80} 
+              className="object-contain"
+            />
           </div>
           <button 
             className="px-6 py-2 bg-[#3D3D3D] text-[#F5F1EB] text-sm rounded-full hover:bg-[#2D2D2D] transition-colors font-light tracking-wide"
@@ -55,6 +60,17 @@ export default function VariantA() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[#F5F1EB]/80 z-[1]"></div>
 
         <div className="relative z-10 text-center px-8 max-w-4xl">
+          {/* Logo */}
+          <div className="mb-12 flex justify-center">
+            <Image 
+              src="/nordic.png" 
+              alt="Nordic Pilates" 
+              width={400} 
+              height={180} 
+              className="object-contain"
+            />
+          </div>
+
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#3D3D3D] mb-8 leading-[1.1] tracking-tight">
             BALANCE <span className="italic font-light">// Calm //</span> RECONNECT
           </h1>
@@ -279,6 +295,17 @@ export default function VariantA() {
       {/* Footer */}
       <footer className="bg-[#3D3D3D] text-[#F5F1EB] py-20 px-8">
         <div className="max-w-6xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-8 flex justify-center">
+            <Image 
+              src="/nordicwhite.png" 
+              alt="Nordic Pilates" 
+              width={250} 
+              height={110} 
+              className="object-contain opacity-90"
+            />
+          </div>
+
           <div className="mb-8">
             <p className="font-serif text-2xl mb-4 tracking-wide">Get in touch with us</p>
             <a href="mailto:contact@nordicpilates.com" className="text-[#C4A582] hover:text-[#8B7355] transition-colors">
