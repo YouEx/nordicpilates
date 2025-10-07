@@ -74,7 +74,7 @@ export default function Home() {
         <HeroMedia />
         
         {/* Dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-[1]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black z-[1]"></div>
 
         {/* Content Overlay */}
         <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-start px-24 md:px-48 text-center pt-80 md:pt-120">
@@ -114,9 +114,6 @@ export default function Home() {
 
         </div>
       </section>
-
-      {/* Gradient Transition */}
-      <div className="h-[48px] bg-gradient-to-b from-transparent via-black/50 to-black"></div>
 
       {/* Waitlist Form Section */}
       <section id="waitlist" className="bg-black py-80">
