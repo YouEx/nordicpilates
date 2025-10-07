@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import HeroMedia from '@/components/HeroMedia'
 import WaitlistQuiz from '@/components/WaitlistQuiz'
 import { Clock, Heart, Sparkles, Instagram, User } from 'lucide-react'
 
@@ -27,14 +26,14 @@ export default function VariantA() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-[#F5F1EB]">
+    <main className="min-h-screen bg-[#FEFBF0]">
       {/* Variant A Label */}
-      <div className="fixed top-4 left-4 z-[100] bg-[#8B7355] text-white px-4 py-2 rounded-full text-xs font-light tracking-wide">
+      <div className="fixed top-4 left-4 z-[100] bg-[#445D68] text-white px-4 py-2 rounded-full text-xs font-light tracking-wide">
         Variant A
       </div>
 
       {/* Minimal Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 bg-[#F5F1EB]/95 backdrop-blur-sm py-6">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-[#FEFBF0]/95 backdrop-blur-sm py-6">
         <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
           <div className="flex items-center">
             <Image 
@@ -46,7 +45,7 @@ export default function VariantA() {
             />
           </div>
           <button 
-            className="px-6 py-2 bg-[#3D3D3D] text-[#F5F1EB] text-sm rounded-full hover:bg-[#2D2D2D] transition-colors font-light tracking-wide"
+            className="px-6 py-2 bg-[#445D68] text-white text-sm rounded-full hover:bg-[#445D68]/90 transition-colors font-light tracking-wide"
             onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Join Waitlist
@@ -56,8 +55,17 @@ export default function VariantA() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
-        <HeroMedia />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[#F5F1EB]/80 z-[1]"></div>
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/bg-a.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[#FEFBF0]/80 z-[1]"></div>
 
         <div className="relative z-10 text-center px-8 max-w-4xl">
           {/* Logo */}
@@ -81,7 +89,7 @@ export default function VariantA() {
 
           <button 
             onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 bg-[#3D3D3D] text-[#F5F1EB] rounded-full hover:bg-[#2D2D2D] transition-all text-sm tracking-wide font-light"
+            className="px-8 py-3 bg-[#445D68] text-white rounded-full hover:bg-[#445D68]/90 transition-all text-sm tracking-wide font-light"
           >
             Start Your Journey
           </button>
@@ -89,9 +97,9 @@ export default function VariantA() {
           {/* Trusted badge */}
           <div className="mt-12 flex items-center justify-center gap-3 text-sm text-[#5D5D5D]">
             <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-[#C4A582] border-2 border-[#F5F1EB]"></div>
-              <div className="w-8 h-8 rounded-full bg-[#8B7355] border-2 border-[#F5F1EB]"></div>
-              <div className="w-8 h-8 rounded-full bg-[#A89080] border-2 border-[#F5F1EB]"></div>
+              <div className="w-8 h-8 rounded-full bg-[#445D68] border-2 border-[#FEFBF0]"></div>
+              <div className="w-8 h-8 rounded-full bg-[#8B7355] border-2 border-[#FEFBF0]"></div>
+              <div className="w-8 h-8 rounded-full bg-[#A89080] border-2 border-[#FEFBF0]"></div>
             </div>
             <span className="font-light">Loved by {signupCount}+ early members</span>
           </div>
@@ -139,7 +147,7 @@ export default function VariantA() {
 
               <button 
                 onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-                className="mt-12 px-8 py-3 bg-[#3D3D3D] text-[#F5F1EB] rounded-full hover:bg-[#2D2D2D] transition-all text-sm tracking-wide font-light"
+                className="mt-12 px-8 py-3 bg-[#445D68] text-white rounded-full hover:bg-[#445D68]/90 transition-all text-sm tracking-wide font-light"
               >
                 Get Your Journey
               </button>
@@ -149,7 +157,7 @@ export default function VariantA() {
       </section>
 
       {/* Waitlist Section */}
-      <section id="waitlist" className="py-32 px-8 bg-[#F5F1EB]">
+      <section id="waitlist" className="py-32 px-8 bg-[#FEFBF0]">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl text-[#3D3D3D] mb-6 tracking-tight">
             Join the Waitlist
@@ -223,7 +231,7 @@ export default function VariantA() {
               </p>
               <button 
                 onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-white text-[#3D3D3D] rounded-full hover:bg-[#F5F1EB] transition-all text-sm tracking-wide font-medium"
+                className="px-8 py-3 bg-white text-[#445D68] rounded-full hover:bg-[#FEFBF0] transition-all text-sm tracking-wide font-medium"
               >
                 Start Your Journey
               </button>
@@ -240,7 +248,7 @@ export default function VariantA() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-32 px-8 bg-[#F5F1EB]">
+      <section className="py-32 px-8 bg-[#FEFBF0]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-[#3D3D3D] mb-6 tracking-tight">
             Simple Pricing
@@ -251,7 +259,7 @@ export default function VariantA() {
 
           <div className="max-w-md mx-auto bg-white rounded-3xl p-12 shadow-lg">
             <div className="mb-8">
-              <Sparkles size={32} className="mx-auto text-[#8B7355] mb-4" />
+              <Sparkles size={32} className="mx-auto text-[#445D68] mb-4" />
               <h3 className="font-serif text-2xl text-[#3D3D3D] mb-2">Unlimited</h3>
             </div>
 
@@ -264,36 +272,36 @@ export default function VariantA() {
 
             <ul className="space-y-4 text-left text-[#5D5D5D] mb-8 font-light">
               <li className="flex items-start gap-3">
-                <span className="text-[#8B7355] mt-1">✓</span>
+                <span className="text-[#445D68] mt-1">✓</span>
                 <span>Unlimited classes</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#8B7355] mt-1">✓</span>
+                <span className="text-[#445D68] mt-1">✓</span>
                 <span>Book anytime 24/7</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#8B7355] mt-1">✓</span>
+                <span className="text-[#445D68] mt-1">✓</span>
                 <span>Priority booking</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#8B7355] mt-1">✓</span>
+                <span className="text-[#445D68] mt-1">✓</span>
                 <span>Free welcome kit</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#8B7355] mt-1">✓</span>
+                <span className="text-[#445D68] mt-1">✓</span>
                 <span>Cancel anytime</span>
               </li>
             </ul>
 
-            <div className="bg-[#F5F1EB] rounded-xl p-4 text-sm text-[#5D5D5D] font-light">
-              <strong className="text-[#8B7355]">Early-bird benefit:</strong> 50% off for 2 months + free welcome kit (200kr value)
+            <div className="bg-[#FEFBF0] rounded-xl p-4 text-sm text-[#5D5D5D] font-light">
+              <strong className="text-[#445D68]">Early-bird benefit:</strong> 50% off for 2 months + free welcome kit (200kr value)
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#3D3D3D] text-[#F5F1EB] py-20 px-8">
+      <footer className="bg-[#445D68] text-white py-20 px-8">
         <div className="max-w-6xl mx-auto text-center">
           {/* Logo */}
           <div className="mb-8 flex justify-center">
