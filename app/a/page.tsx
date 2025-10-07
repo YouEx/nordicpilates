@@ -32,27 +32,6 @@ export default function VariantA() {
         Variant A
       </div>
 
-      {/* Minimal Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 bg-[#FEFBF0]/95 backdrop-blur-sm py-6">
-        <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
-          <div className="flex items-center">
-            <Image 
-              src="/logo-a.png" 
-              alt="Nordic Pilates" 
-              width={180} 
-              height={80} 
-              className="object-contain"
-            />
-          </div>
-          <button 
-            className="px-6 py-2 bg-[#445D68] text-white text-sm rounded-full hover:bg-[#445D68]/90 transition-colors font-light tracking-wide"
-            onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Join Waitlist
-          </button>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
         {/* Background Video */}
@@ -78,10 +57,6 @@ export default function VariantA() {
               className="object-contain"
             />
           </div>
-
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#3D3D3D] mb-8 leading-[1.1] tracking-tight">
-            BALANCE <span className="italic font-light">// Calm //</span> RECONNECT
-          </h1>
           
           <p className="text-[#5D5D5D] text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
             Discover yoga-inspired classes, reformer Pilates, and functional movement for your journey. Opening soon in Copenhagen.
