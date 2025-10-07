@@ -38,7 +38,7 @@ export default function VariantA() {
         <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
           <div className="flex items-center">
             <Image 
-              src="/nordic.png" 
+              src="/logo-a.png" 
               alt="Nordic Pilates" 
               width={180} 
               height={80} 
@@ -63,7 +63,7 @@ export default function VariantA() {
           {/* Logo */}
           <div className="mb-12 flex justify-center">
             <Image 
-              src="/nordic.png" 
+              src="/logo-a.png" 
               alt="Nordic Pilates" 
               width={400} 
               height={180} 
@@ -298,11 +298,11 @@ export default function VariantA() {
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <Image 
-              src="/nordicwhite.png" 
+              src="/logo-a.png" 
               alt="Nordic Pilates" 
               width={250} 
               height={110} 
-              className="object-contain opacity-90"
+              className="object-contain opacity-90 brightness-0 invert"
             />
           </div>
 
