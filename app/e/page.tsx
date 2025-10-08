@@ -377,8 +377,8 @@ export default function VariantE() {
         </div>
       </section>
 
-      {/* Survey Section with Video Background */}
-      <section id="waitlist" className="relative py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 overflow-hidden" aria-labelledby="survey-heading">
+      {/* Waitlist Section with Video Background */}
+      <section id="waitlist" className="relative py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 overflow-hidden" aria-labelledby="waitlist-heading">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video
@@ -398,84 +398,14 @@ export default function VariantE() {
         {/* Content */}
         <div className="relative z-10 max-w-[1400px] mx-auto">
           <div className="max-w-2xl mx-auto">
-            {/* Survey Card */}
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
-              {/* Progress indicator */}
-              <div className="mb-6">
-                <p className="text-sm text-[#6B6B6B] mb-2 font-light">Trin 1 af 5</p>
-                <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-                  <div className="h-full bg-[#E07B6F] rounded-full" style={{ width: '20%' }}></div>
-                </div>
-              </div>
+            <h2 id="waitlist-heading" className="text-center mb-8 text-3xl md:text-4xl font-light text-white">
+              Tilmeld ventelisten
+            </h2>
+            <p className="text-center text-white/80 mb-12 max-w-xl mx-auto font-light">
+              Få early-bird plads, introfordele og først besked om åbning.
+            </p>
 
-              {/* Question */}
-              <h2 id="survey-heading" className="text-2xl md:text-3xl font-light text-[#1F1D1A] mb-4">
-                Hvor vil du helst træne?
-              </h2>
-              <p className="text-[#6B6B6B] text-sm md:text-base font-light mb-8">
-                Vi åbner på Østerbro først, men vil gerne høre dine præferencer.
-              </p>
-
-              {/* Options */}
-              <div className="space-y-3 mb-8">
-                <label className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-[#E07B6F] hover:bg-gray-50 cursor-pointer transition-all group">
-                  <input 
-                    type="radio" 
-                    name="location" 
-                    value="osterbro"
-                    className="w-5 h-5 text-[#E07B6F] border-gray-300 focus:ring-[#E07B6F] focus:ring-2"
-                  />
-                  <span className="ml-4 text-[#1F1D1A] font-light">Østerbro</span>
-                </label>
-
-                <label className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-[#E07B6F] hover:bg-gray-50 cursor-pointer transition-all group">
-                  <input 
-                    type="radio" 
-                    name="location" 
-                    value="frederiksberg"
-                    className="w-5 h-5 text-[#E07B6F] border-gray-300 focus:ring-[#E07B6F] focus:ring-2"
-                  />
-                  <span className="ml-4 text-[#1F1D1A] font-light">Frederiksberg</span>
-                </label>
-
-                <label className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-[#E07B6F] hover:bg-gray-50 cursor-pointer transition-all group">
-                  <input 
-                    type="radio" 
-                    name="location" 
-                    value="vesterbro"
-                    className="w-5 h-5 text-[#E07B6F] border-gray-300 focus:ring-[#E07B6F] focus:ring-2"
-                  />
-                  <span className="ml-4 text-[#1F1D1A] font-light">Vesterbro</span>
-                </label>
-
-                <label className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-[#E07B6F] hover:bg-gray-50 cursor-pointer transition-all group">
-                  <input 
-                    type="radio" 
-                    name="location" 
-                    value="norrebro"
-                    className="w-5 h-5 text-[#E07B6F] border-gray-300 focus:ring-[#E07B6F] focus:ring-2"
-                  />
-                  <span className="ml-4 text-[#1F1D1A] font-light">Nørrebro</span>
-                </label>
-
-                <label className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-[#E07B6F] hover:bg-gray-50 cursor-pointer transition-all group">
-                  <input 
-                    type="radio" 
-                    name="location" 
-                    value="andet"
-                    className="w-5 h-5 text-[#E07B6F] border-gray-300 focus:ring-[#E07B6F] focus:ring-2"
-                  />
-                  <span className="ml-4 text-[#1F1D1A] font-light">Andet</span>
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <button 
-                className="w-full py-4 bg-[#E07B6F] text-white rounded-full hover:bg-[#D86B5F] transition-all text-base font-light shadow-lg hover:shadow-xl"
-              >
-                Fortsæt
-              </button>
-            </div>
+            <WaitlistQuizA />
           </div>
         </div>
       </section>
