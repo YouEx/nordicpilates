@@ -80,16 +80,12 @@ export default function VariantA() {
             <Image 
               src="/logo-a.png" 
               alt="Nordic Pilates" 
-              width={400} 
-              height={180} 
+              width={280} 
+              height={126} 
               className="object-contain"
               priority
             />
           </div>
-          
-          <p className="text-[#5D5D5D] text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed animate-fadeInUp" style={{ animationDelay: '0.4s', opacity: 0 }}>
-            Discover yoga-inspired classes, reformer Pilates, and functional movement for your journey. Opening soon in Copenhagen.
-          </p>
 
           <button 
             onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
