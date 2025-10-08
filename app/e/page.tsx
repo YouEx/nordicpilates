@@ -98,102 +98,138 @@ export default function VariantE() {
         </div>
       </section>
 
-      {/* Class Schedule Section */}
-      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="schedule-heading">
+      {/* Why Nordic Pilates Section */}
+      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="why-heading">
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <h2 id="schedule-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
+            <h2 id="why-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
               Hvorfor Nordic Pilates
             </h2>
             <p className="text-[#6B6B6B] text-base md:text-lg font-light max-w-2xl">
-              Choose from live or on-demand classes including Hatha, Vinyasa, Yin, and beginner-friendly flows.
+              Unlimited medlemskab til 239kr/måned – ingen skjulte gebyrer eller dyre klippekort
             </p>
           </div>
 
-          {/* Class Grid - 2 columns, 3 rows */}
+          {/* Features Grid - 2 columns, 3 rows */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-x-16 md:gap-y-12">
-            {/* Class 01 */}
-            <div className="space-y-3">
-              <div className="flex items-baseline gap-4">
-                <span className="text-sm text-[#999999] font-light">01.</span>
-                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Morning Energy Flow</h3>
-              </div>
-              <div className="pl-10">
-                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">06:30 AM - 07:30 AM  |  ALL LEVELS</p>
-                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
-                  Boost energy and awaken the body through dynamic Vinyasa sequences.
-                </p>
-              </div>
-            </div>
-
-            {/* Class 04 */}
-            <div className="space-y-3">
-              <div className="flex items-baseline gap-4">
-                <span className="text-sm text-[#999999] font-light">04.</span>
-                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Core Strength & Balance</h3>
-              </div>
-              <div className="pl-10">
-                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">05:30 PM - 06:30 PM  |  INTERMEDIATE</p>
-                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
-                  Focused on strengthening the core and improving body balance through controlled movements.
-                </p>
+            {/* Feature 01 - Billigere Pilates */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-light text-[#1F1D1A] mb-3">Billigere Pilates</h3>
+                  <p className="text-sm md:text-base text-[#6B6B6B] font-light leading-relaxed mb-3">
+                    Unlimited medlemskab til 239kr/måned – ingen skjulte gebyrer eller dyre klippekort
+                  </p>
+                  <p className="text-sm text-[#999999] italic leading-relaxed">
+                    "Fantastisk for begyndere! Nordic Flow-klasserne er perfekte for at lære det grundlæggende."
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Class 02 */}
-            <div className="space-y-3">
-              <div className="flex items-baseline gap-4">
-                <span className="text-sm text-[#999999] font-light">02.</span>
-                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Lunchtime Reset</h3>
-              </div>
-              <div className="pl-10">
-                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">12:00 PM - 12:45 PM  |  BEGINNER-FRIENDLY</p>
-                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
-                  Gentle stretches and breathwork to reduce midday tension and recharge focus.
-                </p>
-              </div>
-            </div>
-
-            {/* Class 05 */}
-            <div className="space-y-3">
-              <div className="flex items-baseline gap-4">
-                <span className="text-sm text-[#999999] font-light">05.</span>
-                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Hatha for Posture & Flexibility</h3>
-              </div>
-              <div className="pl-10">
-                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">08:00 AM - 09:00 AM  |  BEGINNER TO INTERMEDIATE</p>
-                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
-                  Deep stretches and alignment techniques to enhance flexibility and posture awareness.
-                </p>
+            {/* Feature 04 - Ekspert instruktører */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-light text-[#1F1D1A] mb-3">Ekspert instruktører</h3>
+                  <p className="text-sm md:text-base text-[#6B6B6B] font-light leading-relaxed mb-3">
+                    Video-vejledning fra certificerede Pilates instruktører + studioguide ved bookede klasser
+                  </p>
+                  <p className="text-sm text-[#999999] italic leading-relaxed">
+                    "Bedste intro til reformer Pilates jeg har prøvet. Instruktørerne er tydelige og hjælpsomme."
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Class 03 */}
-            <div className="space-y-3">
-              <div className="flex items-baseline gap-4">
-                <span className="text-sm text-[#999999] font-light">03.</span>
-                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Evening Wind Down</h3>
-              </div>
-              <div className="pl-10">
-                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">07:00 PM - 08:00 PM  |  ALL LEVELS</p>
-                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
-                  Relaxing Yin yoga flow to release muscle tightness and prepare for restful sleep.
-                </p>
+            {/* Feature 02 - 24/7 Fleksibilitet */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-light text-[#1F1D1A] mb-3">24/7 Fleksibilitet</h3>
+                  <p className="text-sm md:text-base text-[#6B6B6B] font-light leading-relaxed mb-3">
+                    Træn når det passer dig – morgen, middag, aften eller nat
+                  </p>
+                  <p className="text-sm text-[#999999] italic leading-relaxed">
+                    "Elsker at jeg kan træne kl. 7 om morgenen før arbejde. Appen gør det nemt at booke."
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Class 06 */}
-            <div className="space-y-3">
-              <div className="flex items-baseline gap-4">
-                <span className="text-sm text-[#999999] font-light">06.</span>
-                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Restorative Yoga & Meditation</h3>
+            {/* Feature 05 - Book nemt via app */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-light text-[#1F1D1A] mb-3">Book nemt via app</h3>
+                  <p className="text-sm md:text-base text-[#6B6B6B] font-light leading-relaxed mb-3">
+                    Book dine sessions og hold styr på din udvikling direkte fra din mobil – smart adgangskontrol inkluderet
+                  </p>
+                  <p className="text-sm text-[#999999] italic leading-relaxed">
+                    "Appen gør det super nemt at se min fremgang og booke nye sessions."
+                  </p>
+                </div>
               </div>
-              <div className="pl-10">
-                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">08:30 PM - 09:15 PM  |  ALL LEVELS</p>
-                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
-                  Slow-paced restorative poses combined with guided meditation for deep relaxation.
-                </p>
+            </div>
+
+            {/* Feature 03 - Nem app */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-light text-[#1F1D1A] mb-3">Perfekt for alle niveauer</h3>
+                  <p className="text-sm md:text-base text-[#6B6B6B] font-light leading-relaxed mb-3">
+                    Fra begynder til øvet – vi har klasser der passer præcis dit niveau og dine mål
+                  </p>
+                  <p className="text-sm text-[#999999] italic leading-relaxed">
+                    "Kom som komplet begynder og føler mig allerede meget stærkere efter kun 3 uger."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature 06 - Community */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-light text-[#1F1D1A] mb-3">Inspirerende community</h3>
+                  <p className="text-sm md:text-base text-[#6B6B6B] font-light leading-relaxed mb-3">
+                    Bliv del af et støttende fællesskab der motiverer hinanden til at nå nye mål
+                  </p>
+                  <p className="text-sm text-[#999999] italic leading-relaxed">
+                    "Elsker energien i studiet. Alle er venlige og det føles som et rigtig godt fællesskab."
+                  </p>
+                </div>
               </div>
             </div>
           </div>
