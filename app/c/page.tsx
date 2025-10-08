@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import WaitlistQuiz from '@/components/WaitlistQuiz'
+import WaitlistQuizC from '@/components/WaitlistQuizC'
 import { Calendar, ArrowRight, Instagram, MapPin } from 'lucide-react'
 
 // VARIANT C - Modern Studio Design
@@ -234,7 +234,7 @@ export default function VariantC() {
             </p>
           </div>
 
-          <WaitlistQuiz />
+          <WaitlistQuizC />
         </div>
       </section>
 

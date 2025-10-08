@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import WaitlistQuiz from '@/components/WaitlistQuiz'
+import WaitlistQuizA from '@/components/WaitlistQuizA'
 import { Clock, Heart, Sparkles, Instagram, User } from 'lucide-react'
 
 // VARIANT A - Elegant Wellness Design
@@ -155,7 +155,7 @@ export default function VariantA() {
           </p>
         </div>
 
-        <WaitlistQuiz />
+        <WaitlistQuizA />
       </section>
 
       {/* Meet Instructors Preview */}

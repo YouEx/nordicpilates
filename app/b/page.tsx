@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import WaitlistQuiz from '@/components/WaitlistQuiz'
+import WaitlistQuizB from '@/components/WaitlistQuizB'
 import { Instagram, ChevronRight } from 'lucide-react'
 
 // VARIANT B - Scandinavian "Quiet Strength"
@@ -172,7 +172,7 @@ export default function VariantB() {
           </p>
         </div>
 
-        <WaitlistQuiz />
+        <WaitlistQuizB />
       </section>
 
       {/* Class Preview */}

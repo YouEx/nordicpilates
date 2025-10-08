@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import WaitlistQuiz from '@/components/WaitlistQuiz'
+import WaitlistQuizD from '@/components/WaitlistQuizD'
 import { ArrowRight, CheckCircle, Clock, Users, Instagram, Sparkles } from 'lucide-react'
 
 // VARIANT D - Minimalist Blur Design
@@ -199,7 +199,7 @@ export default function VariantD() {
           </div>
 
           <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 md:p-12 border border-white/20">
-            <WaitlistQuiz />
+            <WaitlistQuizD />
           </div>
         </div>
       </section>
