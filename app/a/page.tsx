@@ -8,6 +8,7 @@ import { Clock, Heart, Sparkles, Instagram, User } from 'lucide-react'
 // VARIANT A - Elegant Wellness Design
 export default function VariantA() {
   const [signupCount, setSignupCount] = useState(0)
+  const [videoOpacity, setVideoOpacity] = useState(1)
 
   useEffect(() => {
     const fetchSignupCount = async () => {
@@ -23,6 +24,19 @@ export default function VariantA() {
     fetchSignupCount()
     const interval = setInterval(fetchSignupCount, 30000)
     return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      const windowHeight = window.innerHeight
+      // Fade out from 0 to windowHeight: opacity goes from 1 to 0
+      const opacity = Math.max(0, 1 - (scrollPosition / windowHeight))
+      setVideoOpacity(opacity)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
@@ -48,7 +62,8 @@ export default function VariantA() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+          style={{ opacity: videoOpacity }}
           aria-label="Nordic Pilates studio atmosphere background video"
         >
           <source src="/bg-a.mp4" type="video/mp4" />
