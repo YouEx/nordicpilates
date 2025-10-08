@@ -27,6 +27,16 @@ export default function VariantE() {
 
   return (
     <main className="min-h-screen bg-[#E8E4DF]">
+      {/* 
+        DESIGN SYSTEM
+        - Container max-width: 1400px
+        - Horizontal padding: px-8 md:px-12 lg:px-16 (32px → 48px → 64px)
+        - Section vertical spacing: py-20 md:py-28 lg:py-32 (80px → 112px → 128px)
+        - Content vertical spacing: mb-16 md:mb-20 lg:mb-24 (64px → 80px → 96px)
+        - Card/Panel padding: p-12 md:p-16 lg:p-20 (48px → 64px → 80px)
+        - Element spacing: gap-8 md:gap-12 lg:gap-16 (32px → 48px → 64px)
+      */}
+      
       {/* Skip to main content link for keyboard navigation */}
       <a 
         href="#main-content" 
@@ -41,71 +51,75 @@ export default function VariantE() {
       </div>
 
       {/* Non-Sticky Header */}
-      <header className="relative z-50 px-6 md:px-8 lg:px-12 py-4 md:py-6 flex items-center justify-between bg-[#E8E4DF] max-w-[1400px] mx-auto">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image 
-            src="/orange-logo.png" 
-            alt="Nordic Pilates" 
-            width={120} 
-            height={54} 
-            className="object-contain"
-            priority
-          />
-        </div>
+      <header className="relative z-50 px-8 md:px-12 lg:px-16 py-6 md:py-8 flex items-center justify-between bg-[#E8E4DF]">
+        <div className="w-full max-w-[1400px] mx-auto flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image 
+              src="/orange-logo.png" 
+              alt="Nordic Pilates" 
+              width={120} 
+              height={54} 
+              className="object-contain"
+              priority
+            />
+          </div>
 
-        {/* Right side - Early bird info */}
-        <div className="flex items-center gap-4 text-sm">
-          <span className="text-[#B8926A] font-light">
-            <span className="font-medium">{signupCount}</span> early bird pladser tilbage
-          </span>
-          <button 
-            onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-2.5 bg-[#1F1D1A] text-white rounded-md hover:bg-black transition-all text-sm font-light min-h-[44px]"
-            aria-label="Tilmeld venteliste"
-          >
-            Tilmeld venteliste
-          </button>
+          {/* Right side - Early bird info */}
+          <div className="flex items-center gap-4 text-sm">
+            <span className="text-[#B8926A] font-light">
+              <span className="font-medium">{signupCount}</span> early bird pladser tilbage
+            </span>
+            <button 
+              onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 py-2.5 bg-[#1F1D1A] text-white rounded-md hover:bg-black transition-all text-sm font-light min-h-[44px]"
+              aria-label="Tilmeld venteliste"
+            >
+              Tilmeld venteliste
+            </button>
+          </div>
         </div>
       </header>
 
       {/* Hero Section with Video */}
-      <section className="px-6 md:px-8 lg:px-12 py-8 md:py-12 max-w-[1400px] mx-auto" aria-label="Hero section">
-        {/* Video in Black Frame with Text Inside */}
-        <div className="bg-black p-8 md:p-12 lg:p-16 rounded-lg">
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-8">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              aria-label="Nordic Pilates studio doors video"
-            >
-              <source src="/doors.mp4" type="video/mp4" />
-            </video>
-          </div>
+      <section className="px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-20" aria-label="Hero section">
+        <div className="max-w-[1400px] mx-auto">
+          {/* Video in Black Frame with Text Inside */}
+          <div className="bg-black p-12 md:p-16 lg:p-20 rounded-lg">
+            <div className="aspect-video relative overflow-hidden rounded-lg mb-12 md:mb-16">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+                aria-label="Nordic Pilates studio doors video"
+              >
+                <source src="/doors.mp4" type="video/mp4" />
+              </video>
+            </div>
 
-          {/* Text Inside Black Frame - White on Black */}
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight">
-              Åbner snart i København
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-white/80 font-light">
-              Unlimited reformer pilates til 239kr/måned
-            </p>
+            {/* Text Inside Black Frame - White on Black */}
+            <div className="text-center max-w-3xl mx-auto">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight">
+                Åbner snart i København
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl text-white/80 font-light">
+                Unlimited reformer pilates til 239kr/måned
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Why Nordic Pilates Section */}
-      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-[#E8E4DF]" aria-labelledby="why-heading">
+      <section id="main-content" className="py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 bg-[#E8E4DF]" aria-labelledby="why-heading">
         <div className="max-w-[1400px] mx-auto">
           {/* White panel with padding */}
-          <div className="bg-white rounded-lg p-8 md:p-12 lg:p-16">
+          <div className="bg-white rounded-lg p-12 md:p-16 lg:p-20">
             {/* Header */}
-            <div className="mb-12">
-              <h2 id="why-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
+            <div className="mb-16 md:mb-20 lg:mb-24">
+              <h2 id="why-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-6 tracking-tight">
                 Hvorfor Nordic Pilates
               </h2>
               <p className="text-[#6B6B6B] text-base md:text-lg font-light max-w-2xl">
@@ -114,7 +128,7 @@ export default function VariantE() {
             </div>
 
           {/* Features Grid - 2 columns, 3 rows */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-x-16 lg:gap-x-24 md:gap-y-16 lg:gap-y-20">
             {/* Feature 01 - Billigere Pilates */}
             <div className="flex items-start gap-6">
               <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center">
@@ -228,10 +242,10 @@ export default function VariantE() {
       </section>
 
       {/* Find Your Pilates Variant Section */}
-      <section className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="variants-heading">
+      <section className="py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 bg-white" aria-labelledby="variants-heading">
         <div className="max-w-[1400px] mx-auto">
           {/* Header with tags */}
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-16">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-12 mb-16 md:mb-20 lg:mb-24">
             <div className="flex-1">
               <h2 id="variants-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
                 Find din foretrukne variant af Pilates
@@ -271,9 +285,9 @@ export default function VariantE() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-[2fr_1fr] gap-12 md:gap-16 lg:gap-20">
             {/* Left - Class Cards Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {/* Card 1 - Nordic Flow */}
               <div className="relative rounded-2xl overflow-hidden group cursor-pointer">
                 <div className="aspect-[3/4] relative">
@@ -364,13 +378,13 @@ export default function VariantE() {
       </section>
 
       {/* Waitlist Section */}
-      <section id="waitlist" className="py-20 md:py-32 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="waitlist-heading">
+      <section id="waitlist" className="py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 bg-white" aria-labelledby="waitlist-heading">
         <div className="max-w-[1400px] mx-auto">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <h2 id="waitlist-heading" className="text-3xl md:text-4xl font-light text-[#1F1D1A] mb-6 tracking-tight">
+          <div className="max-w-2xl mx-auto text-center mb-16 md:mb-20 lg:mb-24">
+            <h2 id="waitlist-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-6 tracking-tight">
               Join the Waitlist
             </h2>
-            <p className="text-[#6B6B6B] text-lg font-light leading-relaxed">
+            <p className="text-[#6B6B6B] text-base md:text-lg font-light leading-relaxed">
               Få early-bird fordele og vær blandt de første til at opleve studiet.
             </p>
           </div>
@@ -380,16 +394,16 @@ export default function VariantE() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 md:py-32 px-6 md:px-8 lg:px-12 bg-[#E8E4DF]" aria-labelledby="pricing-heading">
+      <section className="py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 bg-[#E8E4DF]" aria-labelledby="pricing-heading">
         <div className="max-w-[1400px] mx-auto text-center">
-          <h2 id="pricing-heading" className="text-3xl md:text-4xl font-light text-[#1F1D1A] mb-6 tracking-tight">
+          <h2 id="pricing-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-6 tracking-tight">
             Simple Pricing
           </h2>
-          <p className="text-[#6B6B6B] mb-16 text-lg font-light leading-relaxed">
+          <p className="text-[#6B6B6B] mb-16 md:mb-20 text-base md:text-lg font-light leading-relaxed">
             Et transparent medlemskab — ubegrænsede muligheder
           </p>
 
-          <div className="max-w-md mx-auto bg-white p-12 shadow-lg rounded-lg">
+          <div className="max-w-md mx-auto bg-white p-12 md:p-16 shadow-lg rounded-lg">
             <div className="mb-8">
               <h3 className="text-2xl font-light text-[#1F1D1A] mb-2">Unlimited</h3>
             </div>
@@ -432,8 +446,8 @@ export default function VariantE() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1F1D1A] text-white py-20 px-8">
-        <div className="max-w-6xl mx-auto text-center">
+      <footer className="bg-[#1F1D1A] text-white py-20 md:py-24 px-8 md:px-12 lg:px-16">
+        <div className="max-w-[1400px] mx-auto text-center">
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <Image 
