@@ -242,10 +242,12 @@ export default function VariantE() {
       </section>
 
       {/* Find Your Pilates Variant Section */}
-      <section className="py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 bg-white" aria-labelledby="variants-heading">
+      <section className="py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 bg-[#E8E4DF]" aria-labelledby="variants-heading">
         <div className="max-w-[1400px] mx-auto">
-          {/* Header with tags */}
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-12 mb-16 md:mb-20 lg:mb-24">
+          {/* White panel with padding */}
+          <div className="bg-white rounded-lg p-12 md:p-16 lg:p-20">
+            {/* Header with tags */}
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-12 mb-16 md:mb-20 lg:mb-24">
             <div className="flex-1">
               <h2 id="variants-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
                 Find din foretrukne variant af Pilates
@@ -374,38 +376,40 @@ export default function VariantE() {
               </p>
             </div>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Waitlist Section with Video Background */}
-      <section id="waitlist" className="relative py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 overflow-hidden" aria-labelledby="waitlist-heading">
-        {/* Background Video */}
+      <section id="waitlist" className="relative py-20 md:py-28 lg:py-32 px-8 md:px-12 lg:px-16 overflow-hidden bg-[#E8E4DF]" aria-labelledby="waitlist-heading">
+        {/* Background Video - behind everything */}
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-30"
             aria-label="Nordic Pilates studio background"
           >
             <source src="/vid-4.mp4" type="video/mp4" />
           </video>
-          {/* Overlay for better readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-[1400px] mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <h2 id="waitlist-heading" className="text-center mb-8 text-3xl md:text-4xl font-light text-white">
-              Tilmeld ventelisten
-            </h2>
-            <p className="text-center text-white/80 mb-12 max-w-xl mx-auto font-light">
-              Få early-bird plads, introfordele og først besked om åbning.
-            </p>
+          {/* White panel matching other sections */}
+          <div className="bg-white rounded-lg p-12 md:p-16 lg:p-20">
+            <div className="max-w-2xl mx-auto">
+              <h2 id="waitlist-heading" className="text-center mb-6 text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A]">
+                Tilmeld ventelisten
+              </h2>
+              <p className="text-center text-[#6B6B6B] mb-16 md:mb-20 max-w-xl mx-auto font-light text-base md:text-lg">
+                Få early-bird plads, introfordele og først besked om åbning.
+              </p>
 
-            <WaitlistQuizA />
+              <WaitlistQuizA />
+            </div>
           </div>
         </div>
       </section>
