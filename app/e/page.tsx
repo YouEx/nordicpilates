@@ -98,27 +98,103 @@ export default function VariantE() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="features-heading">
+      {/* Class Schedule Section */}
+      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="schedule-heading">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
-            <div>
-              <h3 className="text-xl font-light text-[#1F1D1A] mb-3">Unlimited Classes</h3>
-              <p className="text-[#6B6B6B] font-light text-sm leading-relaxed">
-                Book as many classes as you want. No restrictions, no extra fees.
-              </p>
+          {/* Header */}
+          <div className="mb-12">
+            <h2 id="schedule-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
+              Hvorfor Nordic Pilates
+            </h2>
+            <p className="text-[#6B6B6B] text-base md:text-lg font-light max-w-2xl">
+              Choose from live or on-demand classes including Hatha, Vinyasa, Yin, and beginner-friendly flows.
+            </p>
+          </div>
+
+          {/* Class Grid - 2 columns, 3 rows */}
+          <div className="grid md:grid-cols-2 gap-8 md:gap-x-16 md:gap-y-12">
+            {/* Class 01 */}
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-4">
+                <span className="text-sm text-[#999999] font-light">01.</span>
+                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Morning Energy Flow</h3>
+              </div>
+              <div className="pl-10">
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">06:30 AM - 07:30 AM  |  ALL LEVELS</p>
+                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
+                  Boost energy and awaken the body through dynamic Vinyasa sequences.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-xl font-light text-[#1F1D1A] mb-3">Expert Instructors</h3>
-              <p className="text-[#6B6B6B] font-light text-sm leading-relaxed">
-                Learn from certified professionals with years of experience.
-              </p>
+
+            {/* Class 04 */}
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-4">
+                <span className="text-sm text-[#999999] font-light">04.</span>
+                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Core Strength & Balance</h3>
+              </div>
+              <div className="pl-10">
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">05:30 PM - 06:30 PM  |  INTERMEDIATE</p>
+                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
+                  Focused on strengthening the core and improving body balance through controlled movements.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-xl font-light text-[#1F1D1A] mb-3">Modern Studio</h3>
-              <p className="text-[#6B6B6B] font-light text-sm leading-relaxed">
-                State-of-the-art equipment in a beautiful Copenhagen location.
-              </p>
+
+            {/* Class 02 */}
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-4">
+                <span className="text-sm text-[#999999] font-light">02.</span>
+                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Lunchtime Reset</h3>
+              </div>
+              <div className="pl-10">
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">12:00 PM - 12:45 PM  |  BEGINNER-FRIENDLY</p>
+                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
+                  Gentle stretches and breathwork to reduce midday tension and recharge focus.
+                </p>
+              </div>
+            </div>
+
+            {/* Class 05 */}
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-4">
+                <span className="text-sm text-[#999999] font-light">05.</span>
+                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Hatha for Posture & Flexibility</h3>
+              </div>
+              <div className="pl-10">
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">08:00 AM - 09:00 AM  |  BEGINNER TO INTERMEDIATE</p>
+                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
+                  Deep stretches and alignment techniques to enhance flexibility and posture awareness.
+                </p>
+              </div>
+            </div>
+
+            {/* Class 03 */}
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-4">
+                <span className="text-sm text-[#999999] font-light">03.</span>
+                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Evening Wind Down</h3>
+              </div>
+              <div className="pl-10">
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">07:00 PM - 08:00 PM  |  ALL LEVELS</p>
+                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
+                  Relaxing Yin yoga flow to release muscle tightness and prepare for restful sleep.
+                </p>
+              </div>
+            </div>
+
+            {/* Class 06 */}
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-4">
+                <span className="text-sm text-[#999999] font-light">06.</span>
+                <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A]">Restorative Yoga & Meditation</h3>
+              </div>
+              <div className="pl-10">
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-2">08:30 PM - 09:15 PM  |  ALL LEVELS</p>
+                <p className="text-sm text-[#6B6B6B] font-light leading-relaxed">
+                  Slow-paced restorative poses combined with guided meditation for deep relaxation.
+                </p>
+              </div>
             </div>
           </div>
         </div>
