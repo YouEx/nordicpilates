@@ -227,19 +227,137 @@ export default function VariantE() {
         </div>
       </section>
 
-      {/* Studio Preview */}
-      <section className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-[#E8E4DF]" aria-labelledby="studio-heading">
+      {/* Find Your Pilates Variant Section */}
+      <section className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="variants-heading">
         <div className="max-w-[1400px] mx-auto">
-          <h2 id="studio-heading" className="text-3xl md:text-4xl font-light text-[#1F1D1A] mb-12 text-center tracking-tight">
-            Your New Studio Space
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <div className="aspect-[4/5] relative overflow-hidden rounded-lg">
-              <img src="/1.png" alt="Nordic Pilates studio interior" className="w-full h-full object-cover" />
+          {/* Header with tags */}
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-16">
+            <div className="flex-1">
+              <h2 id="variants-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
+                Find din foretrukne variant af Pilates
+              </h2>
+              <p className="text-base text-[#999999] font-light leading-relaxed max-w-xl">
+                Our certified coaches bring years of experience to guide you with mindfulness, safety, and personalized care.
+              </p>
             </div>
-            <div className="aspect-[4/5] relative overflow-hidden rounded-lg">
-              <img src="/2.png" alt="Nordic Pilates reformer equipment" className="w-full h-full object-cover" />
+            
+            {/* Tags */}
+            <div className="flex flex-wrap gap-4 text-sm">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+                <span className="text-[#6B6B6B] italic font-light">Certified</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span className="text-[#6B6B6B] italic font-light">Personalized</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span className="text-[#6B6B6B] italic font-light">Experienced</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-[#B8926A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span className="text-[#6B6B6B] italic font-light">Holistic</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-12">
+            {/* Left - Class Cards Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card 1 - Nordic Flow */}
+              <div className="relative rounded-2xl overflow-hidden group cursor-pointer">
+                <div className="aspect-[3/4] relative">
+                  <img src="/1.png" alt="Nordic Flow Pilates class" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                </div>
+                
+                {/* Card content */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-light text-[#1F1D1A] text-lg">Nordic Flow</h3>
+                      <span className="text-xl">🔥</span>
+                    </div>
+                    <p className="text-xs text-[#6B6B6B] font-light leading-relaxed">
+                      Rolige sekvenser med fokus på teknik og åndedræt
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 - Power Core */}
+              <div className="relative rounded-2xl overflow-hidden group cursor-pointer">
+                <div className="aspect-[3/4] relative">
+                  <img src="/2.png" alt="Power Core Pilates class" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                </div>
+                
+                {/* Card content */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-light text-[#1F1D1A] text-lg">Power Core</h3>
+                      <div className="flex gap-0.5">
+                        <span className="text-xl">🔥</span>
+                        <span className="text-xl">🔥</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-[#6B6B6B] font-light leading-relaxed">
+                      Stabilitet, styrke og holding – byg en stærk kerne
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 - Sweat 30 */}
+              <div className="relative rounded-2xl overflow-hidden group cursor-pointer">
+                <div className="aspect-[3/4] relative">
+                  <img src="/3.png" alt="Sweat 30 Pilates class" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                </div>
+                
+                {/* Card content */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-light text-[#1F1D1A] text-lg">Sweat 30</h3>
+                      <div className="flex gap-0.5">
+                        <span className="text-xl">🔥</span>
+                        <span className="text-xl">🔥</span>
+                        <span className="text-xl">🔥</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-[#6B6B6B] font-light leading-relaxed">
+                      Tempo og puls på 30 minutter – effektiv træning
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Instructor Info */}
+            <div className="flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl font-serif italic text-[#1F1D1A] mb-6">
+                Maya Tanaka
+              </h3>
+              
+              <p className="text-xs text-[#B8926A] uppercase tracking-wider mb-4 font-light">
+                VINYASA FLOW & BREATHWORK
+              </p>
+              
+              <p className="text-base text-[#6B6B6B] font-light leading-relaxed">
+                Maya blends dynamic movement with mindful breathwork to create a deeply immersive yoga experience. Her sessions are known for their calming energy and fluid transitions.
+              </p>
             </div>
           </div>
         </div>
