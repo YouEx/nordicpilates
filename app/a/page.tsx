@@ -30,10 +30,14 @@ export default function VariantA() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
       const windowHeight = window.innerHeight
-      // Fade out from 0 to windowHeight: opacity goes from 1 to 0
-      const opacity = Math.max(0, 1 - (scrollPosition / windowHeight))
+      // Fade out faster: from 0 to 50% of viewport height (0.5x)
+      const fadeDistance = windowHeight * 0.5
+      const opacity = Math.max(0, 1 - (scrollPosition / fadeDistance))
       setVideoOpacity(opacity)
     }
+
+    // Initial call to set correct opacity on mount
+    handleScroll()
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -62,7 +66,7 @@ export default function VariantA() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: videoOpacity }}
           aria-label="Nordic Pilates studio atmosphere background video"
         >
