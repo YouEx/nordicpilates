@@ -41,11 +41,11 @@ export default function VariantE() {
       </div>
 
       {/* Non-Sticky Header */}
-      <header className="relative z-50 px-8 py-6 flex items-center justify-between bg-[#E8E4DF]">
+      <header className="relative z-50 px-6 md:px-8 lg:px-12 py-4 md:py-6 flex items-center justify-between bg-[#E8E4DF] max-w-[1400px] mx-auto">
         {/* Logo */}
         <div className="flex items-center">
           <Image 
-            src="/logo-a.png" 
+            src="/orange-logo.png" 
             alt="Nordic Pilates" 
             width={120} 
             height={54} 
@@ -61,7 +61,7 @@ export default function VariantE() {
           </span>
           <button 
             onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-2.5 bg-[#1F1D1A] text-white rounded-full hover:bg-black transition-all text-sm font-light min-h-[44px]"
+            className="px-6 py-2.5 bg-[#1F1D1A] text-white rounded-md hover:bg-black transition-all text-sm font-light min-h-[44px]"
             aria-label="Tilmeld venteliste"
           >
             Tilmeld venteliste
@@ -70,10 +70,10 @@ export default function VariantE() {
       </header>
 
       {/* Hero Section with Video */}
-      <section className="px-8 py-16 max-w-7xl mx-auto" aria-label="Hero section">
-        {/* Video in Black Frame */}
-        <div className="bg-black p-6 md:p-8 rounded-none mb-12">
-          <div className="aspect-video relative overflow-hidden">
+      <section className="px-6 md:px-8 lg:px-12 py-8 md:py-12 max-w-[1400px] mx-auto" aria-label="Hero section">
+        {/* Video in Black Frame with Text Inside */}
+        <div className="bg-black p-8 md:p-12 lg:p-16 rounded-lg">
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-8">
             <video
               autoPlay
               loop
@@ -85,23 +85,23 @@ export default function VariantE() {
               <source src="/doors.mp4" type="video/mp4" />
             </video>
           </div>
-        </div>
 
-        {/* Text Below Video */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#1F1D1A] mb-4 tracking-tight">
-            Åbner snart i København
-          </h1>
-          <p className="text-lg md:text-xl text-[#6B6B6B] font-light">
-            Unlimited reformer pilates til 239kr/måned
-          </p>
+          {/* Text Inside Black Frame - White on Black */}
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight">
+              Åbner snart i København
+            </h1>
+            <p className="text-base md:text-lg lg:text-xl text-white/80 font-light">
+              Unlimited reformer pilates til 239kr/måned
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="main-content" className="py-20 px-8 bg-white" aria-labelledby="features-heading">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 text-center">
+      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="features-heading">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
             <div>
               <h3 className="text-xl font-light text-[#1F1D1A] mb-3">Unlimited Classes</h3>
               <p className="text-[#6B6B6B] font-light text-sm leading-relaxed">
@@ -125,17 +125,17 @@ export default function VariantE() {
       </section>
 
       {/* Studio Preview */}
-      <section className="py-20 px-8 bg-[#E8E4DF]" aria-labelledby="studio-heading">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-[#E8E4DF]" aria-labelledby="studio-heading">
+        <div className="max-w-[1400px] mx-auto">
           <h2 id="studio-heading" className="text-3xl md:text-4xl font-light text-[#1F1D1A] mb-12 text-center tracking-tight">
             Your New Studio Space
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="aspect-[4/5] relative overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="aspect-[4/5] relative overflow-hidden rounded-lg">
               <img src="/1.png" alt="Nordic Pilates studio interior" className="w-full h-full object-cover" />
             </div>
-            <div className="aspect-[4/5] relative overflow-hidden">
+            <div className="aspect-[4/5] relative overflow-hidden rounded-lg">
               <img src="/2.png" alt="Nordic Pilates reformer equipment" className="w-full h-full object-cover" />
             </div>
           </div>
@@ -143,22 +143,24 @@ export default function VariantE() {
       </section>
 
       {/* Waitlist Section */}
-      <section id="waitlist" className="py-32 px-8 bg-white" aria-labelledby="waitlist-heading">
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 id="waitlist-heading" className="text-3xl md:text-4xl font-light text-[#1F1D1A] mb-6 tracking-tight">
-            Join the Waitlist
-          </h2>
-          <p className="text-[#6B6B6B] text-lg font-light leading-relaxed">
-            Få early-bird fordele og vær blandt de første til at opleve studiet.
-          </p>
-        </div>
+      <section id="waitlist" className="py-20 md:py-32 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="waitlist-heading">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <h2 id="waitlist-heading" className="text-3xl md:text-4xl font-light text-[#1F1D1A] mb-6 tracking-tight">
+              Join the Waitlist
+            </h2>
+            <p className="text-[#6B6B6B] text-lg font-light leading-relaxed">
+              Få early-bird fordele og vær blandt de første til at opleve studiet.
+            </p>
+          </div>
 
-        <WaitlistQuizA />
+          <WaitlistQuizA />
+        </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-32 px-8 bg-[#E8E4DF]" aria-labelledby="pricing-heading">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 md:py-32 px-6 md:px-8 lg:px-12 bg-[#E8E4DF]" aria-labelledby="pricing-heading">
+        <div className="max-w-[1400px] mx-auto text-center">
           <h2 id="pricing-heading" className="text-3xl md:text-4xl font-light text-[#1F1D1A] mb-6 tracking-tight">
             Simple Pricing
           </h2>
@@ -166,7 +168,7 @@ export default function VariantE() {
             Et transparent medlemskab — ubegrænsede muligheder
           </p>
 
-          <div className="max-w-md mx-auto bg-white p-12 shadow-lg">
+          <div className="max-w-md mx-auto bg-white p-12 shadow-lg rounded-lg">
             <div className="mb-8">
               <h3 className="text-2xl font-light text-[#1F1D1A] mb-2">Unlimited</h3>
             </div>
