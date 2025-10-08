@@ -112,7 +112,7 @@ export default function WaitlistQuizA() {
 
   if (submitSuccess) {
     return (
-      <div className="relative bg-white p-12 md:p-16 rounded-3xl shadow-xl text-center max-w-lg mx-auto border border-[#445D68]/10">
+      <div className="relative bg-[#FEFBF0] p-12 md:p-16 rounded-3xl shadow-xl text-center max-w-lg mx-auto border border-[#445D68]/10">
         <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-full bg-gradient-to-br from-[#445D68] to-[#5D7D88]">
           <Heart className="w-10 h-10 text-white fill-white" />
         </div>
@@ -122,7 +122,7 @@ export default function WaitlistQuizA() {
           Your path to wellness begins now. We'll reach out with your personalized welcome.
         </p>
         
-        <div className="bg-[#445D68]/5 rounded-2xl p-6 mb-8">
+        <div className="bg-white rounded-2xl p-6 mb-8">
           <p className="text-sm text-[#445D68] font-light">
             ✨ A complimentary wellness guide is on its way to your inbox
           </p>
@@ -136,7 +136,7 @@ export default function WaitlistQuizA() {
   }
 
   return (
-    <div className="bg-white p-10 md:p-14 rounded-3xl shadow-xl max-w-lg mx-auto border border-[#445D68]/10">
+    <div className="bg-[#FEFBF0] p-10 md:p-14 rounded-3xl shadow-xl max-w-lg mx-auto border border-[#445D68]/10">
       {/* Elegant Progress Indicator */}
       <div className="mb-10">
         <div className="flex gap-2 justify-center">
