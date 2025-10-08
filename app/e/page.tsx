@@ -99,17 +99,19 @@ export default function VariantE() {
       </section>
 
       {/* Why Nordic Pilates Section */}
-      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-white" aria-labelledby="why-heading">
+      <section id="main-content" className="py-16 md:py-24 px-6 md:px-8 lg:px-12 bg-[#E8E4DF]" aria-labelledby="why-heading">
         <div className="max-w-[1400px] mx-auto">
-          {/* Header */}
-          <div className="mb-12">
-            <h2 id="why-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
-              Hvorfor Nordic Pilates
-            </h2>
-            <p className="text-[#6B6B6B] text-base md:text-lg font-light max-w-2xl">
-              Unlimited medlemskab til 239kr/måned – ingen skjulte gebyrer eller dyre klippekort
-            </p>
-          </div>
+          {/* White panel with padding */}
+          <div className="bg-white rounded-lg p-8 md:p-12 lg:p-16">
+            {/* Header */}
+            <div className="mb-12">
+              <h2 id="why-heading" className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1F1D1A] mb-4 tracking-tight">
+                Hvorfor Nordic Pilates
+              </h2>
+              <p className="text-[#6B6B6B] text-base md:text-lg font-light max-w-2xl">
+                Unlimited medlemskab til 239kr/måned – ingen skjulte gebyrer eller dyre klippekort
+              </p>
+            </div>
 
           {/* Features Grid - 2 columns, 3 rows */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-x-16 md:gap-y-12">
@@ -232,6 +234,7 @@ export default function VariantE() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
